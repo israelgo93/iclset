@@ -465,3 +465,19 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 - Las rutas `/es` y `/en`, junto con las páginas internas iniciales, están disponibles.
 - La documentación principal vive en `README.md` y los datos editables en `src/content`.
 - Los agentes deben seguir evitando `any`, fechas inventadas, chairs inventados, enlaces no confirmados, bases de datos obligatorias y funcionalidades de fase 2 antes de aprobación.
+
+## Estado de despliegue AWS ECS Fargate - 2026-05-11
+
+- Sitio publicado en `https://iclset.com`.
+- GitHub Actions despliega con OIDC hacia AWS, sin access keys permanentes.
+- Workflow: `Deploy to Amazon ECS`.
+- AWS region: `us-east-1`.
+- ECR repository: `iclset`.
+- ECS cluster: `iclset-production`.
+- ECS service: `iclset-web`.
+- ALB: `iclset-web-alb`.
+- Target group: `iclset-web-tg`.
+- Health check: `/healthz`.
+- Route 53 gestiona alias para `iclset.com` y `www.iclset.com`.
+- El contacto provisional del sitio es `israel.gomez@ulean.edu.ec`.
+- Procedimientos reutilizables documentados en `SKILLS.md` y `skills/`.

@@ -1,6 +1,24 @@
 # Despliegue en AWS ECS Fargate
 
-Esta guia deja el sitio ICLSET 2026 listo para publicarse como contenedor en Amazon ECS con Fargate. La landing actual no depende de base de datos para renderizar.
+Esta guia documenta el despliegue de ICLSET 2026 como contenedor en Amazon ECS con Fargate. La landing actual no depende de base de datos para renderizar.
+
+## Estado actual
+
+- Dominio publico: `https://iclset.com`.
+- Cuenta AWS: `761018886122`.
+- Region: `us-east-1`.
+- Route 53 hosted zone: `Z06338863HEV56FVQYT1B`.
+- ECR repository: `iclset`.
+- ECS cluster: `iclset-production`.
+- ECS service: `iclset-web`.
+- ECS task family: `iclset-web`.
+- Container name: `iclset-web`.
+- ALB: `iclset-web-alb`.
+- Target group: `iclset-web-tg`.
+- Health check: `/healthz`.
+- GitHub repository: `israelgo93/iclset`.
+- GitHub Actions workflow: `Deploy to Amazon ECS`.
+- Ultimo despliegue validado: `https://github.com/israelgo93/iclset/actions/runs/25702895800`.
 
 ## Arquitectura recomendada
 
@@ -54,7 +72,7 @@ NEXT_PUBLIC_SITE_URL=https://iclset.com
 Crear el siguiente secreto:
 
 ```txt
-AWS_ROLE_TO_ASSUME=arn:aws:iam::<account-id>:role/<github-actions-deploy-role>
+AWS_ROLE_TO_ASSUME=arn:aws:iam::761018886122:role/iclset-github-actions-deploy-role
 ```
 
 El rol debe permitir:
@@ -98,10 +116,25 @@ http://localhost:3000/sitemap.xml
 3. Crear ECR y subir una primera imagen.
 4. Crear ECS cluster, task definition y service.
 5. Crear ALB, target group y health check `/healthz`.
-6. Apuntar Route 53 al ALB con registro A/AAAA alias.
+6. Apuntar Route 53 al ALB con registro A alias para `iclset.com` y `www.iclset.com`.
 7. Configurar variables/secreto en GitHub.
 8. Ejecutar el workflow `Deploy to Amazon ECS`.
-9. Validar `https://iclset.com/es`, `https://iclset.com/en`, `https://iclset.com/sitemap.xml` y Open Graph.
+9. Validar `https://iclset.com/es`, `https://iclset.com/en`, `https://iclset.com/healthz` y `https://iclset.com/sitemap.xml`.
+
+## Validacion operativa
+
+```powershell
+gh workflow run "Deploy to Amazon ECS" --repo israelgo93/iclset --ref main
+gh run watch --repo israelgo93/iclset
+
+& "C:\Program Files\Amazon\AWSCLIV2\aws.exe" ecs describe-services --cluster iclset-production --services iclset-web --region us-east-1
+& "C:\Program Files\Amazon\AWSCLIV2\aws.exe" elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:us-east-1:761018886122:targetgroup/iclset-web-tg/3c39e21e48aa300e --region us-east-1
+
+Invoke-WebRequest -Uri "https://iclset.com/healthz" -UseBasicParsing
+Invoke-WebRequest -Uri "https://iclset.com/es" -UseBasicParsing
+Invoke-WebRequest -Uri "https://iclset.com/en" -UseBasicParsing
+Invoke-WebRequest -Uri "https://iclset.com/sitemap.xml" -UseBasicParsing
+```
 
 ## Pendientes no tecnicos
 

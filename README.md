@@ -111,7 +111,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 NEXT_PUBLIC_SITE_URL=
 ```
 
-El dominio público final está pendiente de confirmación. Mientras tanto, `src/content/site.ts` usa `https://iclset.example` como URL placeholder para sitemap y metadata.
+El dominio publico de produccion es `https://iclset.com`. En produccion `NEXT_PUBLIC_SITE_URL` debe mantenerse como `https://iclset.com` para sitemap, canonical y metadata.
 
 Uso futuro: inscripciones, participantes, certificados digitales, validación QR, administración de contenido, formularios dinámicos y newsletter.
 
@@ -128,13 +128,17 @@ pnpm format
 
 ## Despliegue AWS ECS Fargate
 
-El proyecto queda preparado para publicarse como contenedor en Amazon ECS Fargate:
+El proyecto esta publicado como contenedor en Amazon ECS Fargate:
 
 - `next.config.ts` usa `output: "standalone"`.
 - `Dockerfile` genera una imagen optimizada para Next.js.
 - `/healthz` responde `200` para health checks de ALB/ECS.
 - `.github/workflows/deploy-ecs.yml` contiene el flujo de build, push a ECR y deploy a ECS.
 - La guia operativa esta en `docs/aws-ecs-fargate.md`.
+- Dominio: `https://iclset.com`.
+- ECS cluster: `iclset-production`.
+- ECS service: `iclset-web`.
+- ECR repository: `iclset`.
 
 Build local de contenedor:
 
@@ -145,8 +149,9 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 
 ## Estado actual
 
-- Landing bilingüe local implementada.
-- Páginas internas iniciales implementadas.
+- Landing bilingüe publicada en AWS ECS Fargate.
+- Páginas internas iniciales implementadas y disponibles en produccion.
 - Build de producción validado.
-- Documentación base actualizada.
-- Pendiente: aprobación institucional de enlaces CMT, plantillas, chairs, tarifas, redes, indexaciones y dominio final.
+- Documentación base y guias de despliegue actualizadas.
+- Contacto provisional: `israel.gomez@ulean.edu.ec`.
+- Pendiente: aprobación institucional de enlaces CMT, plantillas, chairs, tarifas, redes, indexaciones e imagenes oficiales.
