@@ -126,6 +126,23 @@ pnpm build
 pnpm format
 ```
 
+## Despliegue AWS ECS Fargate
+
+El proyecto queda preparado para publicarse como contenedor en Amazon ECS Fargate:
+
+- `next.config.ts` usa `output: "standalone"`.
+- `Dockerfile` genera una imagen optimizada para Next.js.
+- `/healthz` responde `200` para health checks de ALB/ECS.
+- `.github/workflows/deploy-ecs.yml` contiene el flujo de build, push a ECR y deploy a ECS.
+- La guia operativa esta en `docs/aws-ecs-fargate.md`.
+
+Build local de contenedor:
+
+```bash
+docker build --build-arg NEXT_PUBLIC_SITE_URL=http://localhost:3000 -t iclset:local .
+docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclset:local
+```
+
 ## Estado actual
 
 - Landing bilingüe local implementada.
