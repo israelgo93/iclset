@@ -479,5 +479,5 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 - Target group: `iclset-web-tg`.
 - Health check: `/healthz`.
 - Route 53 gestiona alias para `iclset.com` y `www.iclset.com`.
-- El contacto provisional del sitio es `israel.gomez@ulean.edu.ec`.
+- El contacto provisional del sitio es `israel.gomez@uleam.edu.ec`.
 - Procedimientos reutilizables documentados en `SKILLS.md` y `skills/`.

@@ -153,5 +153,5 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Páginas internas iniciales implementadas y disponibles en produccion.
 - Build de producción validado.
 - Documentación base y guias de despliegue actualizadas.
-- Contacto provisional: `israel.gomez@ulean.edu.ec`.
+- Contacto provisional: `israel.gomez@uleam.edu.ec`.
 - Pendiente: aprobación institucional de enlaces CMT, plantillas, chairs, tarifas, redes, indexaciones e imagenes oficiales.

@@ -41,7 +41,7 @@ export const conference = {
     en: "First edition",
   },
   timezone: "America/Guayaquil",
-  contactEmail: "israel.gomez@ulean.edu.ec",
+  contactEmail: "israel.gomez@uleam.edu.ec",
   editorialPlatform: "Microsoft CMT",
   cmtUrl: null,
   templateUrl: null,
