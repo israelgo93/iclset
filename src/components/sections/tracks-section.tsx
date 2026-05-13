@@ -27,7 +27,7 @@ const trackStyles: Record<
 > = {
 	bio: {
 		icon: Leaf,
-		image: "/tracks/bio.svg",
+		image: "/tracks/bio.png",
 		iconBg: "bg-gradient-to-br from-iclset-emerald to-iclset-green",
 		iconColor: "text-white",
 		glow:
@@ -38,7 +38,7 @@ const trackStyles: Record<
 	},
 	agro: {
 		icon: Sprout,
-		image: "/tracks/agro.svg",
+		image: "/tracks/agro.png",
 		iconBg: "bg-gradient-to-br from-iclset-green to-iclset-lime",
 		iconColor: "text-iclset-navy",
 		glow:
@@ -49,7 +49,7 @@ const trackStyles: Record<
 	},
 	tech: {
 		icon: Cpu,
-		image: "/tracks/tech.svg",
+		image: "/tracks/tech.png",
 		iconBg: "bg-gradient-to-br from-iclset-blue to-iclset-sky",
 		iconColor: "text-white",
 		glow:
@@ -115,16 +115,22 @@ export function TracksSection({
 								}
 								className={`group relative isolate flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/60 bg-white ring-1 ${style.ring} shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.16)] transition-all duration-500 ${style.glow}`}
 							>
-								<div className="relative overflow-hidden bg-white">
-									<div className="aspect-[16/10] w-full">
+								<div className="relative overflow-hidden bg-[oklch(10%_0.05_252)]">
+									<div className="aspect-[4/3] w-full">
 										<Image
 											src={style.image}
 											alt={track.name[locale]}
-											width={640}
-											height={400}
-											className="h-full w-full object-cover object-center"
+											width={1024}
+											height={1024}
+											sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+											className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
 										/>
 									</div>
+									{/* Capa de degradado inferior para asegurar legibilidad del badge inferior */}
+									<div
+										aria-hidden="true"
+										className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 via-black/20 to-transparent"
+									/>
 									<span
 										className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-semibold tracking-wide ring-1 ring-white/60 ${style.badge}`}
 									>
