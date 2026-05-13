@@ -31,10 +31,10 @@ export const metadata: Metadata = {
 	manifest: "/manifest.webmanifest",
 	icons: {
 		icon: [
-			{ url: "/brand/favicon.svg", type: "image/svg+xml" },
+			{ url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
 			{ url: "/brand/iclset-logo.png", type: "image/png", sizes: "512x512" },
 		],
-		shortcut: "/brand/favicon.svg",
+		shortcut: "/favicon.ico",
 		apple: "/brand/iclset-logo.png",
 	},
 	openGraph: {
