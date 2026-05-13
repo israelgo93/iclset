@@ -66,15 +66,20 @@ export function ProgramPreviewSection({
 							className="overflow-hidden rounded-[1.85rem] border border-iclset-blue/10 bg-white shadow-[0_24px_70px_-40px_rgb(15_23_42_/_0.2)]"
 						>
 							<div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-								<div className={`p-5 sm:p-6 ${dayAccents[index]}`}>
-									<Image
-										src={day.image.src}
-										alt={day.image.alt[locale]}
-										width={960}
-										height={640}
-										loading={index === 0 ? "eager" : "lazy"}
-										className="aspect-[3/2] w-full rounded-[1.35rem] border border-white/30 object-cover shadow-2xl shadow-iclset-navy/25"
-									/>
+								<div className={`relative p-5 sm:p-6 ${dayAccents[index]}`}>
+									<div className="relative overflow-hidden rounded-[1.35rem] border border-white/30 shadow-2xl shadow-iclset-navy/25">
+										<div className="aspect-[4/3] w-full">
+											<Image
+												src={day.image.src}
+												alt={day.image.alt[locale]}
+												width={1024}
+												height={1024}
+												sizes="(max-width: 1024px) 100vw, 40vw"
+												loading={index === 0 ? "eager" : "lazy"}
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+									</div>
 								</div>
 								<div className="p-5 sm:p-7">
 									<div className="border-b border-iclset-blue/10 pb-5">
