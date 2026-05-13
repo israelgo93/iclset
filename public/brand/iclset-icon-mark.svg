@@ -1,0 +1,23 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="iclsetMarkTitle iclsetMarkDesc">
+  <title id="iclsetMarkTitle">ICLSET 2026 mark</title>
+  <desc id="iclsetMarkDesc">Monograma iC sin fondo para uso sobre superficies claras y oscuras.</desc>
+  <defs>
+    <linearGradient id="iclsetMarkC" x1="78" y1="40" x2="150" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1F94FF"/>
+      <stop offset="0.55" stop-color="#2BC1B6"/>
+      <stop offset="1" stop-color="#7BD957"/>
+    </linearGradient>
+    <linearGradient id="iclsetMarkI" x1="22" y1="50" x2="50" y2="146" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#36A7FF"/>
+      <stop offset="1" stop-color="#1B7BEF"/>
+    </linearGradient>
+    <linearGradient id="iclsetMarkLeaf" x1="20" y1="6" x2="70" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A4ED6B"/>
+      <stop offset="1" stop-color="#3FB337"/>
+    </linearGradient>
+  </defs>
+  <rect x="22" y="50" width="26" height="96" rx="13" fill="url(#iclsetMarkI)"/>
+  <path d="M132 46c-22 0-40 10-49 26a36 36 0 0 0 0 38c9 16 27 26 49 26v-22c-13 0-24-6-30-15a18 18 0 0 1 0-20c6-9 17-15 30-15Z" fill="url(#iclsetMarkC)"/>
+  <path d="M42 4c-16 6-23 19-20 36 3 16 13 26 28 29-2-15-5-27-9-37C37 22 32 13 28 2Z" fill="url(#iclsetMarkLeaf)"/>
+  <path d="M42 4c3 10 6 21 9 32 3-9 7-16 14-22" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity="0.85"/>
+</svg>

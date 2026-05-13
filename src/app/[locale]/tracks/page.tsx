@@ -50,8 +50,8 @@ export default async function TracksPage({
         }
         description={
           locale === "es"
-            ? "Cada track organiza comunidades, líneas de investigación y futuras rutas editoriales."
-            : "Each track organizes communities, research lines, and future editorial pathways."
+            ? "Cada track organiza carreras articuladoras, ejes temáticos, revisión doble ciego y canalización editorial por afinidad disciplinar."
+            : "Each track organizes articulating programs, thematic lines, double-blind review, and discipline-fit editorial routing."
         }
       />
       <TracksSection locale={locale} detailed />

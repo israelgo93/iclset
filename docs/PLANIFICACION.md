@@ -2,18 +2,18 @@
 
 ## Objetivo general
 
-Desarrollar la primera landing page oficial de ICLSET 2026 con enfoque informativo, académico, bilingüe, moderno y escalable.  
-La fase inicial debe permitir publicar la convocatoria, presentar los tracks, comunicar fechas clave, mostrar programa preliminar, explicar el proceso editorial, visibilizar revistas aliadas y preparar la base técnica para una futura plataforma con Supabase.
+Mantener el sitio oficial de ICLSET 2026 con enfoque académico, bilingüe, moderno y escalable.  
+El sitio publica la convocatoria, tracks, fechas clave, programa académico, proceso editorial, revistas aliadas, comités, sede y canales institucionales con base en la documentación oficial del proyecto.
 
-## Alcance de la primera versión
+## Alcance del sitio oficial
 
 Incluye:
 
-- Landing principal bilingüe.
+- Home principal bilingüe.
 - Páginas internas básicas.
 - Call for Papers.
 - Tracks.
-- Programa preliminar.
+- Programa académico.
 - Revistas aliadas.
 - Proceso editorial.
 - Comité y organización.
@@ -21,7 +21,7 @@ Incluye:
 - Preguntas frecuentes.
 - SEO, Open Graph y JSON-LD.
 - Preparación para despliegue.
-- Preparación técnica para Supabase en fase 2.
+- Preparación técnica no bloqueante para integraciones posteriores.
 
 No incluye:
 
@@ -37,13 +37,13 @@ No incluye:
 
 ### Objetivo
 
-Convertir la documentación institucional en una arquitectura clara de sitio.
+Convertir la documentación institucional en una estructura clara de contenido publico.
 
 ### Actividades
 
 - Revisar proyecto ICLSET 2026.
 - Revisar presentación ejecutiva.
-- Revisar presupuesto de landing/plataforma.
+- Revisar presupuesto del sitio y componentes operativos.
 - Extraer datos oficiales.
 - Separar información pública de información operativa.
 - Revisar sitios de referencia internacionales y regionales.
@@ -54,7 +54,6 @@ Convertir la documentación institucional en una arquitectura clara de sitio.
 - `AGENTS.md`
 - `STYLES.md`
 - `PLANIFICACION.md`
-- `PROMPT_INICIAL.md`
 - `REFERENCIAS.md`
 
 ### Criterios de aceptación
@@ -141,7 +140,7 @@ Implementar los tokens visuales y componentes base.
 
 ### Criterios de aceptación
 
-- Coherencia visual en toda la landing.
+- Coherencia visual en todo el sitio.
 - Responsive mobile-first.
 - Contraste AA.
 - Animaciones discretas y controladas.
@@ -183,7 +182,7 @@ src/content/navigation.ts
 - Español e inglés tienen contenido equivalente.
 - Se puede actualizar una fecha desde un solo archivo.
 
-## Hito 4 · Landing principal
+## Hito 4 · Home principal
 
 ### Objetivo
 
@@ -242,7 +241,7 @@ Separar información densa en páginas consultables.
 
 ### Objetivo
 
-Dejar la landing lista para publicación institucional y difusión.
+Dejar el sitio listo para publicación institucional y difusión.
 
 ### Actividades
 
@@ -272,9 +271,9 @@ Dejar la landing lista para publicación institucional y difusión.
 
 ### Objetivo
 
-Conectar servicios sin convertir la landing en una plataforma pesada.
+Conectar servicios sin convertir el sitio publico en un sistema operativo pesado.
 
-### Integraciones fase 1
+### Integraciones publicas
 
 - Links a CMT.
 - Links de descarga de plantillas.
@@ -283,7 +282,7 @@ Conectar servicios sin convertir la landing en una plataforma pesada.
 - Google Analytics o Plausible, si se aprueba.
 - Pixel de redes solo si la institución lo solicita.
 
-### Preparación fase 2
+### Integraciones operativas posteriores
 
 - Supabase Auth.
 - Supabase DB.
@@ -296,20 +295,23 @@ Conectar servicios sin convertir la landing en una plataforma pesada.
 ### Criterios de aceptación
 
 - No se bloquea el lanzamiento por integraciones no críticas.
-- Los enlaces importantes están listos o marcados como pendientes.
+- Los enlaces importantes están listos o excluidos hasta aprobación institucional.
 - Las variables de entorno están documentadas.
 
 ## Hito 8 · Despliegue
 
 ### Objetivo
 
-Publicar la landing en un entorno estable.
+Publicar el sitio en un entorno estable.
 
-### Opciones
+### Plataforma seleccionada
 
-- AWS Lightsail para línea presupuestaria institucional.
-- Vercel para máxima compatibilidad con Next.js.
-- AWS Amplify si se requiere ecosistema AWS administrado.
+- AWS ECS Fargate para ejecucion del contenedor Next.js.
+- Amazon ECR para imagenes Docker.
+- Application Load Balancer para trafico publico.
+- ACM para TLS.
+- Route 53 para dominio y alias DNS.
+- GitHub Actions con OIDC para despliegue continuo.
 
 ### Actividades
 
@@ -320,7 +322,7 @@ Publicar la landing en un entorno estable.
 - Configurar redirects.
 - Configurar headers básicos.
 - Configurar monitoreo simple.
-- Publicar versión inicial.
+- Publicar y validar el sitio oficial.
 
 ### Criterios de aceptación
 
@@ -357,15 +359,15 @@ Validar contenido, diseño y operación antes de difusión masiva.
 
 ### Entregables
 
-- Landing aprobada.
+- Sitio aprobado.
 - Lista de cambios aplicados.
 - Manual corto para actualización de contenido.
 
-## Hito 10 · Fase 2 futura
+## Hito 10 · Evolución operativa
 
 ### Objetivo
 
-Evolucionar de landing a plataforma.
+Evolucionar de sitio publico a operacion digital.
 
 ### Módulos posibles
 
@@ -400,11 +402,11 @@ Tablas futuras:
 
 ### Riesgo: contenido institucional incompleto
 
-Mitigación: usar placeholders marcados como “por confirmar” y centralizados en `src/content`.
+Mitigación: publicar solo datos aprobados y centralizados en `src/content`.
 
 ### Riesgo: exceso de alcance
 
-Mitigación: fase 1 informativa; no construir dashboard ni pagos.
+Mitigación: mantener el alcance publico y no construir dashboard ni pagos sin aprobación institucional.
 
 ### Riesgo: retraso por diseño institucional
 
@@ -412,7 +414,7 @@ Mitigación: usar sistema visual modular y ajustar logo/colores oficiales cuando
 
 ### Riesgo: dependencia de CMT
 
-Mitigación: usar CTA configurable. Si el enlace no está listo, mostrar “próximamente”.
+Mitigación: usar CTA configurable y publicar únicamente enlaces aprobados.
 
 ### Riesgo: rendimiento bajo por animaciones
 
@@ -461,14 +463,14 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - PÃ¡ginas internas implementadas para Call for Papers, programa, tracks, publicaciones, sede, comitÃ©s y contacto.
 - Contenido sensible centralizado en `src/content`.
 - Tipos base creados en `src/types`.
-- Supabase preparado en `src/lib/supabase`, sin dependencia de base de datos en fase 1.
+- Supabase preparado en `src/lib/supabase`, sin dependencia de base de datos para el sitio publico.
 - SEO inicial configurado con metadata por ruta, `sitemap.ts`, `robots.ts` y JSON-LD de evento en home.
 - README completo creado con informaciÃ³n del proyecto, estructura, contenido y comandos.
 
 ### Decisiones aplicadas
 
 - Se mantiene una versiÃ³n visual clara, neutral y moderna, sin fondos oscuros dominantes.
-- Los datos no aprobados se muestran como "Por confirmar" o "To be confirmed".
+- Los datos no aprobados se excluyen del contenido publico hasta su validacion.
 - No se implementan registro, pagos, dashboard, certificados ni base de datos productiva.
 - Se usa `pnpm` y TypeScript estricto.
 
@@ -479,4 +481,48 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Chairs y miembros de comitÃ©.
 - Tarifas de inscripciÃ³n.
 - URLs oficiales de revistas aliadas e indexaciones validadas.
-- Redes institucionales y dominio pÃºblico final.
+- Redes institucionales e imagenes oficiales.
+
+## Estado de despliegue AWS ECS Fargate - 2026-05-11
+
+### Completado
+
+- Dominio `https://iclset.com` publicado.
+- Dominio institucional adicional `https://iclset.uleam.ec` publicado.
+- AWS region `us-east-1`.
+- ECR repository `iclset` creado.
+- ECS cluster `iclset-production` creado.
+- ECS service `iclset-web` activo con una tarea Fargate.
+- ALB `iclset-web-alb` creado con target group `iclset-web-tg`.
+- Health check `/healthz` validado.
+- Certificado ACM emitido para `iclset.com` y `www.iclset.com`.
+- Certificado ACM adicional emitido para `iclset.uleam.ec` y asociado al listener HTTPS del ALB.
+- Route 53 alias configurado para apex y `www`.
+- GitHub Actions con OIDC configurado para build, push a ECR y deploy a ECS.
+- Workflow `Deploy to Amazon ECS` validado correctamente.
+- Contacto provisional actualizado a `israel.gomez@uleam.edu.ec`.
+
+### Validaciones de publicacion
+
+- `https://iclset.com/healthz` responde `200`.
+- `https://iclset.com/es` responde `200`.
+- `https://iclset.com/en` responde `200`.
+- `https://iclset.com/sitemap.xml` responde `200`.
+- `https://iclset.uleam.ec/healthz` responde `200`.
+- `https://iclset.uleam.ec/es` responde `200`.
+- `https://iclset.uleam.ec/en` responde `200`.
+- HTTP redirige a HTTPS con `301`.
+
+## Actualización documental y visual - 2026-05-13
+
+### Completado
+
+- Tracks actualizados desde `docs/v4-Proyecto_ICLSET_2026-signed.pdf` y `docs/Presentacion_Ejecutiva_ICLSET_2026.pptx`.
+- Ejes temáticos completos publicados para Ciencias Biológicas y Ambientales, Agrociencias y Tecnologías de la Información.
+- Chairs y comités actualizados: General Chair, Program Chair, Track Chairs, Publication Chair, Local Organizing Chair, Communication Chair, Comité Honorífico, Comité Organizador, Comité Científico Nacional e Internacional.
+- Cronograma oficial incorporado: aprobación, configuración CMT, Call for Papers, recepción en CMT, revisión doble ciego, notificación, versiones finales, inscripciones, ejecución y seguimiento editorial.
+- Programa académico actualizado por día con actividades, horarios, modalidad, sede y salas Zoom.
+- Revistas aliadas actualizadas con URLs oficiales e indexación Latindex y Dialnet.
+- Hero renovado con icono del evento y animación Motion inspirada en biociencia, agrociencia y tecnología.
+- Imágenes SVG creadas para los tres días del programa y el icono oficial del evento.
+- Copy publico actualizado para eliminar referencias a versiones, progreso tecnico y estructura futura.

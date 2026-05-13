@@ -1,0 +1,20 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Day 3 visual</title>
+  <desc id="desc">Poster fair, editors roundtable, and closing ceremony.</desc>
+  <rect width="960" height="640" rx="48" fill="#F8FAFF"/>
+  <path d="M0 470c118-61 239-62 363-2 120 58 240 55 359-8 91-48 171-55 238-20v200H0V470Z" fill="#E4EEF9"/>
+  <rect x="132" y="112" width="190" height="292" rx="28" fill="#FFFFFF" stroke="#B4D7E6" stroke-width="8"/>
+  <rect x="386" y="112" width="190" height="292" rx="28" fill="#FFFFFF" stroke="#B4D7E6" stroke-width="8"/>
+  <rect x="640" y="112" width="190" height="292" rx="28" fill="#FFFFFF" stroke="#B4D7E6" stroke-width="8"/>
+  <path d="M178 174h98M178 220h72M178 312h96" stroke="#1F7BFF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M432 174h98M432 220h72M432 312h96" stroke="#18C8B8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M686 174h98M686 220h72M686 312h96" stroke="#86D94C" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="226" cy="264" r="30" fill="#DFF6EE"/>
+  <circle cx="480" cy="264" r="30" fill="#E4F5FF"/>
+  <circle cx="734" cy="264" r="30" fill="#EFFADB"/>
+  <path d="M208 404v82M246 404v82M462 404v82M500 404v82M716 404v82M754 404v82" stroke="#08213F" stroke-width="10" stroke-linecap="round"/>
+  <path d="M242 505c69 29 150 44 244 44 93 0 173-15 239-44" stroke="#18C8B8" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="378" cy="505" r="22" fill="#1F7BFF"/>
+  <circle cx="486" cy="545" r="22" fill="#18C8B8"/>
+  <circle cx="594" cy="505" r="22" fill="#86D94C"/>
+</svg>

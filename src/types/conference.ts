@@ -32,12 +32,17 @@ export interface ScheduleItem {
   time: string;
   title: LocalizedText;
   description: LocalizedText;
+  modality: LocalizedText;
 }
 
 export interface ScheduleDay {
   day: LocalizedText;
   date: LocalizedText;
   summary: LocalizedText;
+  image: {
+    src: string;
+    alt: LocalizedText;
+  };
   items: ScheduleItem[];
 }
 

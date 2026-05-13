@@ -57,8 +57,11 @@ export default async function ContactPage({
     {
       icon: Network,
       title:
-        locale === "es" ? "Redes institucionales" : "Institutional channels",
-      text: locale === "es" ? "Por confirmar" : "To be confirmed",
+        locale === "es" ? "Canales institucionales" : "Institutional channels",
+      text:
+        locale === "es"
+          ? "Difusión por sitio web, página institucional ULEAM, redes de la Facultad, boletines académicos y revistas aliadas."
+          : "Outreach through the website, ULEAM institutional page, Faculty channels, academic bulletins, and partner journals.",
       href: null,
     },
   ];
@@ -74,31 +77,51 @@ export default async function ContactPage({
         }
         description={
           locale === "es"
-            ? "Esta primera versión usa canales estáticos mientras se define la fase de formularios y newsletter."
-            : "This first version uses static channels while the forms and newsletter phase is defined."
+            ? "La comunicacion del evento se gestiona desde la Facultad de Ciencias de la Vida y Tecnologias y los canales institucionales ULEAM."
+            : "Event communications are managed through the Faculty of Life Sciences and Technologies and ULEAM institutional channels."
         }
       />
-      <section className="section-band bg-white/65">
-        <div className="section-container grid gap-4 md:grid-cols-3">
-          {cards.map((card) => {
+      <section className="section-band relative">
+        <div className="section-container grid gap-5 md:grid-cols-3">
+          {cards.map((card, index) => {
             const Icon = card.icon;
+            const tone = [
+              {
+                gradient: "from-iclset-blue to-iclset-sky",
+                text: "text-white",
+                shadow: "shadow-[0_24px_70px_-30px_rgb(31_148_255_/_0.5)]",
+              },
+              {
+                gradient: "from-iclset-emerald to-iclset-green",
+                text: "text-iclset-navy",
+                shadow: "shadow-[0_24px_70px_-30px_rgb(78_205_87_/_0.5)]",
+              },
+              {
+                gradient: "from-iclset-cyan to-iclset-sky",
+                text: "text-iclset-navy",
+                shadow: "shadow-[0_24px_70px_-30px_rgb(61_211_240_/_0.5)]",
+              },
+            ][index];
 
             return (
-              <Card key={card.title} className="rounded-2xl bg-white">
-                <CardContent className="p-6">
-                  <Icon className="text-iclset-blue size-6" />
-                  <h2 className="text-iclset-ink mt-4 text-xl font-semibold">
-                    {card.title}
-                  </h2>
+              <Card
+                key={card.title}
+                className={`solid-card overflow-hidden rounded-[1.75rem] border-0 bg-gradient-to-br ${tone.gradient} ${tone.shadow} ring-1 ring-white/30 transition-transform duration-300 hover:-translate-y-1`}
+              >
+                <CardContent className={`p-7 ${tone.text}`}>
+                  <span className="inline-grid size-11 place-items-center rounded-2xl bg-white/22 backdrop-blur">
+                    <Icon className="size-5" />
+                  </span>
+                  <h2 className="mt-4 text-xl font-semibold">{card.title}</h2>
                   {card.href ? (
                     <a
                       href={card.href}
-                      className="text-iclset-blue mt-3 block text-sm font-medium hover:underline"
+                      className="mt-3 block text-sm font-medium underline-offset-4 hover:underline"
                     >
                       {card.text}
                     </a>
                   ) : (
-                    <p className="text-iclset-muted mt-3 text-sm leading-6">
+                    <p className="mt-3 text-sm leading-6 opacity-90">
                       {card.text}
                     </p>
                   )}

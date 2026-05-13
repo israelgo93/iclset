@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Este archivo reúne referencias de sitios modernos de conferencias, plataformas académicas y repositorios científicos útiles para diseñar y desarrollar la primera landing page de ICLSET 2026.
+Este archivo reúne referencias de sitios modernos de conferencias, plataformas académicas y repositorios científicos útiles para diseñar y desarrollar el sitio oficial de ICLSET 2026.
 
 ## Referencias de conferencias internacionales
 

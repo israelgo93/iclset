@@ -5,8 +5,8 @@ export const site = {
     en: "ICLSET 2026 | International conference on bioscience, agroscience, and technology",
   },
   description: {
-    es: "Landing oficial de ICLSET 2026, conferencia internacional híbrida de la Universidad Laica Eloy Alfaro de Manabí sobre biociencia, agrociencia y tecnologías emergentes.",
-    en: "Official landing page for ICLSET 2026, a hybrid international conference by Universidad Laica Eloy Alfaro de Manabí on bioscience, agroscience, and emerging technologies.",
+    es: "Sitio oficial de ICLSET 2026, conferencia internacional híbrida de la Universidad Laica Eloy Alfaro de Manabí sobre biociencia, agrociencia y tecnologías emergentes.",
+    en: "Official website for ICLSET 2026, a hybrid international conference by Universidad Laica Eloy Alfaro de Manabí on bioscience, agroscience, and emerging technologies.",
   },
   keywords: [
     "ICLSET 2026",

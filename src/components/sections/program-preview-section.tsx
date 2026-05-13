@@ -1,87 +1,139 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+"use client";
+
+import { CalendarClock } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
+
 import { SectionHeading } from "@/components/shared/section-heading";
 import { schedule } from "@/content/schedule";
 import type { Locale } from "@/types/locale";
 
 interface ProgramPreviewSectionProps {
-  locale: Locale;
-  detailed?: boolean;
+	locale: Locale;
+	detailed?: boolean;
 }
 
+const dayAccents = [
+	"bg-gradient-to-br from-iclset-emerald to-iclset-green",
+	"bg-gradient-to-br from-iclset-blue to-iclset-sky",
+	"bg-gradient-to-br from-iclset-green to-iclset-lime",
+] as const;
+
+const dayAccentText = [
+	"text-iclset-emerald",
+	"text-iclset-blue",
+	"text-iclset-green",
+] as const;
+
+const easing = [0.22, 1, 0.36, 1] as const;
+
 export function ProgramPreviewSection({
-  locale,
-  detailed = false,
+	locale,
+	detailed = false,
 }: ProgramPreviewSectionProps) {
-  return (
-    <section className="section-band bg-white/50">
-      <div className="section-container">
-        <SectionHeading
-          eyebrow={
-            locale === "es" ? "Programa preliminar" : "Preliminary program"
-          }
-          title={
-            locale === "es"
-              ? "Tres días de ciencia, diálogo y transferencia"
-              : "Three days of science, dialogue, and transfer"
-          }
-          description={
-            locale === "es"
-              ? "El programa definitivo se actualizará cuando se confirmen ponentes, salas y enlaces virtuales."
-              : "The final program will be updated when speakers, rooms, and virtual links are confirmed."
-          }
-        />
-        <Tabs defaultValue="0" className="w-full">
-          <TabsList className="bg-muted mb-6 grid h-auto w-full grid-cols-1 gap-2 rounded-2xl p-2 sm:grid-cols-3">
-            {schedule.map((day, index) => (
-              <TabsTrigger
-                key={day.day.en}
-                value={String(index)}
-                className="py-3"
-              >
-                {day.day[locale]}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          {schedule.map((day, index) => (
-            <TabsContent
-              key={day.day.en}
-              value={String(index)}
-              className="rounded-2xl border bg-white p-5"
-            >
-              <div className="flex flex-col gap-2 border-b pb-5 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-iclset-blue text-sm font-semibold">
-                    {day.date[locale]}
-                  </p>
-                  <h3 className="text-iclset-ink mt-1 text-2xl font-semibold">
-                    {day.summary[locale]}
-                  </h3>
-                </div>
-              </div>
-              <div className="mt-5 grid gap-4">
-                {(detailed ? day.items : day.items.slice(0, 2)).map((item) => (
-                  <article
-                    key={`${item.time}-${item.title.en}`}
-                    className="bg-muted/45 grid gap-3 rounded-xl p-4 sm:grid-cols-[5rem_1fr]"
-                  >
-                    <p className="text-iclset-blue font-mono text-sm font-semibold">
-                      {item.time}
-                    </p>
-                    <div>
-                      <h4 className="text-iclset-ink font-semibold">
-                        {item.title[locale]}
-                      </h4>
-                      <p className="text-iclset-muted mt-1 text-sm leading-6">
-                        {item.description[locale]}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </div>
-    </section>
-  );
+	const shouldReduceMotion = useReducedMotion();
+
+	return (
+		<section className="section-band relative">
+			<div className="section-container">
+				<SectionHeading
+					eyebrow={locale === "es" ? "Programa academico" : "Academic program"}
+					title={
+						locale === "es"
+							? "Tres dias de ciencia, dialogo y transferencia"
+							: "Three days of science, dialogue, and transfer"
+					}
+					description={
+						locale === "es"
+							? "La agenda combina plenarias presenciales en el Paraninfo, transmision por Zoom, sesiones paralelas por track y feria de posters en Plaza Centenario."
+							: "The agenda combines in-person plenaries at the auditorium, Zoom broadcast, parallel sessions by track, and a poster fair at Plaza Centenario."
+					}
+				/>
+				<div className="grid gap-6">
+					{schedule.map((day, index) => (
+						<motion.article
+							key={day.day.en}
+							initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+							whileInView={
+								shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
+							}
+							viewport={{ once: true, margin: "-80px" }}
+							transition={{
+								duration: 0.6,
+								ease: easing,
+								delay: 0.06 * index,
+							}}
+							className="overflow-hidden rounded-[1.85rem] border border-iclset-blue/10 bg-white shadow-[0_24px_70px_-40px_rgb(15_23_42_/_0.2)]"
+						>
+							<div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+								<div className={`p-5 sm:p-6 ${dayAccents[index]}`}>
+									<Image
+										src={day.image.src}
+										alt={day.image.alt[locale]}
+										width={960}
+										height={640}
+										loading={index === 0 ? "eager" : "lazy"}
+										className="aspect-[3/2] w-full rounded-[1.35rem] border border-white/30 object-cover shadow-2xl shadow-iclset-navy/25"
+									/>
+								</div>
+								<div className="p-5 sm:p-7">
+									<div className="border-b border-iclset-blue/10 pb-5">
+										<p
+											className={`text-sm font-semibold tracking-[0.1em] uppercase ${dayAccentText[index]}`}
+										>
+											{day.day[locale]} · {day.date[locale]}
+										</p>
+										<h3 className="mt-2 text-2xl font-semibold tracking-tight text-iclset-ink">
+											{day.summary[locale]}
+										</h3>
+									</div>
+									<div className="mt-5 grid gap-3">
+										{(detailed ? day.items : day.items.slice(0, 3)).map(
+											(item) => (
+												<motion.div
+													key={`${item.time}-${item.title.en}`}
+													whileHover={
+														shouldReduceMotion
+															? undefined
+															: {
+																	y: -2,
+																	transition: {
+																		duration: 0.2,
+																		ease: easing,
+																	},
+																}
+													}
+													className="grid gap-3 rounded-2xl border border-iclset-blue/10 bg-iclset-surface p-4 transition-colors hover:bg-white sm:grid-cols-[7.5rem_1fr]"
+												>
+													<div>
+														<p
+															className={`font-mono text-sm font-semibold ${dayAccentText[index]}`}
+														>
+															{item.time}
+														</p>
+														<p className="mt-1 flex items-center gap-1 text-xs font-medium text-iclset-muted">
+															<CalendarClock className="size-3.5" />
+															{item.modality[locale]}
+														</p>
+													</div>
+													<div>
+														<h4 className="font-semibold text-iclset-ink">
+															{item.title[locale]}
+														</h4>
+														<p className="mt-1 text-sm leading-6 text-iclset-muted">
+															{item.description[locale]}
+														</p>
+													</div>
+												</motion.div>
+											),
+										)}
+									</div>
+								</div>
+							</div>
+						</motion.article>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 }

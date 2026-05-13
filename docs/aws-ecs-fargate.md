@@ -1,10 +1,11 @@
 # Despliegue en AWS ECS Fargate
 
-Esta guia documenta el despliegue de ICLSET 2026 como contenedor en Amazon ECS con Fargate. La landing actual no depende de base de datos para renderizar.
+Esta guia documenta el despliegue de ICLSET 2026 como contenedor en Amazon ECS con Fargate. El sitio actual no depende de base de datos para renderizar.
 
 ## Estado actual
 
-- Dominio publico: `https://iclset.com`.
+- Dominio publico principal: `https://iclset.com`.
+- Dominio institucional adicional: `https://iclset.uleam.ec`.
 - Cuenta AWS: `761018886122`.
 - Region: `us-east-1`.
 - Route 53 hosted zone: `Z06338863HEV56FVQYT1B`.
@@ -27,6 +28,7 @@ Esta guia documenta el despliegue de ICLSET 2026 como contenedor en Amazon ECS c
 - Application Load Balancer publico con listener HTTPS.
 - AWS Certificate Manager para el certificado TLS.
 - Route 53 para apuntar `iclset.com` al ALB.
+- DNS externo de `uleam.ec` para apuntar `iclset.uleam.ec` al mismo ALB.
 - CloudWatch Logs para stdout/stderr del contenedor.
 - GitHub Actions con OIDC para construir, subir a ECR y desplegar.
 
@@ -46,14 +48,15 @@ Las variables de Supabase quedan vacias en fase 1 si no se usa base de datos.
 
 1. Region AWS elegida.
 2. Hosted zone de Route 53 para `iclset.com`.
-3. Certificado ACM validado para `iclset.com` y, si aplica, `www.iclset.com`.
-4. Repositorio ECR, por ejemplo `iclset`.
-5. ECS cluster, por ejemplo `iclset-production`.
-6. Task definition Fargate con contenedor `iclset-web`, puerto `3000` y CPU/memoria inicial `0.25 vCPU / 0.5 GB`.
-7. ECS service con al menos `desired count = 1`.
-8. Application Load Balancer con target group HTTP hacia puerto `3000`.
-9. Health check del target group en `/healthz`, con respuesta `200`.
-10. Security group del ALB abierto a `80/443` y security group de ECS permitiendo trafico solo desde el ALB hacia `3000`.
+3. Certificado ACM validado para `iclset.com` y `www.iclset.com`.
+4. Certificado ACM adicional validado para `iclset.uleam.ec`.
+5. Repositorio ECR, por ejemplo `iclset`.
+6. ECS cluster, por ejemplo `iclset-production`.
+7. Task definition Fargate con contenedor `iclset-web`, puerto `3000` y CPU/memoria inicial `0.25 vCPU / 0.5 GB`.
+8. ECS service con al menos `desired count = 1`.
+9. Application Load Balancer con target group HTTP hacia puerto `3000`.
+10. Health check del target group en `/healthz`, con respuesta `200`.
+11. Security group del ALB abierto a `80/443` y security group de ECS permitiendo trafico solo desde el ALB hacia `3000`.
 
 ## Configuracion de GitHub Actions
 
@@ -117,9 +120,10 @@ http://localhost:3000/sitemap.xml
 4. Crear ECS cluster, task definition y service.
 5. Crear ALB, target group y health check `/healthz`.
 6. Apuntar Route 53 al ALB con registro A alias para `iclset.com` y `www.iclset.com`.
-7. Configurar variables/secreto en GitHub.
-8. Ejecutar el workflow `Deploy to Amazon ECS`.
-9. Validar `https://iclset.com/es`, `https://iclset.com/en`, `https://iclset.com/healthz` y `https://iclset.com/sitemap.xml`.
+7. Apuntar `iclset.uleam.ec` desde el DNS externo de `uleam.ec` con CNAME hacia el DNS del ALB.
+8. Configurar variables/secreto en GitHub.
+9. Ejecutar el workflow `Deploy to Amazon ECS`.
+10. Validar `https://iclset.com/es`, `https://iclset.com/en`, `https://iclset.com/healthz`, `https://iclset.com/sitemap.xml`, `https://iclset.uleam.ec/es` y `https://iclset.uleam.ec/en`.
 
 ## Validacion operativa
 
@@ -134,8 +138,25 @@ Invoke-WebRequest -Uri "https://iclset.com/healthz" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/es" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/en" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/sitemap.xml" -UseBasicParsing
+curl.exe -I https://iclset.uleam.ec/healthz
+curl.exe -I https://iclset.uleam.ec/es
+curl.exe -I https://iclset.uleam.ec/en
 ```
 
-## Pendientes no tecnicos
+## Dominio institucional adicional
 
-La publicacion tecnica puede hacerse con placeholders actuales. Antes de difusion institucional siguen pendientes CMT, plantillas, contacto oficial, redes, chairs, comites, tarifas, imagenes oficiales y revision de copy.
+`iclset.uleam.ec` esta configurado como CNAME externo en la zona DNS de `uleam.ec`:
+
+```txt
+iclset.uleam.ec CNAME iclset-web-alb-837958938.us-east-1.elb.amazonaws.com
+```
+
+El certificado ACM adicional para `iclset.uleam.ec` esta emitido en `us-east-1` y asociado como certificado SNI adicional al listener HTTPS `443` del ALB.
+
+```txt
+ACM certificate ARN: arn:aws:acm:us-east-1:761018886122:certificate/078b5f1c-0e7c-4b9d-9a14-405bf9438a4f
+```
+
+## Estado editorial del sitio
+
+El sitio contiene informacion editorial oficial extraida de la documentacion institucional: tracks, ejes tematicos, chairs, comites, fechas, programa, revistas aliadas, CMT, tarifas e imagenes de referencia del evento.

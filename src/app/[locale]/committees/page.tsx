@@ -50,8 +50,8 @@ export default async function CommitteesPage({
         }
         description={
           locale === "es"
-            ? "La nómina oficial se mantiene centralizada y marcada como pendiente hasta su aprobación."
-            : "The official roster remains centralized and marked as pending until approved."
+            ? "ICLSET 2026 articula dirección estratégica, programa académico, chairs por track, publicaciones, organización local, comunicación y revisión científica."
+            : "ICLSET 2026 articulates strategic direction, academic program, track chairs, publications, local organization, communications, and scientific review."
         }
       />
       <CommitteesPreview locale={locale} detailed />

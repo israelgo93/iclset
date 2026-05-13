@@ -415,13 +415,13 @@ Uso futuro:
 - Sitemap y metadata configurados.
 - Código sin `any` innecesario.
 - Sin dependencias innecesarias.
-- Preparado para despliegue en AWS Lightsail o Vercel.
+- Publicado en AWS ECS Fargate con ECR, ALB, ACM, Route 53 y GitHub Actions OIDC.
 
 ## Buenas prácticas para agentes de IA
 
 Cuando un agente modifique este proyecto debe:
 
-- Leer primero `AGENTS.md`, `STYLES.md` y `PLANIFICACION.md`.
+- Leer primero `AGENTS.md`, `docs/STYLES.md`, `docs/PLANIFICACION.md` y `SKILLS.md`.
 - No inventar fechas, autoridades, chairs, revistas ni tarifas.
 - Mantener el contenido institucional con tono formal.
 - Conservar la estructura bilingüe.
@@ -469,6 +469,7 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 ## Estado de despliegue AWS ECS Fargate - 2026-05-11
 
 - Sitio publicado en `https://iclset.com`.
+- Dominio institucional adicional activo en `https://iclset.uleam.ec`.
 - GitHub Actions despliega con OIDC hacia AWS, sin access keys permanentes.
 - Workflow: `Deploy to Amazon ECS`.
 - AWS region: `us-east-1`.
@@ -479,5 +480,6 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 - Target group: `iclset-web-tg`.
 - Health check: `/healthz`.
 - Route 53 gestiona alias para `iclset.com` y `www.iclset.com`.
+- `iclset.uleam.ec` esta configurado como CNAME externo hacia el ALB y usa certificado ACM adicional asociado al listener HTTPS.
 - El contacto provisional del sitio es `israel.gomez@uleam.edu.ec`.
 - Procedimientos reutilizables documentados en `SKILLS.md` y `skills/`.

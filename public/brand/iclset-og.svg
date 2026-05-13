@@ -1,0 +1,56 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06121F"/>
+      <stop offset="0.55" stop-color="#0B2549"/>
+      <stop offset="1" stop-color="#103B5C"/>
+    </linearGradient>
+    <radialGradient id="ogGlowA" cx="240" cy="120" r="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1F94FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#1F94FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ogGlowB" cx="980" cy="500" r="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7BD957" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#7BD957" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ogGlowC" cx="640" cy="360" r="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3DD3F0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#3DD3F0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ogC" x1="240" y1="150" x2="460" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#36A7FF"/>
+      <stop offset="0.55" stop-color="#3DD3F0"/>
+      <stop offset="1" stop-color="#86E45F"/>
+    </linearGradient>
+    <linearGradient id="ogI" x1="120" y1="180" x2="180" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5BB8FF"/>
+      <stop offset="1" stop-color="#1F94FF"/>
+    </linearGradient>
+    <linearGradient id="ogLeaf" x1="110" y1="40" x2="240" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B8F284"/>
+      <stop offset="1" stop-color="#52C742"/>
+    </linearGradient>
+    <pattern id="ogGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#3DD3F0" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <rect width="1200" height="630" fill="url(#ogGrid)"/>
+  <rect width="1200" height="630" fill="url(#ogGlowA)"/>
+  <rect width="1200" height="630" fill="url(#ogGlowB)"/>
+  <rect width="1200" height="630" fill="url(#ogGlowC)"/>
+  <g transform="translate(110 130)">
+    <rect x="36" y="100" width="60" height="220" rx="30" fill="url(#ogI)"/>
+    <path d="M328 96c-50 0-92 22-112 60a82 82 0 0 0 0 88c20 38 62 60 112 60v-52c-30 0-56-12-68-32a44 44 0 0 1 0-48c12-20 38-32 68-32Z" fill="url(#ogC)"/>
+    <path d="M48 0c-36 14-52 42-46 82 6 36 30 60 64 66-4-34-12-60-20-84-8-24-16-44-26-64h28Z" fill="url(#ogLeaf)"/>
+    <path d="M48 0c8 22 14 46 20 72 6-20 16-36 30-48" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+  </g>
+  <g font-family="Geist, Inter, ui-sans-serif, system-ui, sans-serif">
+    <text x="540" y="270" font-size="60" font-weight="700" letter-spacing="0.04em" fill="#FFFFFF">ICLSET 2026</text>
+    <text x="540" y="328" font-size="24" font-weight="500" letter-spacing="0.18em" fill="#3DD3F0" style="text-transform:uppercase">International Conference</text>
+    <text x="540" y="384" font-size="30" font-weight="500" fill="#D4E1F4">Life Sciences and Emerging Technologies</text>
+    <text x="540" y="478" font-size="24" font-weight="500" fill="#9CB3D2">Manta, Manabi, Ecuador</text>
+    <text x="540" y="514" font-size="24" font-weight="600" fill="#86E45F">15, 16 y 17 de julio de 2026</text>
+    <text x="540" y="556" font-size="22" font-weight="500" fill="#9CB3D2">Universidad Laica Eloy Alfaro de Manabi</text>
+  </g>
+</svg>

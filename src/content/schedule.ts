@@ -7,45 +7,109 @@ export const schedule: ScheduleDay[] = [
       en: "Day 1",
     },
     date: {
-      es: "15 de julio de 2026",
-      en: "July 15, 2026",
+      es: "Miércoles 15 de julio de 2026",
+      en: "Wednesday, July 15, 2026",
     },
     summary: {
-      es: "Inauguración, conferencias magistrales, panel de TI y sesiones paralelas.",
-      en: "Opening ceremony, keynotes, IT panel, and parallel sessions.",
+      es: "Inauguración, keynote transversal, keynote TI, paneles y sesiones paralelas por track.",
+      en: "Opening ceremony, cross-cutting keynote, IT keynote, panels, and parallel sessions by track.",
+    },
+    image: {
+      src: "/program/day-1.svg",
+      alt: {
+        es: "Ilustración del día 1 con auditorio, tecnología y redes científicas",
+        en: "Day 1 illustration with auditorium, technology, and scientific networks",
+      },
     },
     items: [
       {
-        time: "08:30",
+        time: "08:00-09:00",
         title: {
-          es: "Registro e inauguración",
-          en: "Registration and opening",
+          es: "Registro de asistentes",
+          en: "Attendee registration",
         },
         description: {
-          es: "Acreditación de participantes y apertura institucional.",
-          en: "Participant check-in and institutional opening.",
+          es: "Acreditación presencial y acceso virtual para participantes.",
+          en: "In-person check-in and virtual access for participants.",
+        },
+        modality: {
+          es: "Paraninfo + virtual",
+          en: "Auditorium + virtual",
         },
       },
       {
-        time: "10:30",
+        time: "09:00-10:00",
         title: {
-          es: "Keynotes y panel TI",
-          en: "Keynotes and IT panel",
+          es: "Inauguración institucional",
+          en: "Institutional opening",
         },
         description: {
-          es: "Sesiones centrales sobre tecnologías emergentes aplicadas al territorio.",
-          en: "Main sessions on emerging technologies applied to territories.",
+          es: "Palabras del Decano FCVT, presentación artística e intervención del Rector ULEAM.",
+          en: "Remarks by the FCVT Dean, artistic presentation, and ULEAM Rector address.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
         },
       },
       {
-        time: "14:30",
+        time: "10:00-11:00",
         title: {
-          es: "Sesiones paralelas",
-          en: "Parallel sessions",
+          es: "Conferencia magistral inaugural",
+          en: "Opening keynote",
         },
         description: {
-          es: "Presentaciones por tracks científicos.",
-          en: "Presentations by scientific track.",
+          es: "Keynote internacional transversal para los tres tracks.",
+          en: "Cross-cutting international keynote for the three tracks.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
+        },
+      },
+      {
+        time: "11:30-12:30",
+        title: {
+          es: "Conferencia magistral - Tecnologías de la Información",
+          en: "Keynote - Information Technologies",
+        },
+        description: {
+          es: "Sesión central del track de tecnologías emergentes.",
+          en: "Main session for the emerging technologies track.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
+        },
+      },
+      {
+        time: "12:30-13:30",
+        title: {
+          es: "Panel transversal - Tecnologías de la Información",
+          en: "Cross-cutting panel - Information Technologies",
+        },
+        description: {
+          es: "Mesa de diálogo sobre transformación digital y aplicaciones territoriales.",
+          en: "Dialogue panel on digital transformation and territorial applications.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
+        },
+      },
+      {
+        time: "15:00-17:30",
+        title: {
+          es: "Panel Agro-Tecnología y sesiones paralelas",
+          en: "Agro-Technology panel and parallel sessions",
+        },
+        description: {
+          es: "Tres salas Zoom simultáneas para papers por track: Bio/Ambiente, Agrociencias y TI.",
+          en: "Three simultaneous Zoom rooms for papers by track: Bio/Environment, Agrosciences, and IT.",
+        },
+        modality: {
+          es: "Virtual por track",
+          en: "Virtual by track",
         },
       },
     ],
@@ -56,45 +120,94 @@ export const schedule: ScheduleDay[] = [
       en: "Day 2",
     },
     date: {
-      es: "16 de julio de 2026",
-      en: "July 16, 2026",
+      es: "Jueves 16 de julio de 2026",
+      en: "Thursday, July 16, 2026",
     },
     summary: {
-      es: "Keynotes, panel Bio-Ambiente, panel Ciencia Abierta y sesiones paralelas.",
-      en: "Keynotes, Bio-Environment panel, Open Science panel, and parallel sessions.",
+      es: "Keynotes Bio/Ambiente, panel Bio-Ambiente, panel Ciencia Abierta y sesiones paralelas.",
+      en: "Bio/Environment keynotes, Bio-Environment panel, Open Science panel, and parallel sessions.",
+    },
+    image: {
+      src: "/program/day-2.svg",
+      alt: {
+        es: "Ilustración del día 2 con biodiversidad, agro y ciencia abierta",
+        en: "Day 2 illustration with biodiversity, agriculture, and open science",
+      },
     },
     items: [
       {
-        time: "09:00",
+        time: "09:00-10:00",
         title: {
-          es: "Conferencias magistrales",
-          en: "Keynote talks",
+          es: "Conferencia magistral - Ciencias Biológicas y Ambientales",
+          en: "Keynote - Biological and Environmental Sciences",
         },
         description: {
-          es: "Investigación aplicada en biociencia, ambiente y agrociencias.",
-          en: "Applied research in bioscience, environment, and agrosciences.",
+          es: "Investigación aplicada en biodiversidad, ambiente y resiliencia territorial.",
+          en: "Applied research in biodiversity, environment, and territorial resilience.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
         },
       },
       {
-        time: "11:30",
+        time: "10:00-11:00",
         title: {
-          es: "Paneles académicos",
-          en: "Academic panels",
+          es: "Conferencia magistral - Ciencias Biológicas y Ambientales",
+          en: "Keynote - Biological and Environmental Sciences",
         },
         description: {
-          es: "Bio-Ambiente y Ciencia Abierta como ejes de transferencia.",
-          en: "Bio-Environment and Open Science as knowledge transfer themes.",
+          es: "Segundo bloque magistral del track Bio/Ambiente.",
+          en: "Second keynote block for the Bio/Environment track.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
         },
       },
       {
-        time: "15:00",
+        time: "11:30-12:30",
         title: {
-          es: "Sesiones paralelas",
-          en: "Parallel sessions",
+          es: "Panel transversal Bio-Ambiente",
+          en: "Bio-Environment cross-cutting panel",
         },
         description: {
-          es: "Presentaciones de autores y discusión por áreas.",
-          en: "Author presentations and area-based discussion.",
+          es: "Mesa redonda sobre ambiente, biodiversidad y territorio.",
+          en: "Roundtable on environment, biodiversity, and territory.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
+        },
+      },
+      {
+        time: "12:30-13:30",
+        title: {
+          es: "Panel transversal Ciencia Abierta",
+          en: "Open Science cross-cutting panel",
+        },
+        description: {
+          es: "Discusión sobre transferencia, publicación y ciencia abierta.",
+          en: "Discussion on transfer, publishing, and open science.",
+        },
+        modality: {
+          es: "Plenaria Paraninfo",
+          en: "Auditorium plenary",
+        },
+      },
+      {
+        time: "15:00-17:30",
+        title: {
+          es: "Sesiones paralelas por track - bloque B",
+          en: "Parallel sessions by track - block B",
+        },
+        description: {
+          es: "Presentación de papers en tres salas Zoom institucionales simultáneas.",
+          en: "Paper presentations in three simultaneous institutional Zoom rooms.",
+        },
+        modality: {
+          es: "Virtual",
+          en: "Virtual",
         },
       },
     ],
@@ -105,45 +218,64 @@ export const schedule: ScheduleDay[] = [
       en: "Day 3",
     },
     date: {
-      es: "17 de julio de 2026",
-      en: "July 17, 2026",
+      es: "Viernes 17 de julio de 2026",
+      en: "Friday, July 17, 2026",
     },
     summary: {
-      es: "Feria de pósters científicos, sesiones finales y clausura.",
-      en: "Scientific poster fair, final sessions, and closing ceremony.",
+      es: "Feria de pósters en Plaza Centenario, mesa de editores y clausura.",
+      en: "Poster fair at Plaza Centenario, editors' roundtable, and closing ceremony.",
+    },
+    image: {
+      src: "/program/day-3.svg",
+      alt: {
+        es: "Ilustración del día 3 con feria de pósters, editores y clausura",
+        en: "Day 3 illustration with poster fair, editors, and closing ceremony",
+      },
     },
     items: [
       {
-        time: "09:00",
+        time: "10:00-12:00",
         title: {
-          es: "Feria de pósters",
-          en: "Poster fair",
+          es: "Feria de pósters científicos",
+          en: "Scientific poster fair",
         },
         description: {
-          es: "Exposición de pósters científicos presenciales y virtuales.",
-          en: "In-person and virtual scientific poster presentations.",
+          es: "Casa abierta con presentación de pósters asociados a los tres tracks.",
+          en: "Open fair with poster presentations associated with the three tracks.",
+        },
+        modality: {
+          es: "Plaza Centenario ULEAM",
+          en: "ULEAM Plaza Centenario",
         },
       },
       {
-        time: "11:30",
+        time: "12:00-13:00",
         title: {
-          es: "Sesiones finales",
-          en: "Final sessions",
+          es: "Mesa de editores y revistas aliadas",
+          en: "Editors and partner journals roundtable",
         },
         description: {
-          es: "Cierre de presentaciones por track y conclusiones.",
-          en: "Track presentation wrap-up and conclusions.",
+          es: "Articulación editorial con Encriptar, YAKU, ALLPA, Conectividad y Ecuadorian Science Journal.",
+          en: "Editorial coordination with Encriptar, YAKU, ALLPA, Conectividad, and Ecuadorian Science Journal.",
+        },
+        modality: {
+          es: "Híbrida",
+          en: "Hybrid",
         },
       },
       {
-        time: "15:30",
+        time: "13:00-13:30",
         title: {
           es: "Clausura",
           en: "Closing ceremony",
         },
         description: {
-          es: "Balance institucional y próximos pasos editoriales.",
-          en: "Institutional summary and editorial next steps.",
+          es: "Cierre institucional y menciones a mejores artículos y pósters por track.",
+          en: "Institutional closing and mentions for best papers and posters by track.",
+        },
+        modality: {
+          es: "Virtual",
+          en: "Virtual",
         },
       },
     ],

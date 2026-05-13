@@ -37,13 +37,13 @@ export const conference = {
     en: "Hybrid: in-person + synchronous virtual",
   },
   edition: {
-    es: "Primera edición",
-    en: "First edition",
+    es: "Conferencia internacional híbrida",
+    en: "Hybrid international conference",
   },
   timezone: "America/Guayaquil",
   contactEmail: "israel.gomez@uleam.edu.ec",
   editorialPlatform: "Microsoft CMT",
-  cmtUrl: null,
+  cmtUrl: "https://cmt3.research.microsoft.com/About",
   templateUrl: null,
   repoUrl: "https://github.com/israelgo93/iclset.git",
 } as const;

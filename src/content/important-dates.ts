@@ -2,52 +2,164 @@ import type { ImportantDate } from "@/types/conference";
 
 export const importantDates: ImportantDate[] = [
   {
-    key: "cfp",
+    key: "approval",
     date: {
-      es: "Por confirmar",
-      en: "To be confirmed",
+      es: "4-8 de mayo de 2026",
+      en: "May 4-8, 2026",
     },
     title: {
-      es: "Apertura de convocatoria",
-      en: "Call opening",
+      es: "Aval académico",
+      en: "Academic endorsement",
     },
     description: {
-      es: "Publicación del Call for Papers, plantillas y lineamientos de anonimización.",
-      en: "Publication of the Call for Papers, templates, and anonymization guidelines.",
+      es: "Aprobación del proyecto y formalización académica de la conferencia.",
+      en: "Project approval and academic formalization of the conference.",
     },
-    status: "pending",
+    status: "confirmed",
+  },
+  {
+    key: "chairs-cmt",
+    date: {
+      es: "4-13 de mayo de 2026",
+      en: "May 4-13, 2026",
+    },
+    title: {
+      es: "Chairs y CMT",
+      en: "Chairs and CMT",
+    },
+    description: {
+      es: "Designación formal de chairs y configuración editorial en Microsoft CMT.",
+      en: "Formal chair appointments and editorial setup in Microsoft CMT.",
+    },
+    status: "confirmed",
+  },
+  {
+    key: "cfp",
+    date: {
+      es: "11-13 de mayo de 2026",
+      en: "May 11-13, 2026",
+    },
+    title: {
+      es: "Lanzamiento del Call for Papers",
+      en: "Call for Papers launch",
+    },
+    description: {
+      es: "Publicación de convocatoria, plantillas y lineamientos de anonimización.",
+      en: "Publication of the call, templates, and anonymization guidelines.",
+    },
+    status: "confirmed",
+  },
+  {
+    key: "journals",
+    date: {
+      es: "27 de abril-15 de mayo de 2026",
+      en: "April 27-May 15, 2026",
+    },
+    title: {
+      es: "Acuerdos con revistas aliadas",
+      en: "Partner journal agreements",
+    },
+    description: {
+      es: "Formalización de rutas editoriales con las cinco revistas aliadas.",
+      en: "Formalization of editorial pathways with the five partner journals.",
+    },
+    status: "confirmed",
   },
   {
     key: "submission",
     date: {
-      es: "Por confirmar",
-      en: "To be confirmed",
+      es: "27 de abril-14 de junio de 2026",
+      en: "April 27-June 14, 2026",
     },
     title: {
-      es: "Cierre de envío de trabajos",
-      en: "Submission deadline",
+      es: "Recepción de artículos en CMT",
+      en: "CMT submission window",
     },
     description: {
       es: "Recepción de full papers y pósters científicos mediante Microsoft CMT.",
       en: "Full paper and scientific poster submission through Microsoft CMT.",
     },
-    status: "pending",
+    status: "confirmed",
+  },
+  {
+    key: "review-assignment",
+    date: {
+      es: "15-17 de junio de 2026",
+      en: "June 15-17, 2026",
+    },
+    title: {
+      es: "Asignación de revisores",
+      en: "Reviewer assignment",
+    },
+    description: {
+      es: "Los Track Chairs asignan dos revisores por contribución y controlan conflictos de interés.",
+      en: "Track Chairs assign two reviewers per contribution and control conflicts of interest.",
+    },
+    status: "confirmed",
+  },
+  {
+    key: "peer-review",
+    date: {
+      es: "17-30 de junio de 2026",
+      en: "June 17-30, 2026",
+    },
+    title: {
+      es: "Revisión doble ciego",
+      en: "Double-blind review",
+    },
+    description: {
+      es: "Evaluación por pares mediante rúbrica, comentarios anonimizados y decisión por track.",
+      en: "Peer evaluation through rubric, anonymized comments, and track-level decision.",
+    },
+    status: "confirmed",
   },
   {
     key: "notification",
     date: {
-      es: "Por confirmar",
-      en: "To be confirmed",
+      es: "1-3 de julio de 2026",
+      en: "July 1-3, 2026",
     },
     title: {
       es: "Notificación a autores",
       en: "Author notification",
     },
     description: {
-      es: "Comunicación de resultados de la revisión por pares doble ciego.",
-      en: "Communication of double-blind peer-review results.",
+      es: "Comunicación de aceptación, aceptación con cambios, revisión mayor o rechazo.",
+      en: "Notification of acceptance, minor revision, major revision, or rejection.",
     },
-    status: "pending",
+    status: "confirmed",
+  },
+  {
+    key: "camera-ready",
+    date: {
+      es: "4-10 de julio de 2026",
+      en: "July 4-10, 2026",
+    },
+    title: {
+      es: "Versión final",
+      en: "Final version",
+    },
+    description: {
+      es: "Entrega de versiones finales de trabajos aceptados incorporando observaciones.",
+      en: "Final versions of accepted work are submitted with reviewer comments addressed.",
+    },
+    status: "confirmed",
+  },
+  {
+    key: "registration",
+    date: {
+      es: "4 de mayo-14 de julio de 2026",
+      en: "May 4-July 14, 2026",
+    },
+    title: {
+      es: "Inscripciones",
+      en: "Registration",
+    },
+    description: {
+      es: "Registro institucional de asistentes, autores, docentes y profesionales.",
+      en: "Institutional registration for attendees, authors, faculty, and professionals.",
+    },
+    status: "confirmed",
   },
   {
     key: "event",
@@ -56,12 +168,28 @@ export const importantDates: ImportantDate[] = [
       en: "July 15-17, 2026",
     },
     title: {
-      es: "ICLSET 2026",
-      en: "ICLSET 2026",
+      es: "Ejecución de ICLSET 2026",
+      en: "ICLSET 2026 conference",
     },
     description: {
-      es: "Conferencia híbrida en Manta, Manabí, Ecuador.",
-      en: "Hybrid conference in Manta, Manabí, Ecuador.",
+      es: "Tres jornadas híbridas en ULEAM Manta, Paraninfo Alfonso Aguilar Ruilova, Plaza Centenario y salas Zoom institucionales.",
+      en: "Three hybrid days at ULEAM Manta, Alfonso Aguilar Ruilova Auditorium, Plaza Centenario, and institutional Zoom rooms.",
+    },
+    status: "confirmed",
+  },
+  {
+    key: "journal-followup",
+    date: {
+      es: "23 de julio de 2026-22 de enero de 2027",
+      en: "July 23, 2026-January 22, 2027",
+    },
+    title: {
+      es: "Seguimiento editorial",
+      en: "Editorial follow-up",
+    },
+    description: {
+      es: "Canalización de artículos a revistas aliadas y seguimiento editorial a seis meses.",
+      en: "Accepted papers are routed to partner journals with six-month editorial follow-up.",
     },
     status: "confirmed",
   },

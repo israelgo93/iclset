@@ -16,7 +16,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
 
   return (
     <div
-      className="inline-flex items-center rounded-full border bg-white/80 p-1 text-xs font-semibold shadow-sm"
+      className="inline-flex items-center rounded-full border border-iclset-blue/15 bg-white/85 p-1 text-xs font-semibold shadow-sm backdrop-blur"
       aria-label={locale === "es" ? "Selector de idioma" : "Language selector"}
     >
       {locales.map((item) => (
@@ -24,10 +24,10 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
           key={item}
           href={switchLocalePath(item, pathname)}
           className={cn(
-            "rounded-full px-3 py-1.5 transition-colors",
+            "rounded-full px-3 py-1.5 transition-all duration-300",
             item === locale
-              ? "bg-iclset-navy text-white"
-              : "text-iclset-muted hover:bg-muted hover:text-iclset-ink",
+              ? "bg-gradient-to-r from-iclset-blue to-iclset-sky text-white shadow-[0_8px_18px_-10px_rgb(31_148_255_/_0.6)]"
+              : "text-iclset-muted hover:bg-iclset-blue-soft hover:text-iclset-ink",
           )}
           aria-current={item === locale ? "page" : undefined}
         >

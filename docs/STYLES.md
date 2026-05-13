@@ -2,7 +2,7 @@
 
 ## Dirección visual
 
-La landing de ICLSET 2026 debe combinar tres mundos:
+El sitio oficial de ICLSET 2026 debe combinar tres mundos:
 
 1. **Rigor académico internacional**
    Inspiración: ICLR, NeurIPS, CVPR, CLEI y CITIS.
@@ -197,7 +197,7 @@ padding desktop: 32px a 48px
 - Comité: cards compactas.
 - FAQ: acordeón.
 
-## Secciones de la landing
+## Secciones del sitio
 
 ### 1. Header
 
@@ -218,7 +218,7 @@ Altura recomendada:
 
 Debe incluir:
 
-- Badge: “Primera edición · Manta, Ecuador · Julio 2026”.
+- Marca ICLSET 2026 con icono oficial del evento.
 - H1 emocional-académico.
 - Descripción breve.
 - CTAs.
@@ -361,7 +361,7 @@ Estilo:
 
 Uso:
 
-- Primera edición.
+- Conferencia internacional hibrida.
 - Híbrido.
 - Doble ciego.
 - CMT.
@@ -373,7 +373,7 @@ Uso:
 
 - Línea vertical en mobile.
 - Cards por fecha.
-- Colores por estado: pendiente, activo, cerrado.
+- Colores por estado: confirmado, activo, cerrado.
 
 ## Animación con Motion
 
@@ -467,16 +467,112 @@ No usar:
 - Tablas gigantes en mobile.
 - Texto excesivo en hero.
 - Dependencias pesadas para interacciones simples.
-- Formularios sin objetivo en fase 1.
+- Formularios sin flujo operativo aprobado.
 - Colores desconectados de ciencia, territorio y tecnología.
 
-## Ajuste visual de la primera implementación · 2026-05-11
+## Ajuste visual institucional · 2026-05-13
 
-Aunque la dirección conceptual original contempla un hero oscuro premium, la primera versión local se implementa con una dirección clara y neutral por solicitud de producto:
+La dirección visual activa usa un sistema claro, académico y tecnológico:
 
-- Fondos principales blancos, `surface` y `sand` suave.
-- Acentos en azul, cyan, emerald y lime.
-- Navy reservado para textos, marca y estados de énfasis, no como fondo dominante.
-- Cards limpias con bordes sutiles y sombras suaves.
-- Layout mobile-first con secciones amplias y legibles.
-- Sin imágenes institucionales definitivas; se usan visuales abstractos con CSS hasta recibir material aprobado.
+- Hero con icono ICLSET y visual animado de biociencia, agrociencia y tecnología construido con Motion for React.
+- Fondos principales blancos, `surface` y `sand` suave, con acentos controlados en azul, cyan, emerald y lime.
+- Navy reservado para marca, textos principales y contraste, no como fondo dominante permanente.
+- Programa académico con imágenes SVG propias para los tres días, aspect ratio estable y layout responsive.
+- Cards limpias con bordes sutiles, sombras suaves y contenido documental real.
+- Layout mobile-first para Android, iOS, tablet, desktop y wide desktop.
+- Icono del evento en `public/brand/iclset-icon.svg`, representando hoja, red tecnológica y resiliencia territorial.
+- Visuales de programa en `public/program/day-1.svg`, `public/program/day-2.svg` y `public/program/day-3.svg`.
+
+## Rediseno UI tech-agro · 2026-05-13
+
+La interfaz activa se ajusta hacia una presencia mas tecnologica, diferenciadora y contemporanea sin cambiar el contenido institucional aprobado.
+
+### Decisiones aplicadas
+
+- Header, hero, page heroes, CTA final y footer usan fondo `navy` con reticula tecnica, glows controlados y alto contraste.
+- El hero incorpora efecto reactivo al puntero, paneles glass y una animacion Motion que integra hoja, nodos, rutas y geometria para representar biociencia, agrociencia y tecnologias emergentes.
+- Las cards principales usan bloques solidos por eje: azul para tecnologia, emerald para biociencia/ambiente, lime para agrociencias y cyan para accion editorial.
+- Los botones se vuelven mas tactiles: mayor altura, radio full, sombra sutil, elevacion hover y colores mas energicos.
+- El programa usa media cards con fondos solidos por dia y marcos estables para las imagenes SVG.
+- Las paginas internas heredan un hero oscuro consistente para que el sitio completo se sienta como una conferencia internacional de tecnologia aplicada.
+- Las animaciones deben seguir siendo puntuales, respetar `prefers-reduced-motion` y no bloquear lectura ni navegacion.
+
+### Uso de color
+
+- `navy`: superficies principales de alto impacto y navegacion.
+- `blue`: tecnologia, rutas digitales, enlaces y datos.
+- `cyan`: accion principal, CMT, editorial y detalles de sistema.
+- `emerald`: biociencia, ambiente, biodiversidad y sede.
+- `lime`: agrociencia, sostenibilidad y transferencia territorial.
+
+## Rediseno UI moderno paleta iC · 2026-05-12
+
+Segunda iteracion del rediseno alineada con la identidad del logo iC (gradiente azul celeste a verde). El sitio adopta una superficie clara dominante, gradientes controlados, animaciones Motion sutiles y una identidad de marca consistente desde el favicon hasta la imagen OpenGraph.
+
+### Nueva paleta de marca
+
+Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme`:
+
+```css
+:root {
+	--iclset-navy: oklch(20% 0.06 250);
+	--iclset-ink: oklch(18% 0.04 250);
+	--iclset-muted: oklch(52% 0.025 240);
+	--iclset-surface: oklch(98% 0.012 220);
+
+	--iclset-blue: oklch(63% 0.21 240);
+	--iclset-blue-soft: oklch(94% 0.04 235);
+	--iclset-sky: oklch(74% 0.16 230);
+	--iclset-cyan: oklch(80% 0.14 215);
+	--iclset-cyan-soft: oklch(95% 0.04 215);
+	--iclset-emerald: oklch(72% 0.18 158);
+	--iclset-emerald-soft: oklch(94% 0.05 158);
+	--iclset-green: oklch(78% 0.22 142);
+	--iclset-green-soft: oklch(95% 0.06 142);
+	--iclset-lime: oklch(86% 0.20 130);
+}
+```
+
+#### Uso recomendado
+
+- `blue`: CTAs primarios, enlaces, tecnologia y datos.
+- `sky` / `cyan`: gradiente intermedio del logo, acentos de sistema.
+- `emerald` / `green`: biociencia, ambiente, sostenibilidad.
+- `lime`: agrociencias, transferencia y micro-acentos.
+- `navy` / `ink`: tipografia principal, footer y CTA final.
+- `surface` / `card`: superficies claras dominantes en home y paginas internas.
+
+### Decisiones aplicadas
+
+- Header con fondo `white/55` que pasa a `white/88` con sombra suave al hacer scroll mediante Motion `useScroll`.
+- Hero principal con fondo claro, glows radiales azul a verde, reticula tecnica y `PointerGlow` adaptado a superficies claras.
+- Logo iC vectorial nuevo en `public/brand`:
+  - `iclset-icon.svg` (256x256, version con fondo blanco redondeado).
+  - `iclset-icon-mark.svg` (160x160, monograma sin fondo).
+  - `iclset-logo.svg` y `iclset-logo-light.svg` (640x160, logotipo completo claro y oscuro).
+  - `favicon.svg` (32x32) y `manifest-icon-512.svg` para PWA.
+  - `iclset-og.svg` (1200x630) para Open Graph y Twitter card.
+- `manifest.webmanifest` registra los iconos del sitio y el tema visual.
+- Boton `default` adopta gradiente `iclset-blue → iclset-sky → iclset-emerald` con sombra azul, hover de elevacion sutil y radius `rounded-full`. Nuevas variantes: `solid`, `green` y `glass`.
+- Cards de tracks, fechas, comites, publicaciones y sede ahora usan fondos blancos con bordes degradados, anillos sutiles y sombras de color al hover. Animaciones de entrada por scroll y elevacion tactil mediante Motion.
+- Stats con tarjetas en gradiente vertical y stagger por scroll.
+- Hero animado redibujado con el monograma iC, hoja, barra azul, C en gradiente azul a verde y nodos por eje.
+- Footer en navy con reticula tecnica oscura, logo iC y glows azul a verde controlados.
+- Final CTA con fondo navy degradado y glows azul/verde, manteniendo contraste alto.
+
+### Animaciones Motion
+
+- Entrada de hero, cards y stats con `whileInView`, `staggerChildren` y easing `cubic-bezier(0.22, 1, 0.36, 1)`.
+- Hover de cards con `whileHover` `y: -6` y sombras de color.
+- Boton primario con micro interacciones por hover (icono + elevacion).
+- `PointerGlow` (variante `light` y `dark`) acompana al cursor sin distraer.
+- `MotionCard` y `Reveal` son helpers reutilizables.
+- Toda animacion respeta `prefers-reduced-motion`.
+
+### Restricciones
+
+- No cambiar nombres, fechas, chairs, tracks o revistas desde componentes visuales.
+- Usar gradientes con moderacion: principalmente para hero, boton primario, fondos de cards de stats/tracks y CTA final.
+- No introducir fondos navy dominantes en home, page heroes y secciones intermedias.
+- Mantener contraste AA, foco visible y dimensiones estables en mobile, tablet, desktop y wide.
+- No sobrecargar con animaciones constantes; el movimiento debe reforzar jerarquia e interaccion.
