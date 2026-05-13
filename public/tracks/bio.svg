@@ -1,0 +1,57 @@
+<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="bioTitle bioDesc">
+	<title id="bioTitle">Ciencias Biologicas y Ambientales</title>
+	<desc id="bioDesc">Helice de ADN doble enmarcada por hojas y nodos cientificos.</desc>
+	<defs>
+		<radialGradient id="bioBg" cx="240" cy="240" r="240" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#0E3528"/>
+			<stop offset="0.6" stop-color="#0A2A21"/>
+			<stop offset="1" stop-color="#061B17"/>
+		</radialGradient>
+		<linearGradient id="bioDna" x1="160" y1="60" x2="320" y2="420" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#86E45F"/>
+			<stop offset="0.5" stop-color="#3DD3F0"/>
+			<stop offset="1" stop-color="#1F94FF"/>
+		</linearGradient>
+		<linearGradient id="bioLeaf" x1="60" y1="280" x2="180" y2="420" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#A4ED6B"/>
+			<stop offset="1" stop-color="#3FB337"/>
+		</linearGradient>
+		<linearGradient id="bioLeaf2" x1="300" y1="60" x2="420" y2="200" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#7BD957"/>
+			<stop offset="1" stop-color="#2E9A3D"/>
+		</linearGradient>
+		<pattern id="bioGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+			<path d="M40 0H0V40" fill="none" stroke="#3DD3F0" stroke-opacity="0.08" stroke-width="1"/>
+		</pattern>
+	</defs>
+	<rect width="480" height="480" rx="120" fill="url(#bioBg)"/>
+	<rect width="480" height="480" rx="120" fill="url(#bioGrid)"/>
+	<g transform="translate(240 240)" stroke="url(#bioDna)" stroke-width="6" stroke-linecap="round" fill="none">
+		<path d="M-60 -160 Q 0 -120 60 -160 Q 120 -120 60 -80 Q 0 -40 -60 -80 Q -120 -40 -60 0 Q 0 40 60 0 Q 120 40 60 80 Q 0 120 -60 80 Q -120 120 -60 160"/>
+		<path d="M60 -160 Q 0 -120 -60 -160 Q -120 -120 -60 -80 Q 0 -40 60 -80 Q 120 -40 60 0 Q 0 40 -60 0 Q -120 40 -60 80 Q 0 120 60 80 Q 120 120 60 160"/>
+		<line x1="-44" y1="-140" x2="44" y2="-140" stroke-width="4" opacity="0.7"/>
+		<line x1="-44" y1="-100" x2="44" y2="-100" stroke-width="4" opacity="0.7"/>
+		<line x1="-44" y1="-20" x2="44" y2="-20" stroke-width="4" opacity="0.7"/>
+		<line x1="-44" y1="20" x2="44" y2="20" stroke-width="4" opacity="0.7"/>
+		<line x1="-44" y1="100" x2="44" y2="100" stroke-width="4" opacity="0.7"/>
+		<line x1="-44" y1="140" x2="44" y2="140" stroke-width="4" opacity="0.7"/>
+	</g>
+	<g fill="url(#bioLeaf)">
+		<path d="M52 312c20-50 56-78 110-90-10 56-44 90-110 90Z"/>
+		<path d="M52 312c34 4 60 18 78 42-22 0-58-12-78-42Z" opacity="0.7"/>
+	</g>
+	<g fill="url(#bioLeaf2)">
+		<path d="M428 168c-20-50-56-78-110-90 10 56 44 90 110 90Z"/>
+		<path d="M428 168c-34 4-60 18-78 42 22 0 58-12 78-42Z" opacity="0.7"/>
+	</g>
+	<g fill="#3DD3F0">
+		<circle cx="120" cy="120" r="6"/>
+		<circle cx="360" cy="360" r="6"/>
+		<circle cx="380" cy="100" r="4" opacity="0.7"/>
+		<circle cx="100" cy="380" r="4" opacity="0.7"/>
+	</g>
+	<g stroke="#3DD3F0" stroke-width="1.5" stroke-dasharray="4 6" stroke-linecap="round" opacity="0.45" fill="none">
+		<path d="M120 120 L240 240 L360 360"/>
+		<path d="M380 100 L240 240 L100 380"/>
+	</g>
+</svg>

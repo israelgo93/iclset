@@ -21,25 +21,19 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 	const headerBg = useTransform(
 		scrollY,
 		[0, 80],
-		[
-			"rgba(255, 255, 255, 0.55)",
-			"rgba(255, 255, 255, 0.88)",
-		],
+		["rgba(255, 255, 255, 0.55)", "rgba(255, 255, 255, 0.92)"],
 	);
 	const headerBorder = useTransform(
 		scrollY,
 		[0, 80],
-		[
-			"rgba(31, 148, 255, 0.08)",
-			"rgba(31, 148, 255, 0.18)",
-		],
+		["rgba(31, 148, 255, 0.08)", "rgba(31, 148, 255, 0.18)"],
 	);
 	const headerShadow = useTransform(
 		scrollY,
 		[0, 80],
 		[
 			"0 0 0 rgba(15, 23, 42, 0)",
-			"0 18px 40px -22px rgba(31, 64, 120, 0.18)",
+			"0 18px 40px -22px rgba(31, 64, 120, 0.2)",
 		],
 	);
 
@@ -53,32 +47,31 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 				boxShadow: headerShadow,
 			}}
 		>
-			<div className="section-container flex h-18 items-center justify-between gap-4">
+			<div className="section-container flex h-16 items-center justify-between gap-4 md:h-18">
 				<Link
 					href={`/${locale}`}
-					className="group flex min-w-0 items-center gap-3"
+					className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
 					aria-label={conference.acronym}
 				>
 					<motion.span
-						className="relative grid size-11 place-items-center rounded-2xl bg-gradient-to-br from-iclset-blue/10 via-iclset-cyan/10 to-iclset-green/10 ring-1 ring-iclset-blue/15"
-						whileHover={{ rotate: -6, scale: 1.05 }}
+						className="relative inline-flex shrink-0"
+						whileHover={{ rotate: -4, scale: 1.04 }}
 						transition={{ type: "spring", stiffness: 320, damping: 22 }}
 					>
 						<Image
-							src="/brand/iclset-icon-mark.svg"
-							alt=""
-							width={32}
-							height={32}
-							className="size-8"
-							style={{ width: "auto", height: "auto" }}
+							src="/brand/iclset-logo.png"
+							alt={`${conference.acronym} logo`}
+							width={56}
+							height={56}
+							className="h-10 w-auto sm:h-11"
 							priority
 						/>
 					</motion.span>
 					<span className="min-w-0">
-						<span className="block text-sm leading-5 font-semibold text-iclset-ink">
+						<span className="block text-sm leading-5 font-semibold tracking-tight text-iclset-ink sm:text-[0.95rem]">
 							{conference.acronym}
 						</span>
-						<span className="hidden max-w-64 truncate text-xs text-iclset-muted sm:block">
+						<span className="hidden max-w-72 truncate text-[0.7rem] font-medium tracking-[0.04em] text-iclset-muted sm:block">
 							{conference.location.faculty}
 						</span>
 					</span>

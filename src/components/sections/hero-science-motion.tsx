@@ -1,167 +1,219 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 
-const orbits = [
-	{ size: 320, color: "oklch(74% 0.16 230 / 0.55)", duration: 28 },
-	{ size: 240, color: "oklch(80% 0.14 215 / 0.5)", duration: 22 },
-	{ size: 160, color: "oklch(78% 0.22 142 / 0.55)", duration: 18 },
-] as const;
+interface Hex {
+	id: "bio" | "agro" | "tech";
+	src: string;
+	label: { es: string; en: string };
+	caption: { es: string; en: string };
+	top: string;
+	left: string;
+	glow: string;
+	ring: string;
+	delay: number;
+	float: number;
+}
 
-const nodes = [
-	{ cx: 80, cy: 96, color: "bg-iclset-emerald", label: "Bio" },
-	{ cx: 170, cy: 60, color: "bg-iclset-sky", label: "Tech" },
-	{ cx: 244, cy: 132, color: "bg-iclset-green", label: "Agro" },
-	{ cx: 116, cy: 212, color: "bg-iclset-blue", label: "Data" },
-	{ cx: 238, cy: 244, color: "bg-iclset-cyan", label: "Cloud" },
-] as const;
+const hexagons: Hex[] = [
+	{
+		id: "bio",
+		src: "/tracks/bio.svg",
+		label: { es: "Biociencia", en: "Life Sciences" },
+		caption: { es: "Biodiversidad y ambiente", en: "Biodiversity & environment" },
+		top: "4%",
+		left: "8%",
+		glow: "from-iclset-emerald/55 to-iclset-green/30",
+		ring: "ring-iclset-emerald/50",
+		delay: 0,
+		float: -10,
+	},
+	{
+		id: "tech",
+		src: "/tracks/tech.svg",
+		label: { es: "Tecnología", en: "Technology" },
+		caption: { es: "IA, datos y sistemas", en: "AI, data & systems" },
+		top: "12%",
+		left: "58%",
+		glow: "from-iclset-blue/55 to-iclset-sky/30",
+		ring: "ring-iclset-blue/55",
+		delay: 0.18,
+		float: -8,
+	},
+	{
+		id: "agro",
+		src: "/tracks/agro.svg",
+		label: { es: "Agrociencia", en: "Agroscience" },
+		caption: { es: "Producción sostenible", en: "Sustainable production" },
+		top: "54%",
+		left: "30%",
+		glow: "from-iclset-green/55 to-iclset-lime/30",
+		ring: "ring-iclset-green/55",
+		delay: 0.32,
+		float: 10,
+	},
+];
 
-export function HeroScienceMotion() {
+interface HeroScienceMotionProps {
+	locale: "es" | "en";
+}
+
+export function HeroScienceMotion({ locale }: HeroScienceMotionProps) {
 	const shouldReduceMotion = useReducedMotion();
 
 	return (
-		<div className="brand-gradient-border relative isolate min-h-[26rem] overflow-hidden rounded-[2rem] bg-gradient-to-br from-white via-white to-[oklch(96%_0.02_215)] p-5 shadow-[0_30px_90px_-40px_rgb(31_64_120_/_0.35)] md:min-h-[32rem]">
+		<div
+			className="relative isolate w-full overflow-hidden rounded-[1.75rem] border border-iclset-blue/15 bg-gradient-to-br from-[oklch(98%_0.012_220)] via-white to-[oklch(96%_0.025_215)] shadow-[0_30px_90px_-40px_rgb(31_64_120_/_0.35)]"
+			style={{ aspectRatio: "1 / 1" }}
+		>
 			<div
 				aria-hidden="true"
-				className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,oklch(74%_0.16_230_/_0.22),transparent_22rem),radial-gradient(circle_at_78%_82%,oklch(78%_0.22_142_/_0.22),transparent_22rem)]"
+				className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,oklch(74%_0.16_230_/_0.28),transparent_22rem),radial-gradient(circle_at_78%_82%,oklch(78%_0.22_142_/_0.28),transparent_22rem),radial-gradient(circle_at_72%_24%,oklch(80%_0.14_215_/_0.18),transparent_18rem)]"
 			/>
 			<div
 				aria-hidden="true"
-				className="tech-grid absolute inset-0 -z-10 opacity-45"
+				className="tech-grid absolute inset-0 -z-10 opacity-55"
 			/>
 
-			{orbits.map((orbit, index) => (
-				<motion.div
-					key={orbit.size}
-					aria-hidden="true"
-					className="absolute top-1/2 left-1/2 rounded-full border"
-					style={{
-						width: orbit.size,
-						height: orbit.size,
-						marginLeft: -orbit.size / 2,
-						marginTop: -orbit.size / 2,
-						borderColor: orbit.color,
-					}}
-					animate={
-						shouldReduceMotion
-							? undefined
-							: { rotate: index % 2 === 0 ? 360 : -360 }
-					}
-					transition={{
-						duration: orbit.duration,
-						repeat: Infinity,
-						ease: "linear",
-					}}
-				/>
-			))}
-
+			{/* Lineas de conexion entre hexagonos */}
 			<svg
-				viewBox="0 0 320 320"
-				className="absolute inset-0 m-auto h-[19rem] w-[19rem] md:h-[24rem] md:w-[24rem]"
+				className="absolute inset-0 h-full w-full"
+				viewBox="0 0 400 400"
+				preserveAspectRatio="none"
 				aria-hidden="true"
 			>
 				<defs>
-					<linearGradient id="heroLeafGrad" x1="0" y1="0" x2="1" y2="1">
-						<stop offset="0" stopColor="#A4ED6B" />
-						<stop offset="1" stopColor="#3FB337" />
-					</linearGradient>
-					<linearGradient id="heroBarGrad" x1="0" y1="0" x2="0" y2="1">
-						<stop offset="0" stopColor="#36A7FF" />
-						<stop offset="1" stopColor="#1F94FF" />
-					</linearGradient>
-					<linearGradient id="heroCGrad" x1="0" y1="0" x2="1" y2="1">
-						<stop offset="0" stopColor="#1F94FF" />
-						<stop offset="0.55" stopColor="#2BC1B6" />
-						<stop offset="1" stopColor="#7BD957" />
+					<linearGradient id="heroLink" x1="0" y1="0" x2="1" y2="1">
+						<stop offset="0" stopColor="#1F94FF" stopOpacity="0.55" />
+						<stop offset="0.5" stopColor="#3DD3F0" stopOpacity="0.55" />
+						<stop offset="1" stopColor="#7BD957" stopOpacity="0.55" />
 					</linearGradient>
 				</defs>
-
-				<motion.g
-					animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
-					transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-				>
-					<rect x="98" y="120" width="34" height="120" rx="17" fill="url(#heroBarGrad)" opacity="0.95" />
-					<path
-						d="M226 116c-30 0-54 14-66 36a48 48 0 0 0 0 52c12 22 36 36 66 36v-30c-18 0-33-8-41-22a26 26 0 0 1 0-28c8-14 23-22 41-22Z"
-						fill="url(#heroCGrad)"
-						opacity="0.95"
-					/>
-					<path
-						d="M114 62c-22 8-32 26-28 50 4 22 18 36 38 40-2-20-6-37-12-50-6-13-12-25-18-40Z"
-						fill="url(#heroLeafGrad)"
-					/>
-					<path
-						d="M114 62c4 13 8 28 12 44 4-12 10-22 18-30"
-						stroke="#FFFFFF"
-						strokeWidth="3"
-						strokeLinecap="round"
-						opacity="0.7"
-					/>
-				</motion.g>
-
-				<path
-					d="M80 96c30-12 60-12 90 36c20 32 60 48 70 14"
-					stroke="oklch(74% 0.16 230 / 0.45)"
-					strokeWidth="2.4"
-					strokeDasharray="6 10"
+				<motion.path
+					d="M82 100 Q 200 60 290 130"
+					stroke="url(#heroLink)"
+					strokeWidth="2.2"
 					strokeLinecap="round"
+					strokeDasharray="6 9"
 					fill="none"
+					initial={shouldReduceMotion ? false : { pathLength: 0 }}
+					animate={shouldReduceMotion ? undefined : { pathLength: 1 }}
+					transition={{ duration: 1.8, ease: "easeInOut", delay: 0.4 }}
 				/>
-				<path
-					d="M170 60c30 12 50 50 74 80"
-					stroke="oklch(78% 0.22 142 / 0.5)"
-					strokeWidth="2.4"
-					strokeDasharray="6 10"
+				<motion.path
+					d="M290 130 Q 280 280 200 320"
+					stroke="url(#heroLink)"
+					strokeWidth="2.2"
 					strokeLinecap="round"
+					strokeDasharray="6 9"
 					fill="none"
+					initial={shouldReduceMotion ? false : { pathLength: 0 }}
+					animate={shouldReduceMotion ? undefined : { pathLength: 1 }}
+					transition={{ duration: 1.8, ease: "easeInOut", delay: 0.7 }}
+				/>
+				<motion.path
+					d="M200 320 Q 100 280 82 100"
+					stroke="url(#heroLink)"
+					strokeWidth="2.2"
+					strokeLinecap="round"
+					strokeDasharray="6 9"
+					fill="none"
+					initial={shouldReduceMotion ? false : { pathLength: 0 }}
+					animate={shouldReduceMotion ? undefined : { pathLength: 1 }}
+					transition={{ duration: 1.8, ease: "easeInOut", delay: 1 }}
 				/>
 			</svg>
 
-			{nodes.map((node, index) => (
-				<motion.span
-					key={`${node.cx}-${node.cy}`}
-					className={`absolute grid size-6 place-items-center rounded-full ${node.color} shadow-[0_8px_24px_-8px_rgb(31_64_120_/_0.45)] ring-2 ring-white/85`}
-					style={{
-						left: `calc(50% - 160px + ${node.cx}px)`,
-						top: `calc(50% - 160px + ${node.cy}px)`,
-					}}
+			{/* Hexagonos animados */}
+			{hexagons.map((hex) => (
+				<motion.div
+					key={hex.id}
+					className="absolute"
+					style={{ top: hex.top, left: hex.left, width: "38%" }}
+					initial={
+						shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.92 }
+					}
 					animate={
 						shouldReduceMotion
 							? undefined
-							: {
-									y: [0, index % 2 === 0 ? -10 : 10, 0],
-									scale: [1, 1.18, 1],
-								}
+							: { opacity: 1, y: 0, scale: 1 }
 					}
 					transition={{
-						duration: 3.6 + index * 0.35,
-						repeat: Infinity,
-						ease: "easeInOut",
+						duration: 0.7,
+						ease: [0.22, 1, 0.36, 1],
+						delay: hex.delay,
 					}}
 				>
-					<span className="size-2 rounded-full bg-white" />
-				</motion.span>
-			))}
-
-			<div className="absolute right-5 bottom-5 left-5 grid grid-cols-3 gap-3">
-				{[
-					{ label: "Bio", className: "bg-iclset-emerald text-white" },
-					{ label: "Agro", className: "bg-iclset-green text-iclset-navy" },
-					{ label: "Tech", className: "bg-iclset-blue text-white" },
-				].map((item, index) => (
 					<motion.div
-						key={item.label}
-						initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+						className={`relative rounded-[28%] bg-gradient-to-br ${hex.glow} p-1.5 shadow-[0_24px_50px_-22px_rgb(31_64_120_/_0.45)] ring-1 ${hex.ring}`}
+						animate={
+							shouldReduceMotion
+								? undefined
+								: { y: [0, hex.float, 0] }
+						}
+						transition={{
+							duration: 5.5 + hex.delay * 2,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+						whileHover={
+							shouldReduceMotion
+								? undefined
+								: { scale: 1.05, transition: { duration: 0.25 } }
+						}
+					>
+						<div className="overflow-hidden rounded-[26%] bg-white">
+							<Image
+								src={hex.src}
+								alt={hex.label[locale]}
+								width={480}
+								height={480}
+								className="h-auto w-full"
+								priority={hex.id === "bio"}
+							/>
+						</div>
+					</motion.div>
+					<motion.div
+						className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full border border-iclset-blue/15 bg-white/95 px-3 py-1 text-[0.65rem] font-semibold whitespace-nowrap text-iclset-ink shadow-[0_8px_20px_-10px_rgb(31_64_120_/_0.35)] backdrop-blur"
+						initial={shouldReduceMotion ? false : { opacity: 0, y: 6 }}
 						animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
 						transition={{
-							duration: 0.55,
+							duration: 0.4,
+							delay: hex.delay + 0.5,
 							ease: [0.22, 1, 0.36, 1],
-							delay: 0.25 + index * 0.12,
 						}}
-						className={`rounded-2xl px-4 py-3 text-center text-sm font-semibold shadow-[0_12px_30px_-12px_rgb(15_23_42_/_0.25)] ${item.className}`}
 					>
-						{item.label}
+						{hex.label[locale]}
 					</motion.div>
+				</motion.div>
+			))}
+
+			{/* Nodos decorativos animados */}
+			<div className="pointer-events-none absolute inset-0">
+				{[
+					{ top: "20%", left: "48%", color: "bg-iclset-blue", size: "size-2.5", delay: 0 },
+					{ top: "44%", left: "12%", color: "bg-iclset-emerald", size: "size-2", delay: 0.5 },
+					{ top: "68%", left: "72%", color: "bg-iclset-green", size: "size-2.5", delay: 1 },
+					{ top: "78%", left: "18%", color: "bg-iclset-cyan", size: "size-1.5", delay: 1.5 },
+					{ top: "30%", left: "90%", color: "bg-iclset-sky", size: "size-2", delay: 2 },
+				].map((node) => (
+					<motion.span
+						key={`${node.top}-${node.left}`}
+						className={`absolute rounded-full ${node.color} ${node.size} shadow-[0_0_18px_currentColor] ring-2 ring-white/85`}
+						style={{ top: node.top, left: node.left }}
+						animate={
+							shouldReduceMotion
+								? undefined
+								: { scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }
+						}
+						transition={{
+							duration: 2.4,
+							repeat: Infinity,
+							ease: "easeInOut",
+							delay: node.delay,
+						}}
+					/>
 				))}
 			</div>
 		</div>

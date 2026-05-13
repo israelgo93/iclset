@@ -32,10 +32,10 @@ export const metadata: Metadata = {
 	icons: {
 		icon: [
 			{ url: "/brand/favicon.svg", type: "image/svg+xml" },
-			{ url: "/brand/iclset-icon.svg", type: "image/svg+xml", sizes: "any" },
+			{ url: "/brand/iclset-logo.png", type: "image/png", sizes: "512x512" },
 		],
 		shortcut: "/brand/favicon.svg",
-		apple: "/brand/manifest-icon-512.svg",
+		apple: "/brand/iclset-logo.png",
 	},
 	openGraph: {
 		images: [

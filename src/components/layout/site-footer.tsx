@@ -29,14 +29,13 @@ export function SiteFooter({ locale }: SiteFooterProps) {
 						className="inline-flex items-center gap-3"
 						aria-label={conference.acronym}
 					>
-						<span className="grid size-12 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
+						<span className="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
 							<Image
-								src="/brand/iclset-icon-mark.svg"
-								alt=""
-								width={36}
-								height={36}
-								className="size-9"
-								style={{ width: "auto", height: "auto" }}
+								src="/brand/iclset-logo.png"
+								alt={`${conference.acronym} logo`}
+								width={56}
+								height={56}
+								className="h-10 w-auto"
 							/>
 						</span>
 						<span>

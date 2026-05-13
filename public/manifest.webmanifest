@@ -4,8 +4,8 @@
 	"description": "International Conference on Life Sciences and Emerging Technologies. Manta, Ecuador, julio 2026.",
 	"start_url": "/",
 	"display": "standalone",
-	"background_color": "#06121F",
-	"theme_color": "#0B1B33",
+	"background_color": "#04101F",
+	"theme_color": "#0B2549",
 	"icons": [
 		{
 			"src": "/brand/favicon.svg",
@@ -14,10 +14,16 @@
 			"purpose": "any"
 		},
 		{
-			"src": "/brand/manifest-icon-512.svg",
+			"src": "/brand/iclset-logo.png",
 			"sizes": "512x512",
-			"type": "image/svg+xml",
+			"type": "image/png",
 			"purpose": "any maskable"
+		},
+		{
+			"src": "/brand/iclset-logo-dark.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
 		}
 	]
 }
