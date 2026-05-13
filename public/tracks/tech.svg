@@ -1,72 +1,150 @@
-<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="techTitle techDesc">
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="techTitle techDesc">
 	<title id="techTitle">Tecnologias de la Informacion</title>
-	<desc id="techDesc">Chip de IA central con circuito y red neuronal sobre fondo tecnologico.</desc>
+	<desc id="techDesc">Chip AI central conectado a red neuronal, snippet de codigo, flujo de datos y escudo de ciberseguridad sobre fondo claro.</desc>
 	<defs>
-		<radialGradient id="techBg" cx="240" cy="240" r="240" gradientUnits="userSpaceOnUse">
-			<stop offset="0" stop-color="#0E2350"/>
-			<stop offset="0.6" stop-color="#0A1A3D"/>
-			<stop offset="1" stop-color="#061026"/>
-		</radialGradient>
-		<linearGradient id="techChip" x1="160" y1="160" x2="320" y2="320" gradientUnits="userSpaceOnUse">
-			<stop offset="0" stop-color="#1F94FF"/>
-			<stop offset="0.55" stop-color="#3DD3F0"/>
-			<stop offset="1" stop-color="#7BD957"/>
+		<linearGradient id="techBg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#FFFFFF"/>
+			<stop offset="0.55" stop-color="#F2F8FF"/>
+			<stop offset="1" stop-color="#E6F1FF"/>
 		</linearGradient>
-		<linearGradient id="techChipBorder" x1="160" y1="160" x2="320" y2="320" gradientUnits="userSpaceOnUse">
-			<stop offset="0" stop-color="#4FB1FF"/>
-			<stop offset="1" stop-color="#86E45F"/>
+		<radialGradient id="techGlowBlue" cx="220" cy="180" r="220" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#1F94FF" stop-opacity="0.18"/>
+			<stop offset="1" stop-color="#1F94FF" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="techGlowCyan" cx="500" cy="280" r="200" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#3DD3F0" stop-opacity="0.2"/>
+			<stop offset="1" stop-color="#3DD3F0" stop-opacity="0"/>
+		</radialGradient>
+		<linearGradient id="techChip" x1="240" y1="140" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#FFFFFF"/>
+			<stop offset="1" stop-color="#EAF3FF"/>
+		</linearGradient>
+		<linearGradient id="techChipBorder" x1="240" y1="140" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#1F94FF"/>
+			<stop offset="1" stop-color="#3DD3F0"/>
 		</linearGradient>
 		<pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-			<path d="M40 0H0V40" fill="none" stroke="#3DD3F0" stroke-opacity="0.08" stroke-width="1"/>
+			<path d="M40 0H0V40" fill="none" stroke="#1F94FF" stroke-opacity="0.07" stroke-width="1"/>
 		</pattern>
 	</defs>
-	<rect width="480" height="480" rx="120" fill="url(#techBg)"/>
-	<rect width="480" height="480" rx="120" fill="url(#techGrid)"/>
-	<g stroke="url(#techChipBorder)" stroke-width="2" stroke-linecap="round" opacity="0.55" fill="none">
-		<path d="M60 240 H160"/>
-		<path d="M320 240 H420"/>
-		<path d="M240 60 V160"/>
-		<path d="M240 320 V420"/>
-		<path d="M100 100 L160 160"/>
-		<path d="M380 100 L320 160"/>
-		<path d="M100 380 L160 320"/>
-		<path d="M380 380 L320 320"/>
+	<rect width="640" height="400" fill="url(#techBg)"/>
+	<rect width="640" height="400" fill="url(#techGrid)"/>
+	<rect width="640" height="400" fill="url(#techGlowBlue)"/>
+	<rect width="640" height="400" fill="url(#techGlowCyan)"/>
+
+	<g transform="translate(120 200)" fill="none" stroke="#1F94FF" stroke-width="1.2" stroke-opacity="0.55">
+		<line x1="-40" y1="-60" x2="0" y2="-30"/>
+		<line x1="-40" y1="-60" x2="-10" y2="-90"/>
+		<line x1="-40" y1="-60" x2="20" y2="-80"/>
+		<line x1="0" y1="-30" x2="40" y2="-50"/>
+		<line x1="0" y1="-30" x2="30" y2="10"/>
+		<line x1="40" y1="-50" x2="80" y2="-30"/>
+		<line x1="40" y1="-50" x2="60" y2="-20"/>
+		<line x1="30" y1="10" x2="80" y2="20"/>
+		<line x1="80" y1="-30" x2="80" y2="20"/>
+		<line x1="-10" y1="-90" x2="20" y2="-80"/>
+		<line x1="20" y1="-80" x2="60" y2="-100"/>
+		<line x1="-40" y1="-60" x2="-60" y2="-20"/>
+		<line x1="-60" y1="-20" x2="-20" y2="20"/>
+		<line x1="-20" y1="20" x2="30" y2="10"/>
 	</g>
-	<g fill="#3DD3F0">
-		<circle cx="60" cy="240" r="6"/>
-		<circle cx="420" cy="240" r="6"/>
-		<circle cx="240" cy="60" r="6"/>
-		<circle cx="240" cy="420" r="6"/>
-		<circle cx="100" cy="100" r="5" opacity="0.7"/>
-		<circle cx="380" cy="100" r="5" opacity="0.7"/>
-		<circle cx="100" cy="380" r="5" opacity="0.7"/>
-		<circle cx="380" cy="380" r="5" opacity="0.7"/>
+	<g transform="translate(120 200)" fill="#1F94FF">
+		<circle cx="-40" cy="-60" r="4.5"/>
+		<circle cx="0" cy="-30" r="3.5"/>
+		<circle cx="40" cy="-50" r="3.5"/>
+		<circle cx="-10" cy="-90" r="3.5"/>
+		<circle cx="20" cy="-80" r="3.5"/>
+		<circle cx="60" cy="-100" r="3"/>
+		<circle cx="80" cy="-30" r="3.5"/>
+		<circle cx="30" cy="10" r="4.5" fill="#3DD3F0"/>
+		<circle cx="80" cy="20" r="3.5"/>
+		<circle cx="60" cy="-20" r="3"/>
+		<circle cx="-60" cy="-20" r="3.5"/>
+		<circle cx="-20" cy="20" r="3"/>
 	</g>
-	<rect x="160" y="160" width="160" height="160" rx="28" fill="url(#techChip)" opacity="0.92"/>
-	<rect x="160" y="160" width="160" height="160" rx="28" fill="none" stroke="url(#techChipBorder)" stroke-width="3"/>
-	<g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.55" fill="none">
-		<path d="M188 192 H292"/>
-		<path d="M188 220 H272"/>
-		<path d="M188 248 H292"/>
-		<path d="M188 276 H252"/>
+
+	<g transform="translate(240 140)">
+		<rect x="0" y="0" width="160" height="160" rx="20" fill="url(#techChip)" stroke="url(#techChipBorder)" stroke-width="2.4"/>
+		<g stroke="url(#techChipBorder)" stroke-width="1.6" stroke-linecap="round">
+			<line x1="-22" y1="30" x2="0" y2="30"/>
+			<line x1="-22" y1="62" x2="0" y2="62"/>
+			<line x1="-22" y1="94" x2="0" y2="94"/>
+			<line x1="-22" y1="126" x2="0" y2="126"/>
+			<line x1="160" y1="30" x2="182" y2="30"/>
+			<line x1="160" y1="62" x2="182" y2="62"/>
+			<line x1="160" y1="94" x2="182" y2="94"/>
+			<line x1="160" y1="126" x2="182" y2="126"/>
+			<line x1="30" y1="-22" x2="30" y2="0"/>
+			<line x1="62" y1="-22" x2="62" y2="0"/>
+			<line x1="94" y1="-22" x2="94" y2="0"/>
+			<line x1="126" y1="-22" x2="126" y2="0"/>
+			<line x1="30" y1="160" x2="30" y2="182"/>
+			<line x1="62" y1="160" x2="62" y2="182"/>
+			<line x1="94" y1="160" x2="94" y2="182"/>
+			<line x1="126" y1="160" x2="126" y2="182"/>
+		</g>
+		<g fill="#1F94FF" opacity="0.85">
+			<circle cx="-22" cy="30" r="2.5"/>
+			<circle cx="-22" cy="62" r="2.5"/>
+			<circle cx="-22" cy="94" r="2.5"/>
+			<circle cx="-22" cy="126" r="2.5"/>
+			<circle cx="182" cy="30" r="2.5"/>
+			<circle cx="182" cy="62" r="2.5"/>
+			<circle cx="182" cy="94" r="2.5"/>
+			<circle cx="182" cy="126" r="2.5"/>
+			<circle cx="30" cy="-22" r="2.5"/>
+			<circle cx="62" cy="-22" r="2.5"/>
+			<circle cx="94" cy="-22" r="2.5"/>
+			<circle cx="126" cy="-22" r="2.5"/>
+		</g>
+		<text x="80" y="98" font-family="Geist Mono, ui-monospace, monospace" font-size="42" font-weight="700" text-anchor="middle" fill="#1F94FF">AI</text>
+		<rect x="14" y="14" width="132" height="132" rx="12" fill="none" stroke="#3DD3F0" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 4"/>
 	</g>
-	<g font-family="Geist Mono, ui-monospace, monospace" fill="#FFFFFF" font-weight="700">
-		<text x="240" y="262" font-size="44" text-anchor="middle">AI</text>
+
+	<g transform="translate(430 96)">
+		<rect x="0" y="0" width="160" height="74" rx="10" fill="#FFFFFF" stroke="#1F94FF" stroke-width="1.4" stroke-opacity="0.4"/>
+		<g fill="#1F94FF" opacity="0.75">
+			<circle cx="12" cy="12" r="2.4"/>
+			<circle cx="22" cy="12" r="2.4"/>
+			<circle cx="32" cy="12" r="2.4"/>
+		</g>
+		<line x1="0" y1="22" x2="160" y2="22" stroke="#1F94FF" stroke-width="0.8" stroke-opacity="0.2"/>
+		<g font-family="Geist Mono, ui-monospace, monospace" font-size="9" fill="#1F94FF">
+			<text x="12" y="40" opacity="0.85">1 fetch_data(source)</text>
+			<text x="12" y="56" opacity="0.85">2 process(data)</text>
+		</g>
 	</g>
-	<g stroke="#86E45F" stroke-width="2" stroke-linecap="round" opacity="0.7" fill="none">
-		<path d="M152 200 H160"/>
-		<path d="M152 232 H160"/>
-		<path d="M152 264 H160"/>
-		<path d="M152 296 H160"/>
-		<path d="M320 200 H328"/>
-		<path d="M320 232 H328"/>
-		<path d="M320 264 H328"/>
-		<path d="M320 296 H328"/>
-		<path d="M200 152 V160"/>
-		<path d="M232 152 V160"/>
-		<path d="M264 152 V160"/>
-		<path d="M200 320 V328"/>
-		<path d="M232 320 V328"/>
-		<path d="M264 320 V328"/>
+
+	<g transform="translate(420 260)" fill="#3DD3F0">
+		<circle cx="0" cy="0" r="2"/>
+		<circle cx="14" cy="-6" r="2.2"/>
+		<circle cx="28" cy="-2" r="2"/>
+		<circle cx="42" cy="-10" r="2.4"/>
+		<circle cx="56" cy="-4" r="2.2"/>
+		<circle cx="70" cy="-12" r="2.6"/>
+		<circle cx="84" cy="-6" r="2.4"/>
+		<circle cx="98" cy="-14" r="2.2"/>
+		<circle cx="112" cy="-8" r="2"/>
+		<circle cx="126" cy="-16" r="2.4"/>
+		<circle cx="140" cy="-10" r="2.2"/>
+		<circle cx="154" cy="-18" r="2"/>
+		<circle cx="0" cy="14" r="1.6" opacity="0.7"/>
+		<circle cx="20" cy="10" r="1.8" opacity="0.7"/>
+		<circle cx="40" cy="6" r="1.6" opacity="0.7"/>
+		<circle cx="60" cy="2" r="1.8" opacity="0.7"/>
+		<circle cx="80" cy="-2" r="1.6" opacity="0.7"/>
+		<circle cx="100" cy="-6" r="1.8" opacity="0.7"/>
+	</g>
+
+	<g transform="translate(470 318)">
+		<path d="M0 0 L 22 -10 L 44 0 L 44 22 Q 44 38 22 48 Q 0 38 0 22 Z" fill="none" stroke="#1F94FF" stroke-width="1.8" stroke-opacity="0.75"/>
+		<rect x="14" y="16" width="16" height="14" rx="2" fill="#1F94FF" opacity="0.78"/>
+		<path d="M18 16 V 12 Q 18 8 22 8 Q 26 8 26 12 V 16" fill="none" stroke="#1F94FF" stroke-width="1.4"/>
+	</g>
+
+	<g stroke="#1F94FF" stroke-width="1" stroke-dasharray="2 5" stroke-linecap="round" opacity="0.4" fill="none">
+		<path d="M210 200 Q 250 180 240 180"/>
+		<path d="M400 180 Q 420 150 430 130"/>
+		<path d="M400 240 Q 430 250 470 320"/>
 	</g>
 </svg>

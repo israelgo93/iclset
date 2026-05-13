@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { conference } from "@/content/conference";
+import { faqs } from "@/content/faqs";
 import { site } from "@/content/site";
 import { eventEndDateTime, eventStartDateTime } from "@/lib/constants";
 import { defaultLocale, locales, type Locale } from "@/types/locale";
@@ -77,5 +78,21 @@ export function buildEventJsonLd(locale: Locale) {
       "@type": "Organization",
       name: conference.location.venue,
     },
+  } as const;
+}
+
+export function buildFaqJsonLd(locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale === "es" ? "es-EC" : "en-US",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question[locale],
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer[locale],
+      },
+    })),
   } as const;
 }

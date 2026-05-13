@@ -26,6 +26,10 @@ export interface ImportantDate {
   title: LocalizedText;
   description: LocalizedText;
   status: "confirmed" | "pending";
+  /** Inicio del hito en formato ISO (YYYY-MM-DD). Usado para calcular estados pasado/activo/futuro. */
+  startsAt?: string;
+  /** Fin del hito en formato ISO (YYYY-MM-DD). Inclusive. */
+  endsAt?: string;
 }
 
 export interface ScheduleItem {

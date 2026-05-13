@@ -23,7 +23,6 @@ const trackStyles: Record<
 		accentText: string;
 		ring: string;
 		badge: string;
-		imageBg: string;
 	}
 > = {
 	bio: {
@@ -36,8 +35,6 @@ const trackStyles: Record<
 		accentText: "text-iclset-emerald",
 		ring: "ring-iclset-emerald/15",
 		badge: "bg-iclset-emerald-soft text-iclset-emerald",
-		imageBg:
-			"bg-gradient-to-br from-iclset-emerald/15 via-iclset-green/10 to-iclset-cyan/10",
 	},
 	agro: {
 		icon: Sprout,
@@ -49,8 +46,6 @@ const trackStyles: Record<
 		accentText: "text-iclset-green",
 		ring: "ring-iclset-green/15",
 		badge: "bg-iclset-green-soft text-iclset-green",
-		imageBg:
-			"bg-gradient-to-br from-iclset-green/15 via-iclset-lime/10 to-iclset-emerald/10",
 	},
 	tech: {
 		icon: Cpu,
@@ -62,8 +57,6 @@ const trackStyles: Record<
 		accentText: "text-iclset-blue",
 		ring: "ring-iclset-blue/15",
 		badge: "bg-iclset-blue-soft text-iclset-blue",
-		imageBg:
-			"bg-gradient-to-br from-iclset-blue/15 via-iclset-sky/10 to-iclset-cyan/10",
 	},
 };
 
@@ -122,28 +115,26 @@ export function TracksSection({
 								}
 								className={`group relative isolate flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/60 bg-white ring-1 ${style.ring} shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.16)] transition-all duration-500 ${style.glow}`}
 							>
-								<div
-									className={`relative overflow-hidden ${style.imageBg}`}
-								>
+								<div className="relative overflow-hidden bg-white">
 									<div className="aspect-[16/10] w-full">
 										<Image
 											src={style.image}
 											alt={track.name[locale]}
-											width={480}
-											height={300}
+											width={640}
+											height={400}
 											className="h-full w-full object-cover object-center"
 										/>
 									</div>
 									<span
-										className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-semibold tracking-wide ${style.badge}`}
+										className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-semibold tracking-wide ring-1 ring-white/60 ${style.badge}`}
 									>
 										{track.shortName[locale]}
 									</span>
 									<span
-										className={`absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold ${style.accentText} shadow-[0_8px_18px_-8px_rgb(15_23_42_/_0.25)] backdrop-blur`}
+										className={`absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold ${style.accentText} shadow-[0_8px_18px_-8px_rgb(15_23_42_/_0.25)] ring-1 ring-iclset-blue/10 backdrop-blur`}
 									>
 										<Icon className="size-3.5" />
-										{locale === "es" ? "Track" : "Track"} · {track.key.toUpperCase()}
+										Track · {track.key.toUpperCase()}
 									</span>
 								</div>
 								<div className="flex flex-1 flex-col p-6 sm:p-7">

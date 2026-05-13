@@ -23,6 +23,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Publication of the call, templates, and anonymization guidelines.",
 		},
 		status: "confirmed",
+		startsAt: "2026-05-11",
+		endsAt: "2026-05-13",
 	},
 	{
 		key: "submission",
@@ -39,6 +41,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Full paper and scientific poster submission through Microsoft CMT.",
 		},
 		status: "confirmed",
+		startsAt: "2026-04-27",
+		endsAt: "2026-06-14",
 	},
 	{
 		key: "review-assignment",
@@ -55,6 +59,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Track Chairs assign two reviewers per contribution and control conflicts of interest.",
 		},
 		status: "confirmed",
+		startsAt: "2026-06-15",
+		endsAt: "2026-06-17",
 	},
 	{
 		key: "peer-review",
@@ -71,6 +77,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Peer evaluation through rubric, anonymized comments, and track-level decision.",
 		},
 		status: "confirmed",
+		startsAt: "2026-06-17",
+		endsAt: "2026-06-30",
 	},
 	{
 		key: "notification",
@@ -87,6 +95,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Notification of acceptance, minor revision, major revision, or rejection.",
 		},
 		status: "confirmed",
+		startsAt: "2026-07-01",
+		endsAt: "2026-07-03",
 	},
 	{
 		key: "camera-ready",
@@ -103,6 +113,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Final versions of accepted work are submitted with reviewer comments addressed.",
 		},
 		status: "confirmed",
+		startsAt: "2026-07-04",
+		endsAt: "2026-07-10",
 	},
 	{
 		key: "registration",
@@ -119,6 +131,8 @@ export const importantDates: ImportantDate[] = [
 			en: "Institutional registration for attendees, authors, faculty, and professionals.",
 		},
 		status: "confirmed",
+		startsAt: "2026-05-04",
+		endsAt: "2026-07-14",
 	},
 	{
 		key: "event",
@@ -135,5 +149,7 @@ export const importantDates: ImportantDate[] = [
 			en: "Three hybrid days at ULEAM Manta, Alfonso Aguilar Ruilova Auditorium, Plaza Centenario, and institutional Zoom rooms.",
 		},
 		status: "confirmed",
+		startsAt: "2026-07-15",
+		endsAt: "2026-07-17",
 	},
 ];

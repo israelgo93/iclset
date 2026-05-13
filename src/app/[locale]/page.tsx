@@ -12,7 +12,11 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { TimelineSection } from "@/components/sections/timeline-section";
 import { TracksSection } from "@/components/sections/tracks-section";
 import { VenueSection } from "@/components/sections/venue-section";
-import { buildEventJsonLd, buildPageMetadata } from "@/lib/metadata";
+import {
+  buildEventJsonLd,
+  buildFaqJsonLd,
+  buildPageMetadata,
+} from "@/lib/metadata";
 import { isLocale } from "@/types/locale";
 
 export async function generateMetadata({
@@ -41,6 +45,7 @@ export default async function HomePage({
   }
 
   const eventJsonLd = buildEventJsonLd(locale);
+  const faqJsonLd = buildFaqJsonLd(locale);
 
   return (
     <>
@@ -48,6 +53,11 @@ export default async function HomePage({
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <HeroSection locale={locale} />
       <StatsSection locale={locale} />
