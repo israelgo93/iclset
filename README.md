@@ -36,6 +36,7 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad hibrida.
 - `/es/committees` y `/en/committees`: chairs, comités y organización.
 - `/es/contact` y `/en/contact`: canales institucionales.
+- `/en/cmt-acknowledgment.html`: pagina estatica verificable por `curl` con el acknowledgement obligatorio de Microsoft CMT y `charset=UTF-8`.
 
 ## Contenido centralizado
 
@@ -50,6 +51,7 @@ Todo el contenido sensible vive en `src/content`:
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
+- `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques preliminares de lineamientos para autores y envio.
 
 ## Visuales
 
@@ -105,5 +107,15 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Sitio bilingue publicado en AWS ECS Fargate.
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
+- Requisitos preliminares de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
+- Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.
+
+## Planificacion CMT
+
+- Mantener `/en/call-for-papers` como pagina publica central para CFP, fechas futuras, lineamientos de autores, lineamientos de envio, donde enviar y como enviar.
+- Mantener `/en/committees` como evidencia publica de chairs, comite honorifico, comite organizador y comite cientifico.
+- Mantener `/en/cmt-acknowledgment.html` como pagina HTML estatica para verificacion automatica de Microsoft CMT.
+- Validar en cada despliegue que el acknowledgement responde con `Content-Type: text/html; charset=UTF-8` y contiene el texto exacto solicitado por Microsoft CMT.
+- Cuando CMT cree el sitio oficial del congreso, reemplazar el placeholder por el enlace final de envio sin habilitar otros canales de recepcion.

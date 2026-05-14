@@ -483,3 +483,11 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 - `iclset.uleam.ec` esta configurado como CNAME externo hacia el ALB y usa certificado ACM adicional asociado al listener HTTPS.
 - El contacto provisional del sitio es `israel.gomez@uleam.edu.ec`.
 - Procedimientos reutilizables documentados en `SKILLS.md` y `skills/`.
+
+## Estado CMT - 2026-05-14
+
+- La pagina Call for Papers debe conservar visibles los requisitos de Microsoft CMT: CFP, fechas futuras claras, comites, author guidelines, submission guidelines, where to submit y how to submit.
+- El acknowledgement obligatorio de Microsoft CMT vive en `/en/cmt-acknowledgment.html` como HTML estatico, texto plano y visible en el HTML fuente.
+- La ruta de acknowledgement debe responder `200 OK` con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4`.
+- El enlace final de envio CMT sigue como placeholder hasta que Microsoft cree el sitio oficial de ICLSET 2026.
+- Antes de solicitar validacion CMT, ejecutar `curl.exe -i https://iclset.com/en/cmt-acknowledgment.html` y confirmar que contiene el texto exacto del acknowledgement.

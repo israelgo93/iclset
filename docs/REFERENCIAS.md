@@ -426,9 +426,30 @@ Uso:
 - Ciclo de vida de submissions.
 - Revisión single-blind y double-blind.
 
+### Microsoft CMT website requirements
+
+URL: https://cmt3.research.microsoft.com/docs/help/cheat-sheets/website-requirements.html
+
+Uso:
+
+- Checklist publico obligatorio para el sitio externo de la conferencia.
+- CFP, fechas futuras claras, comites, author guidelines, submission guidelines, where to submit, how to submit y acknowledgement.
+- Regla de no publicar canales alternos de envio distintos a CMT.
+
+### Microsoft CMT acknowledgment
+
+URL: https://cmt3.research.microsoft.com/docs/help/general/request-conference.html#cmt-acknowledgment
+
+Uso:
+
+- Texto obligatorio copiado de forma literal en el sitio externo.
+- Verificacion por `curl` y por HTML fuente.
+- Requisito de pagina accesible con `200 OK` y charset valido `UTF-8`.
+
 ## Aplicación en la versión inicial · 2026-05-11
 
 - De ICLR, NeurIPS y CVPR se adapta la separación entre home, Call for Papers, programa, comités y fechas importantes.
 - De CLEI, CITIS e INCISCOS se adapta el enfoque regional, multitrack y de convocatoria académica.
 - De las referencias técnicas se implementa App Router, SSG por locale, metadata, sitemap, robots, Tailwind CSS v4, shadcn/ui y preparación Supabase.
-- Las URLs externas específicas de CMT, plantillas y revistas aliadas quedan pendientes hasta confirmación institucional.
+- Las URLs externas específicas de plantillas quedan pendientes hasta confirmación institucional.
+- El enlace final de envio CMT queda pendiente hasta que Microsoft cree el sitio oficial, pero el sitio ya publica el placeholder aceptado por CMT y el acknowledgement verificable.

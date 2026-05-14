@@ -515,21 +515,21 @@ Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme
 
 ```css
 :root {
-	--iclset-navy: oklch(20% 0.06 250);
-	--iclset-ink: oklch(18% 0.04 250);
-	--iclset-muted: oklch(52% 0.025 240);
-	--iclset-surface: oklch(98% 0.012 220);
+  --iclset-navy: oklch(20% 0.06 250);
+  --iclset-ink: oklch(18% 0.04 250);
+  --iclset-muted: oklch(52% 0.025 240);
+  --iclset-surface: oklch(98% 0.012 220);
 
-	--iclset-blue: oklch(63% 0.21 240);
-	--iclset-blue-soft: oklch(94% 0.04 235);
-	--iclset-sky: oklch(74% 0.16 230);
-	--iclset-cyan: oklch(80% 0.14 215);
-	--iclset-cyan-soft: oklch(95% 0.04 215);
-	--iclset-emerald: oklch(72% 0.18 158);
-	--iclset-emerald-soft: oklch(94% 0.05 158);
-	--iclset-green: oklch(78% 0.22 142);
-	--iclset-green-soft: oklch(95% 0.06 142);
-	--iclset-lime: oklch(86% 0.20 130);
+  --iclset-blue: oklch(63% 0.21 240);
+  --iclset-blue-soft: oklch(94% 0.04 235);
+  --iclset-sky: oklch(74% 0.16 230);
+  --iclset-cyan: oklch(80% 0.14 215);
+  --iclset-cyan-soft: oklch(95% 0.04 215);
+  --iclset-emerald: oklch(72% 0.18 158);
+  --iclset-emerald-soft: oklch(94% 0.05 158);
+  --iclset-green: oklch(78% 0.22 142);
+  --iclset-green-soft: oklch(95% 0.06 142);
+  --iclset-lime: oklch(86% 0.2 130);
 }
 ```
 
@@ -576,3 +576,10 @@ Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme
 - No introducir fondos navy dominantes en home, page heroes y secciones intermedias.
 - Mantener contraste AA, foco visible y dimensiones estables en mobile, tablet, desktop y wide.
 - No sobrecargar con animaciones constantes; el movimiento debe reforzar jerarquia e interaccion.
+
+## Ajuste editorial CMT · 2026-05-14
+
+- La seccion CMT en Call for Papers debe ser documental, escaneable y sobria; no debe parecer un banner promocional.
+- Los titulos `AUTHOR GUIDELINES`, `SUBMISSION GUIDELINES`, `WHERE TO SUBMIT` y `HOW TO SUBMIT` deben quedar visibles como textos reales en la pagina.
+- El acknowledgement debe mantenerse como parrafo simple, sin negrita, cursiva ni transformaciones visuales que modifiquen el texto requerido por Microsoft CMT.
+- La pagina `/en/cmt-acknowledgment.html` prioriza verificacion automatica sobre diseño; debe conservar HTML minimo, texto plano y `charset=UTF-8`.

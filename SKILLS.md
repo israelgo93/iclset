@@ -7,6 +7,7 @@ Este indice documenta procedimientos reutilizables para agentes que deban replic
 - [GitHub Actions con AWS OIDC](skills/github-actions-aws-oidc.md): configurar variables, secretos, rol OIDC y workflow de despliegue.
 - [AWS ECS Fargate para Next.js](skills/aws-ecs-fargate-nextjs.md): preparar Docker, ECR, ECS cluster, task definition y service.
 - [ALB, ACM y Route 53](skills/aws-alb-acm-route53.md): publicar el servicio con HTTPS, health checks y alias DNS.
+- [CI/CD generico GitHub Actions a AWS ECS Fargate](skills/aws-ecs-fargate-cicd-general.md): guia reutilizable para cualquier proyecto con OIDC, ECR, ECS, ALB, ACM, DNS y validacion.
 
 ## Principios
 
@@ -25,3 +26,4 @@ Este indice documenta procedimientos reutilizables para agentes que deban replic
 - AWS region: `us-east-1`.
 - ECS cluster: `iclset-production`.
 - ECS service: `iclset-web`.
+- Validacion CMT: `curl.exe -i https://iclset.com/en/cmt-acknowledgment.html` debe devolver `200 OK`, `charset=UTF-8` y el acknowledgement exacto de Microsoft CMT.

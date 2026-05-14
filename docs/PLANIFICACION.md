@@ -526,3 +526,13 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Hero renovado con icono del evento y animación Motion inspirada en biociencia, agrociencia y tecnología.
 - Imágenes SVG creadas para los tres días del programa y el icono oficial del evento.
 - Copy publico actualizado para eliminar referencias a versiones, progreso tecnico y estructura futura.
+
+## Actualizacion CMT - 2026-05-14
+
+### Completado
+
+- Requisitos oficiales de Microsoft CMT incorporados en la pagina Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
+- Placeholder publico de envio configurado: el enlace de Microsoft CMT se publicara cuando CMT cree el sitio oficial de ICLSET 2026.
+- Se explicita que no se reciben trabajos por correo electronico ni por plataformas distintas a Microsoft CMT.
+- Acknowledgement obligatorio de CMT publicado como texto plano estatico y verificable en `/en/cmt-acknowledgment.html`.
+- La ruta de acknowledgement debe responder con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4` porque CMT lo reporta como charset invalido.

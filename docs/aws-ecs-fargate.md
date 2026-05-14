@@ -138,6 +138,7 @@ Invoke-WebRequest -Uri "https://iclset.com/healthz" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/es" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/en" -UseBasicParsing
 Invoke-WebRequest -Uri "https://iclset.com/sitemap.xml" -UseBasicParsing
+curl.exe -i https://iclset.com/en/cmt-acknowledgment.html
 curl.exe -I https://iclset.uleam.ec/healthz
 curl.exe -I https://iclset.uleam.ec/es
 curl.exe -I https://iclset.uleam.ec/en
@@ -160,3 +161,11 @@ ACM certificate ARN: arn:aws:acm:us-east-1:761018886122:certificate/078b5f1c-0e7
 ## Estado editorial del sitio
 
 El sitio contiene informacion editorial oficial extraida de la documentacion institucional: tracks, ejes tematicos, chairs, comites, fechas, programa, revistas aliadas, CMT, tarifas e imagenes de referencia del evento.
+
+## Validacion CMT
+
+- La ruta publica `https://iclset.com/en/cmt-acknowledgment.html` debe responder `200 OK`.
+- El header debe incluir `content-type: text/html; charset=UTF-8`.
+- El body debe incluir el acknowledgement exacto de Microsoft CMT como texto plano visible en el HTML fuente.
+- La pagina Call for Papers debe mantener CFP, fechas futuras claras, author guidelines, submission guidelines, where to submit y how to submit.
+- La pagina Committees debe estar accesible como evidencia publica de comites.

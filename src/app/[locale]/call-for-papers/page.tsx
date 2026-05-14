@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { CmtComplianceSection } from "@/components/sections/cmt-compliance-section";
 import { CfpSection } from "@/components/sections/cfp-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { TimelineSection } from "@/components/sections/timeline-section";
@@ -57,6 +58,7 @@ export default async function CallForPapersPage({
         }
       />
       <CfpSection locale={locale} />
+      <CmtComplianceSection locale={locale} />
       <TimelineSection locale={locale} />
       <FinalCtaSection locale={locale} />
     </>
