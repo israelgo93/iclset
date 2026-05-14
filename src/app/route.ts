@@ -1,7 +1,10 @@
-import { NextResponse } from "next/server";
-
 import { defaultLocale } from "@/types/locale";
 
-export function GET(request: Request) {
-	return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
+export function GET() {
+	return new Response(null, {
+		status: 307,
+		headers: {
+			Location: `/${defaultLocale}`,
+		},
+	});
 }
