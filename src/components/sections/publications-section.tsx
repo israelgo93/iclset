@@ -17,11 +17,11 @@ interface PublicationsSectionProps {
 
 const processLabels = {
 	es: [
-		"Recepcion",
-		"Revision doble ciego",
-		"Decision editorial",
-		"Presentacion",
-		"Canalizacion a revista",
+		"Recepción",
+		"Revisión doble ciego",
+		"Decisión editorial",
+		"Presentación",
+		"Canalización a revista",
 	],
 	en: [
 		"Reception",
@@ -47,12 +47,12 @@ export function PublicationsSection({
 					eyebrow={locale === "es" ? "Proceso editorial" : "Editorial process"}
 					title={
 						locale === "es"
-							? "Publicacion academica con revision y ruta posterior"
+							? "Publicación académica con revisión y ruta posterior"
 							: "Academic publication with review and post-conference pathways"
 					}
 					description={
 						locale === "es"
-							? "ICLSET 2026 contempla libro de actas y canalizacion de articulos aceptados hacia revistas aliadas, respetando los procesos editoriales de cada publicacion."
+							? "ICLSET 2026 contempla libro de actas y canalización de artículos aceptados hacia revistas aliadas, respetando los procesos editoriales de cada publicación."
 							: "ICLSET 2026 includes proceedings and pathways for accepted papers toward partner journals, respecting each publication's editorial process."
 					}
 				/>
@@ -71,16 +71,16 @@ export function PublicationsSection({
 								visible: { opacity: 1, y: 0 },
 							}}
 							transition={{ duration: 0.5, ease: easing }}
-							className="relative overflow-hidden rounded-2xl border border-iclset-blue/10 bg-white p-5 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)]"
+							className="border-iclset-blue/10 relative overflow-hidden rounded-2xl border bg-white p-5 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)]"
 						>
 							<span
 								aria-hidden="true"
-								className="absolute -top-6 -right-6 -z-10 size-16 rounded-full bg-gradient-to-br from-iclset-blue/15 to-iclset-green/15 blur-2xl"
+								className="from-iclset-blue/15 to-iclset-green/15 absolute -top-6 -right-6 -z-10 size-16 rounded-full bg-gradient-to-br blur-2xl"
 							/>
-							<span className="inline-grid size-10 place-items-center rounded-full bg-gradient-to-br from-iclset-blue to-iclset-sky font-mono text-sm font-semibold text-white shadow-md shadow-iclset-blue/30">
+							<span className="from-iclset-blue to-iclset-sky shadow-iclset-blue/30 inline-grid size-10 place-items-center rounded-full bg-gradient-to-br font-mono text-sm font-semibold text-white shadow-md">
 								{index + 1}
 							</span>
-							<p className="mt-4 text-sm font-semibold text-iclset-ink">
+							<p className="text-iclset-ink mt-4 text-sm font-semibold">
 								{label}
 							</p>
 						</motion.div>
@@ -106,18 +106,18 @@ export function PublicationsSection({
 									? undefined
 									: { y: -6, transition: { duration: 0.25, ease: easing } }
 							}
-							className="group rounded-2xl border border-iclset-blue/10 bg-white p-5 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)] transition-all duration-500 hover:border-iclset-emerald/30 hover:shadow-[0_28px_70px_-30px_rgb(78_205_87_/_0.35)]"
+							className="group border-iclset-blue/10 hover:border-iclset-emerald/30 rounded-2xl border bg-white p-5 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)] transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(78_205_87_/_0.35)]"
 						>
-							<span className="inline-grid size-10 place-items-center rounded-xl bg-iclset-emerald-soft text-iclset-emerald">
+							<span className="bg-iclset-emerald-soft text-iclset-emerald inline-grid size-10 place-items-center rounded-xl">
 								<FileCheck2 className="size-5" />
 							</span>
-							<h3 className="mt-4 font-semibold text-iclset-ink">
+							<h3 className="text-iclset-ink mt-4 font-semibold">
 								{journal.name}
 							</h3>
-							<p className="mt-2 text-sm leading-6 text-iclset-muted">
+							<p className="text-iclset-muted mt-2 text-sm leading-6">
 								{journal.area[locale]}
 							</p>
-							<p className="mt-3 text-xs font-semibold tracking-[0.12em] text-iclset-blue uppercase">
+							<p className="text-iclset-blue mt-3 text-xs font-semibold tracking-[0.12em] uppercase">
 								{journal.indexing[locale]}
 							</p>
 							{journal.url ? (
@@ -125,7 +125,7 @@ export function PublicationsSection({
 									href={journal.url}
 									target="_blank"
 									rel="noreferrer"
-									className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-iclset-ink transition-colors hover:text-iclset-blue"
+									className="text-iclset-ink hover:text-iclset-blue mt-4 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
 								>
 									{locale === "es" ? "Ver revista" : "View journal"}
 									<ExternalLink className="size-3.5" />

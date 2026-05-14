@@ -35,28 +35,27 @@ export function CfpSection({ locale }: CfpSectionProps) {
 			title: "Full paper",
 			text:
 				locale === "es"
-					? "Articulo completo de 8 a 12 paginas en plantilla del congreso."
+					? "Artículo completo de 8 a 12 páginas en la plantilla del congreso."
 					: "Full paper, 8 to 12 pages, using the conference template.",
 			accent: "from-iclset-blue to-iclset-sky",
 			color: "text-iclset-blue",
 		},
 		{
 			icon: BookOpenCheck,
-			title: locale === "es" ? "Poster cientifico" : "Scientific poster",
+			title: locale === "es" ? "Póster científico" : "Scientific poster",
 			text:
 				locale === "es"
-					? "Contribucion de 2 paginas y poster para feria academica."
+					? "Contribución de 2 páginas y póster para la feria académica."
 					: "Two-page contribution and poster for the academic fair.",
 			accent: "from-iclset-emerald to-iclset-green",
 			color: "text-iclset-emerald",
 		},
 		{
 			icon: ShieldCheck,
-			title:
-				locale === "es" ? "Revision doble ciego" : "Double-blind review",
+			title: locale === "es" ? "Revisión doble ciego" : "Double-blind review",
 			text:
 				locale === "es"
-					? "Dos revisores por articulo; tercer revisor o decision del Track Chair si hay discrepancia."
+					? "Dos revisores por artículo; tercer revisor o decisión del Track Chair si hay discrepancia."
 					: "Two reviewers per paper; third reviewer or Track Chair decision when reviews conflict.",
 			accent: "from-iclset-cyan to-iclset-sky",
 			color: "text-iclset-sky",
@@ -66,7 +65,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
 			title: conference.editorialPlatform,
 			text:
 				locale === "es"
-					? "Recepcion, asignacion de revisores, rubricas y notificaciones."
+					? "Recepción, asignación de revisores, rúbricas y notificaciones."
 					: "Reception, reviewer assignment, rubrics, and notifications.",
 			accent: "from-iclset-green to-iclset-lime",
 			color: "text-iclset-green",
@@ -80,12 +79,12 @@ export function CfpSection({ locale }: CfpSectionProps) {
 					eyebrow="Call for Papers"
 					title={
 						locale === "es"
-							? "Convocatoria academica con trazabilidad editorial"
+							? "Convocatoria académica con trazabilidad editorial"
 							: "Academic call with editorial traceability"
 					}
 					description={
 						locale === "es"
-							? "Los autores envian full papers de 8 a 12 paginas y posters cientificos anonimizados mediante el flujo editorial de Microsoft CMT."
+							? "Los autores envían full papers de 8 a 12 páginas y pósters científicos anonimizados mediante el flujo editorial de Microsoft CMT."
 							: "Authors submit anonymized 8-12 page full papers and scientific posters through the Microsoft CMT editorial workflow."
 					}
 				/>
@@ -96,7 +95,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
 					viewport={{ once: true, margin: "-80px" }}
 					transition={{ duration: 0.6, ease: easing }}
 				>
-					<div className="rounded-[1.85rem] bg-gradient-to-br from-white via-iclset-cyan-soft/40 to-iclset-emerald-soft/30 p-6 sm:p-8">
+					<div className="via-iclset-cyan-soft/40 to-iclset-emerald-soft/30 rounded-[1.85rem] bg-gradient-to-br from-white p-6 sm:p-8">
 						<div className="grid gap-4 sm:grid-cols-2">
 							{items.map((item, index) => {
 								const Icon = item.icon;
@@ -116,7 +115,10 @@ export function CfpSection({ locale }: CfpSectionProps) {
 										whileHover={
 											shouldReduceMotion
 												? undefined
-												: { y: -4, transition: { duration: 0.25, ease: easing } }
+												: {
+														y: -4,
+														transition: { duration: 0.25, ease: easing },
+													}
 										}
 										className="group rounded-2xl border border-white/70 bg-white/85 p-5 shadow-[0_18px_40px_-28px_rgb(15_23_42_/_0.2)] backdrop-blur"
 									>
@@ -125,22 +127,22 @@ export function CfpSection({ locale }: CfpSectionProps) {
 										>
 											<Icon className="size-5" />
 										</span>
-										<h3 className="mt-4 text-base font-semibold text-iclset-ink">
+										<h3 className="text-iclset-ink mt-4 text-base font-semibold">
 											{item.title}
 										</h3>
-										<p className="mt-2 text-sm leading-6 text-iclset-muted">
+										<p className="text-iclset-muted mt-2 text-sm leading-6">
 											{item.text}
 										</p>
 									</motion.div>
 								);
 							})}
 						</div>
-						<div className="mt-6 grid gap-4 rounded-2xl border border-iclset-blue/15 bg-iclset-blue/8 p-5 sm:flex sm:items-center sm:justify-between">
+						<div className="border-iclset-blue/15 bg-iclset-blue/8 mt-6 grid gap-4 rounded-2xl border p-5 sm:flex sm:items-center sm:justify-between">
 							<div>
-								<p className="text-[0.7rem] font-semibold tracking-[0.18em] text-iclset-blue uppercase">
-									{locale === "es" ? "Recepcion en CMT" : "CMT submission"}
+								<p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+									{locale === "es" ? "Recepción en CMT" : "CMT submission"}
 								</p>
-								<p className="mt-1 text-xl font-semibold text-iclset-ink">
+								<p className="text-iclset-ink mt-1 text-xl font-semibold">
 									{submissionDate?.date[locale]}
 								</p>
 							</div>

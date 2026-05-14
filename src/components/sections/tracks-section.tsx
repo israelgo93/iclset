@@ -30,8 +30,7 @@ const trackStyles: Record<
 		image: "/tracks/bio.png",
 		iconBg: "bg-gradient-to-br from-iclset-emerald to-iclset-green",
 		iconColor: "text-white",
-		glow:
-			"hover:shadow-[0_36px_90px_-40px_rgb(78_205_87_/_0.55)] hover:ring-iclset-emerald/40",
+		glow: "hover:shadow-[0_36px_90px_-40px_rgb(78_205_87_/_0.55)] hover:ring-iclset-emerald/40",
 		accentText: "text-iclset-emerald",
 		ring: "ring-iclset-emerald/15",
 		badge: "bg-iclset-emerald-soft text-iclset-emerald",
@@ -41,8 +40,7 @@ const trackStyles: Record<
 		image: "/tracks/agro.png",
 		iconBg: "bg-gradient-to-br from-iclset-green to-iclset-lime",
 		iconColor: "text-iclset-navy",
-		glow:
-			"hover:shadow-[0_36px_90px_-40px_rgb(134_228_95_/_0.55)] hover:ring-iclset-green/40",
+		glow: "hover:shadow-[0_36px_90px_-40px_rgb(134_228_95_/_0.55)] hover:ring-iclset-green/40",
 		accentText: "text-iclset-green",
 		ring: "ring-iclset-green/15",
 		badge: "bg-iclset-green-soft text-iclset-green",
@@ -52,8 +50,7 @@ const trackStyles: Record<
 		image: "/tracks/tech.png",
 		iconBg: "bg-gradient-to-br from-iclset-blue to-iclset-sky",
 		iconColor: "text-white",
-		glow:
-			"hover:shadow-[0_36px_90px_-40px_rgb(31_148_255_/_0.55)] hover:ring-iclset-blue/40",
+		glow: "hover:shadow-[0_36px_90px_-40px_rgb(31_148_255_/_0.55)] hover:ring-iclset-blue/40",
 		accentText: "text-iclset-blue",
 		ring: "ring-iclset-blue/15",
 		badge: "bg-iclset-blue-soft text-iclset-blue",
@@ -77,15 +74,15 @@ export function TracksSection({
 		<section className="section-band relative">
 			<div className="section-container">
 				<SectionHeading
-					eyebrow={locale === "es" ? "Tracks cientificos" : "Scientific tracks"}
+					eyebrow={locale === "es" ? "Tracks científicos" : "Scientific tracks"}
 					title={
 						locale === "es"
-							? "Tres areas, una agenda de investigacion aplicada"
+							? "Tres áreas, una agenda de investigación aplicada"
 							: "Three areas, one applied research agenda"
 					}
 					description={
 						locale === "es"
-							? "La conferencia articula ciencias de la vida, produccion sostenible y tecnologia emergente para responder a desafios territoriales."
+							? "La conferencia articula ciencias de la vida, producción sostenible y tecnología emergente para responder a desafíos territoriales."
 							: "The conference connects life sciences, sustainable production, and emerging technology to address territorial challenges."
 					}
 				/>
@@ -137,20 +134,20 @@ export function TracksSection({
 										{track.shortName[locale]}
 									</span>
 									<span
-										className={`absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold ${style.accentText} shadow-[0_8px_18px_-8px_rgb(15_23_42_/_0.25)] ring-1 ring-iclset-blue/10 backdrop-blur`}
+										className={`absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold ${style.accentText} ring-iclset-blue/10 shadow-[0_8px_18px_-8px_rgb(15_23_42_/_0.25)] ring-1 backdrop-blur`}
 									>
 										<Icon className="size-3.5" />
 										Track · {track.key.toUpperCase()}
 									</span>
 								</div>
 								<div className="flex flex-1 flex-col p-6 sm:p-7">
-									<h3 className="text-xl font-semibold tracking-tight text-iclset-ink sm:text-2xl">
+									<h3 className="text-iclset-ink text-xl font-semibold tracking-tight sm:text-2xl">
 										{track.name[locale]}
 									</h3>
-									<p className="mt-3 text-sm leading-6 text-iclset-muted">
+									<p className="text-iclset-muted mt-3 text-sm leading-6">
 										{track.description[locale]}
 									</p>
-									<div className="mt-5 rounded-2xl border border-iclset-blue/10 bg-iclset-blue-soft/40 p-4">
+									<div className="border-iclset-blue/10 bg-iclset-blue-soft/40 mt-5 rounded-2xl border p-4">
 										<p
 											className={`text-[0.7rem] font-semibold tracking-[0.16em] uppercase ${style.accentText}`}
 										>
@@ -158,8 +155,10 @@ export function TracksSection({
 												? "Carreras articuladoras"
 												: "Articulating programs"}
 										</p>
-										<p className="mt-2 text-sm leading-6 font-medium text-iclset-ink">
-											{track.careers.map((career) => career[locale]).join(" · ")}
+										<p className="text-iclset-ink mt-2 text-sm leading-6 font-medium">
+											{track.careers
+												.map((career) => career[locale])
+												.join(" · ")}
 										</p>
 									</div>
 									<div className="mt-4 flex flex-wrap gap-2">
@@ -167,7 +166,7 @@ export function TracksSection({
 											(topic) => (
 												<span
 													key={topic[locale]}
-													className="rounded-full bg-iclset-surface px-3 py-1 text-xs font-medium text-iclset-ink ring-1 ring-iclset-blue/10"
+													className="bg-iclset-surface text-iclset-ink ring-iclset-blue/10 rounded-full px-3 py-1 text-xs font-medium ring-1"
 												>
 													{topic[locale]}
 												</span>
@@ -175,13 +174,13 @@ export function TracksSection({
 										)}
 									</div>
 									{detailed ? (
-										<div className="mt-5 rounded-2xl border border-iclset-blue/10 bg-white p-4">
+										<div className="border-iclset-blue/10 mt-5 rounded-2xl border bg-white p-4">
 											<p
 												className={`text-[0.7rem] font-semibold tracking-[0.16em] uppercase ${style.accentText}`}
 											>
 												Chair
 											</p>
-											<p className="mt-1 text-sm font-medium text-iclset-ink">
+											<p className="text-iclset-ink mt-1 text-sm font-medium">
 												{track.chair[locale]}
 											</p>
 										</div>

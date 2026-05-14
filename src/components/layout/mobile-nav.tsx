@@ -32,14 +32,14 @@ export function MobileNav({ locale }: MobileNavProps) {
 					variant="outline"
 					size="icon-lg"
 					className="xl:hidden"
-					aria-label={locale === "es" ? "Abrir menu" : "Open menu"}
+					aria-label={locale === "es" ? "Abrir menú" : "Open menu"}
 				>
 					<Menu className="size-5" />
 				</Button>
 			</SheetTrigger>
 			<SheetContent side="right" className="w-[min(88vw,24rem)]">
 				<SheetHeader>
-					<SheetTitle className="text-left text-iclset-ink">
+					<SheetTitle className="text-iclset-ink text-left">
 						{conference.acronym}
 					</SheetTitle>
 				</SheetHeader>
@@ -49,7 +49,7 @@ export function MobileNav({ locale }: MobileNavProps) {
 							key={item.href}
 							href={localizePath(locale, item.href)}
 							onClick={() => setOpen(false)}
-							className="rounded-xl px-3 py-3 text-base font-medium text-iclset-ink transition-colors hover:bg-iclset-blue/8 hover:text-iclset-blue"
+							className="text-iclset-ink hover:bg-iclset-blue/8 hover:text-iclset-blue rounded-xl px-3 py-3 text-base font-medium transition-colors"
 						>
 							{item.label[locale]}
 						</Link>

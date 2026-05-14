@@ -38,16 +38,16 @@ export function FinalCtaSection({ locale }: FinalCtaSectionProps) {
 					/>
 					<div
 						aria-hidden="true"
-						className="absolute -top-24 -right-24 -z-10 size-72 rounded-full bg-iclset-green/30 blur-3xl"
+						className="bg-iclset-green/30 absolute -top-24 -right-24 -z-10 size-72 rounded-full blur-3xl"
 					/>
 					<div
 						aria-hidden="true"
-						className="absolute -bottom-24 -left-24 -z-10 size-72 rounded-full bg-iclset-blue/30 blur-3xl"
+						className="bg-iclset-blue/30 absolute -bottom-24 -left-24 -z-10 size-72 rounded-full blur-3xl"
 					/>
 
 					<div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
 						<div>
-							<p className="text-sm font-semibold tracking-[0.22em] text-iclset-cyan uppercase">
+							<p className="text-iclset-cyan text-sm font-semibold tracking-[0.22em] uppercase">
 								{conference.acronym}
 							</p>
 							<h2 className="mt-3 max-w-3xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.85rem]">
@@ -57,7 +57,7 @@ export function FinalCtaSection({ locale }: FinalCtaSectionProps) {
 							</h2>
 							<p className="mt-5 max-w-2xl text-base leading-7 text-white/72">
 								{locale === "es"
-									? "Revise los lineamientos, seleccione el track correspondiente y prepare su contribucion anonimizada para el flujo de revision doble ciego."
+									? "Revise los lineamientos, seleccione el track correspondiente y prepare su contribución anonimizada para el flujo de revisión doble ciego."
 									: "Review the guidelines, select the right track, and prepare an anonymized contribution for the double-blind review workflow."}
 							</p>
 						</div>

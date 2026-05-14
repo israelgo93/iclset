@@ -67,7 +67,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         </div>
         <div>
           <p className="text-iclset-cyan text-xs font-semibold tracking-[0.18em] uppercase">
-            {locale === "es" ? "Navegacion" : "Navigation"}
+            {locale === "es" ? "Navegación" : "Navigation"}
           </p>
           <div className="mt-5 grid gap-2">
             {navigation.slice(0, 5).map((item) => (
@@ -102,7 +102,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           </a>
           <p className="mt-8 text-xs leading-5 text-white/40">
             © 2026 {conference.acronym}. Universidad Laica Eloy Alfaro de
-            Manabi.
+            Manabí.
           </p>
         </div>
       </div>

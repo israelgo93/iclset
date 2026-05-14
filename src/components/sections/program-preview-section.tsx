@@ -37,15 +37,15 @@ export function ProgramPreviewSection({
 		<section className="section-band relative">
 			<div className="section-container">
 				<SectionHeading
-					eyebrow={locale === "es" ? "Programa academico" : "Academic program"}
+					eyebrow={locale === "es" ? "Programa académico" : "Academic program"}
 					title={
 						locale === "es"
-							? "Tres dias de ciencia, dialogo y transferencia"
+							? "Tres días de ciencia, diálogo y transferencia"
 							: "Three days of science, dialogue, and transfer"
 					}
 					description={
 						locale === "es"
-							? "La agenda combina plenarias presenciales en el Paraninfo, transmision por Zoom, sesiones paralelas por track y feria de posters en Plaza Centenario."
+							? "La agenda combina plenarias presenciales en el Paraninfo, transmisión por Zoom, sesiones paralelas por track y feria de pósters en Plaza Centenario."
 							: "The agenda combines in-person plenaries at the auditorium, Zoom broadcast, parallel sessions by track, and a poster fair at Plaza Centenario."
 					}
 				/>
@@ -63,11 +63,11 @@ export function ProgramPreviewSection({
 								ease: easing,
 								delay: 0.06 * index,
 							}}
-							className="overflow-hidden rounded-[1.85rem] border border-iclset-blue/10 bg-white shadow-[0_24px_70px_-40px_rgb(15_23_42_/_0.2)]"
+							className="border-iclset-blue/10 overflow-hidden rounded-[1.85rem] border bg-white shadow-[0_24px_70px_-40px_rgb(15_23_42_/_0.2)]"
 						>
 							<div className="grid lg:grid-cols-[0.85fr_1.15fr]">
 								<div className={`relative p-5 sm:p-6 ${dayAccents[index]}`}>
-									<div className="relative overflow-hidden rounded-[1.35rem] border border-white/30 shadow-2xl shadow-iclset-navy/25">
+									<div className="shadow-iclset-navy/25 relative overflow-hidden rounded-[1.35rem] border border-white/30 shadow-2xl">
 										<div className="aspect-[4/3] w-full">
 											<Image
 												src={day.image.src}
@@ -82,13 +82,13 @@ export function ProgramPreviewSection({
 									</div>
 								</div>
 								<div className="p-5 sm:p-7">
-									<div className="border-b border-iclset-blue/10 pb-5">
+									<div className="border-iclset-blue/10 border-b pb-5">
 										<p
 											className={`text-sm font-semibold tracking-[0.1em] uppercase ${dayAccentText[index]}`}
 										>
 											{day.day[locale]} · {day.date[locale]}
 										</p>
-										<h3 className="mt-2 text-2xl font-semibold tracking-tight text-iclset-ink">
+										<h3 className="text-iclset-ink mt-2 text-2xl font-semibold tracking-tight">
 											{day.summary[locale]}
 										</h3>
 									</div>
@@ -108,7 +108,7 @@ export function ProgramPreviewSection({
 																	},
 																}
 													}
-													className="grid gap-3 rounded-2xl border border-iclset-blue/10 bg-iclset-surface p-4 transition-colors hover:bg-white sm:grid-cols-[7.5rem_1fr]"
+													className="border-iclset-blue/10 bg-iclset-surface grid gap-3 rounded-2xl border p-4 transition-colors hover:bg-white sm:grid-cols-[7.5rem_1fr]"
 												>
 													<div>
 														<p
@@ -116,16 +116,16 @@ export function ProgramPreviewSection({
 														>
 															{item.time}
 														</p>
-														<p className="mt-1 flex items-center gap-1 text-xs font-medium text-iclset-muted">
+														<p className="text-iclset-muted mt-1 flex items-center gap-1 text-xs font-medium">
 															<CalendarClock className="size-3.5" />
 															{item.modality[locale]}
 														</p>
 													</div>
 													<div>
-														<h4 className="font-semibold text-iclset-ink">
+														<h4 className="text-iclset-ink font-semibold">
 															{item.title[locale]}
 														</h4>
-														<p className="mt-1 text-sm leading-6 text-iclset-muted">
+														<p className="text-iclset-muted mt-1 text-sm leading-6">
 															{item.description[locale]}
 														</p>
 													</div>

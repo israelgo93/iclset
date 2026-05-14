@@ -34,15 +34,15 @@ export function CommitteesPreview({
 		<section className="section-band relative">
 			<div className="section-container">
 				<SectionHeading
-					eyebrow={locale === "es" ? "Organizacion" : "Organization"}
+					eyebrow={locale === "es" ? "Organización" : "Organization"}
 					title={
 						locale === "es"
-							? "Chairs y comites de ICLSET 2026"
+							? "Chairs y comités de ICLSET 2026"
 							: "ICLSET 2026 chairs and committees"
 					}
 					description={
 						locale === "es"
-							? "La gobernanza academica integra direccion general, chairs por track, comite honorifico, comite organizador y comite cientifico."
+							? "La gobernanza académica integra dirección general, chairs por track, comité honorífico, comité organizador y comité científico."
 							: "Academic governance includes general leadership, track chairs, honorary committee, organizing committee, and scientific committee."
 					}
 				/>
@@ -67,17 +67,17 @@ export function CommitteesPreview({
 										? undefined
 										: { y: -6, transition: { duration: 0.25, ease: easing } }
 								}
-								className="group rounded-2xl border border-iclset-blue/10 bg-white p-6 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)] transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(31_64_120_/_0.25)] hover:border-iclset-blue/20"
+								className="group border-iclset-blue/10 hover:border-iclset-blue/20 rounded-2xl border bg-white p-6 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.18)] transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(31_64_120_/_0.25)]"
 							>
 								<span
-									className={`inline-grid size-11 place-items-center rounded-2xl text-white shadow-md shadow-iclset-navy/15 ${accents[index % accents.length]}`}
+									className={`shadow-iclset-navy/15 inline-grid size-11 place-items-center rounded-2xl text-white shadow-md ${accents[index % accents.length]}`}
 								>
 									<UsersRound className="size-5" />
 								</span>
-								<h3 className="mt-5 font-semibold text-iclset-ink">
+								<h3 className="text-iclset-ink mt-5 font-semibold">
 									{group.title[locale]}
 								</h3>
-								<p className="mt-2 text-sm leading-6 text-iclset-muted">
+								<p className="text-iclset-muted mt-2 text-sm leading-6">
 									{group.description[locale]}
 								</p>
 								<ul className="mt-4 grid gap-2">
@@ -85,7 +85,7 @@ export function CommitteesPreview({
 										(member) => (
 											<li
 												key={member.es}
-												className="rounded-xl bg-iclset-surface px-3 py-2 text-sm leading-5 font-medium text-iclset-ink ring-1 ring-iclset-blue/8"
+												className="bg-iclset-surface text-iclset-ink ring-iclset-blue/8 rounded-xl px-3 py-2 text-sm leading-5 font-medium ring-1"
 											>
 												{member[locale]}
 											</li>
@@ -100,7 +100,7 @@ export function CommitteesPreview({
 					<div className="mt-10">
 						<Button asChild size="default" variant="outline">
 							<Link href={localizePath(locale, "/committees")}>
-								{locale === "es" ? "Ver comites" : "View committees"}
+								{locale === "es" ? "Ver comités" : "View committees"}
 							</Link>
 						</Button>
 					</div>

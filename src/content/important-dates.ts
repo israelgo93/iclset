@@ -1,10 +1,10 @@
 import type { ImportantDate } from "@/types/conference";
 
 /**
- * Calendario publico de ICLSET 2026.
+ * Calendario público de ICLSET 2026.
  * Solo incluye hitos visibles para autores, asistentes y revistas aliadas,
- * desde el lanzamiento del Call for Papers hasta la culminacion del evento.
- * Las fechas administrativas internas (aval academico, chairs, acuerdos
+ * desde el lanzamiento del Call for Papers hasta la culminación del evento.
+ * Las fechas administrativas internas (aval académico, chairs, acuerdos
  * editoriales, seguimiento editorial post-evento) viven en docs/PLANIFICACION.md.
  */
 export const importantDates: ImportantDate[] = [

@@ -77,7 +77,7 @@ export default async function ContactPage({
         }
         description={
           locale === "es"
-            ? "La comunicacion del evento se gestiona desde la Facultad de Ciencias de la Vida y Tecnologias y los canales institucionales ULEAM."
+            ? "La comunicación del evento se gestiona desde la Facultad de Ciencias de la Vida y Tecnologías y los canales institucionales ULEAM."
             : "Event communications are managed through the Faculty of Life Sciences and Technologies and ULEAM institutional channels."
         }
       />

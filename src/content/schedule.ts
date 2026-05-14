@@ -229,7 +229,7 @@ export const schedule: ScheduleDay[] = [
       src: "/keynote/day-3.png",
       alt: {
         es: "Feria de pósters científicos, mesa de editores y clausura institucional",
-        en: "Scientific poster fair, editors roundtable, and institutional closing",
+        en: "Scientific poster fair, editors' roundtable, and institutional closing",
       },
     },
     items: [

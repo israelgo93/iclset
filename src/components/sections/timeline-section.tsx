@@ -34,10 +34,7 @@ function computeState(item: ImportantDate, now: Date): DateState {
 	return "active";
 }
 
-const stateBadges: Record<
-	DateState,
-	{ es: string; en: string }
-> = {
+const stateBadges: Record<DateState, { es: string; en: string }> = {
 	past: { es: "Completado", en: "Completed" },
 	active: { es: "En curso", en: "In progress" },
 	upcoming: { es: "Próximo", en: "Upcoming" },
@@ -105,12 +102,12 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 					eyebrow={locale === "es" ? "Fechas clave" : "Key dates"}
 					title={
 						locale === "es"
-							? "Calendario oficial de convocatoria, revision y evento"
+							? "Calendario oficial de convocatoria, revisión y evento"
 							: "Official timeline for call, review, and conference"
 					}
 					description={
 						locale === "es"
-							? "El cronograma esta alineado con la recepcion en Microsoft CMT, la revision doble ciego y la ejecucion de ICLSET 2026."
+							? "El cronograma está alineado con la recepción en Microsoft CMT, la revisión doble ciego y la ejecución de ICLSET 2026."
 							: "The timeline is aligned with Microsoft CMT reception, double-blind review, and ICLSET 2026 delivery."
 					}
 				/>
@@ -122,9 +119,7 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 					variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
 				>
 					{importantDates.map((item) => {
-						const state: DateState = now
-							? computeState(item, now)
-							: "upcoming";
+						const state: DateState = now ? computeState(item, now) : "upcoming";
 						const style = stateStyles[state];
 						const Icon = style.icon;
 
@@ -146,7 +141,7 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 							>
 								<div className="flex items-start justify-between gap-3">
 									<span
-										className={`inline-grid size-11 place-items-center rounded-2xl shadow-md shadow-iclset-navy/15 ${style.iconBg} ${style.iconText}`}
+										className={`shadow-iclset-navy/15 inline-grid size-11 place-items-center rounded-2xl shadow-md ${style.iconBg} ${style.iconText}`}
 									>
 										<Icon
 											className={`size-5 ${state === "active" && !shouldReduceMotion ? "animate-spin [animation-duration:2.4s]" : ""}`}
@@ -164,12 +159,12 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 								>
 									{item.date[locale]}
 								</p>
-								<h3
-									className={`mt-2 text-lg font-semibold ${style.titleText}`}
-								>
+								<h3 className={`mt-2 text-lg font-semibold ${style.titleText}`}>
 									{item.title[locale]}
 								</h3>
-								<p className={`mt-2 text-sm leading-6 ${style.descriptionText}`}>
+								<p
+									className={`mt-2 text-sm leading-6 ${style.descriptionText}`}
+								>
 									{item.description[locale]}
 								</p>
 							</motion.article>

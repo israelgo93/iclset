@@ -25,12 +25,12 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
           </p>
           <h2 className="text-iclset-ink mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
             {locale === "es"
-              ? "Informacion preliminar para autores y envio"
+              ? "Información preliminar para autores y envío"
               : "Preliminary author and submission information"}
           </h2>
           <p className="text-iclset-muted mt-4 text-base leading-7">
             {locale === "es"
-              ? "Esta seccion concentra los elementos solicitados por Microsoft CMT para que la convocatoria sea publica, clara y verificable antes de habilitar el sitio editorial oficial."
+              ? "Esta sección concentra los elementos solicitados por Microsoft CMT para que la convocatoria sea pública, clara y verificable antes de habilitar el sitio editorial oficial."
               : "This section centralizes the elements requested by Microsoft CMT so the call is public, clear, and verifiable before the official editorial site is enabled."}
           </p>
         </div>
@@ -77,7 +77,7 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
             </h3>
             <p className="text-iclset-muted mt-2 text-sm leading-6">
               {locale === "es"
-                ? "Los autores deben contar con una cuenta CMT. La guia de cuenta y el flujo de envio de autores se enlazan como referencia operativa."
+                ? "Los autores deben contar con una cuenta CMT. La guía de cuenta y el flujo de envío de autores se enlazan como referencia operativa."
                 : "Authors must have a CMT account. The account guide and author submission workflow are linked as operational references."}
             </p>
           </div>
@@ -90,7 +90,7 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
             </Button>
             <Button asChild variant="outline">
               <Link href={cmtHelpLinks.authorSubmission}>
-                {locale === "es" ? "Guia de envio CMT" : "CMT submission guide"}
+                {locale === "es" ? "Guía de envío CMT" : "CMT submission guide"}
                 <ExternalLink className="size-4" />
               </Link>
             </Button>
@@ -99,7 +99,7 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
 
         <div className="border-iclset-blue/15 mt-5 rounded-[1.5rem] border bg-white p-6">
           <h3 className="text-iclset-ink text-lg font-semibold">
-            {locale === "es" ? "CMT acknowledgement" : "CMT ACKNOWLEDGMENT"}
+            {locale === "es" ? "Reconocimiento CMT" : "CMT ACKNOWLEDGMENT"}
           </h3>
           <p className="text-iclset-muted mt-3 text-sm leading-6">
             {cmtAcknowledgmentText}
@@ -107,7 +107,7 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
           <Button asChild className="mt-5" variant="solid">
             <Link href={cmtAcknowledgmentPath}>
               {locale === "es"
-                ? "Ver pagina HTML verificable"
+                ? "Ver página HTML verificable"
                 : "View verifiable HTML page"}
               <ExternalLink className="size-4" />
             </Link>

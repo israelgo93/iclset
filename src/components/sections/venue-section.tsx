@@ -45,8 +45,7 @@ export function VenueSection({ locale }: VenueSectionProps) {
 		},
 		{
 			icon: MonitorUp,
-			title:
-				locale === "es" ? "Virtual sincronica" : "Synchronous virtual",
+			title: locale === "es" ? "Virtual sincrónica" : "Synchronous virtual",
 			text:
 				locale === "es"
 					? "Salas Zoom institucionales: una sala plenaria y tres salas paralelas, una por track."
@@ -54,8 +53,7 @@ export function VenueSection({ locale }: VenueSectionProps) {
 		},
 		{
 			icon: Waves,
-			title:
-				locale === "es" ? "Territorio costero" : "Coastal territory",
+			title: locale === "es" ? "Territorio costero" : "Coastal territory",
 			text:
 				locale === "es"
 					? "Manta aporta contexto territorial, biodiversidad, puerto, agroindustria y transferencia."
@@ -68,16 +66,16 @@ export function VenueSection({ locale }: VenueSectionProps) {
 			<div className="section-container grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
 				<div>
 					<SectionHeading
-						eyebrow={locale === "es" ? "Sede hibrida" : "Hybrid venue"}
+						eyebrow={locale === "es" ? "Sede híbrida" : "Hybrid venue"}
 						title={
 							locale === "es"
-								? "Manta conecta ciencia, agro y tecnologia"
+								? "Manta conecta ciencia, agro y tecnología"
 								: "Manta connects science, agriculture, and technology"
 						}
 						description={
 							locale === "es"
-								? "La conferencia se desarrollara en la Universidad Laica Eloy Alfaro de Manabi con participacion presencial y virtual sincronica."
-								: "The conference will take place at Universidad Laica Eloy Alfaro de Manabi with in-person and synchronous virtual participation."
+								? "La conferencia se desarrollará en la Universidad Laica Eloy Alfaro de Manabí con participación presencial y virtual sincrónica."
+								: "The conference will take place at Universidad Laica Eloy Alfaro de Manabí with in-person and synchronous virtual participation."
 						}
 					/>
 					<Button asChild size="default" variant="default">
@@ -114,12 +112,8 @@ export function VenueSection({ locale }: VenueSectionProps) {
 								<span className="inline-grid size-11 place-items-center rounded-2xl bg-white/22 backdrop-blur">
 									<Icon className="size-5" />
 								</span>
-								<h3 className="mt-4 text-lg font-semibold">
-									{item.title}
-								</h3>
-								<p className="mt-2 text-sm leading-6 opacity-90">
-									{item.text}
-								</p>
+								<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+								<p className="mt-2 text-sm leading-6 opacity-90">{item.text}</p>
 							</motion.article>
 						);
 					})}

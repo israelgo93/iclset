@@ -36,7 +36,7 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
     },
     items: [
       {
-        es: "Cada contribucion debe estar asociada a uno de los tres tracks oficiales del congreso.",
+        es: "Cada contribución debe estar asociada a uno de los tres tracks oficiales del congreso.",
         en: "Each contribution must be associated with one of the three official conference tracks.",
       },
       {
@@ -44,40 +44,40 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
         en: "Authors must use an active Microsoft CMT account to submit and track their work.",
       },
       {
-        es: "Al menos un autor de cada trabajo aceptado debera inscribirse y presentar la contribucion en la modalidad asignada.",
+        es: "Al menos un autor de cada trabajo aceptado deberá inscribirse y presentar la contribución en la modalidad asignada.",
         en: "At least one author of each accepted work must register and present the contribution in the assigned modality.",
       },
       {
-        es: "Las contribuciones deben ser originales y respetar criterios de etica academica, citacion y ausencia de plagio.",
-        en: "Contributions must be original and follow academic ethics, citation, and plagiarism-free standards.",
+        es: "Las contribuciones deben ser originales y respetar criterios de ética académica, citación y ausencia de plagio.",
+        en: "Contributions must be original and follow standards for academic ethics, citation, and plagiarism prevention.",
       },
     ],
   },
   {
     key: "submission-guidelines",
     title: {
-      es: "Lineamientos de envio",
+      es: "Lineamientos de envío",
       en: "SUBMISSION GUIDELINES",
     },
     description: {
-      es: "Condiciones preliminares para preparar el archivo y completar la postulacion en CMT.",
+      es: "Condiciones preliminares para preparar el archivo y completar la postulación en CMT.",
       en: "Preliminary conditions for preparing the file and completing the submission in CMT.",
     },
     items: [
       {
-        es: "Full papers: 8 a 12 paginas en la plantilla oficial del congreso, cuando sea publicada.",
+        es: "Full papers: 8 a 12 páginas en la plantilla oficial del congreso, cuando sea publicada.",
         en: "Full papers: 8 to 12 pages using the official conference template once published.",
       },
       {
-        es: "Posters cientificos: contribucion de 2 paginas y poster para la feria academica.",
+        es: "Pósters científicos: contribución de 2 páginas y póster para la feria académica.",
         en: "Scientific posters: two-page contribution and poster for the academic fair.",
       },
       {
-        es: "El archivo inicial debe estar anonimizado para revision doble ciego, sin nombres, afiliaciones ni agradecimientos identificables.",
+        es: "El archivo inicial debe estar anonimizado para revisión doble ciego, sin nombres, afiliaciones ni agradecimientos identificables.",
         en: "The initial file must be anonymized for double-blind review, with no names, affiliations, or identifying acknowledgments.",
       },
       {
-        es: "Se aceptara un unico envio por contribucion en la plataforma CMT, dentro del plazo oficial publicado.",
+        es: "Se aceptará un único envío por contribución en la plataforma CMT, dentro del plazo oficial publicado.",
         en: "One submission per contribution will be accepted in the CMT platform within the official published deadline.",
       },
     ],
@@ -85,20 +85,20 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
   {
     key: "where-to-submit",
     title: {
-      es: "Donde enviar",
+      es: "Dónde enviar",
       en: "WHERE TO SUBMIT",
     },
     description: {
-      es: "Canal editorial preliminar definido para la recepcion de trabajos.",
+      es: "Canal editorial preliminar definido para la recepción de trabajos.",
       en: "Preliminary editorial channel defined for receiving submissions.",
     },
     items: [
       {
-        es: "El enlace de envio de Microsoft CMT estara disponible proximamente cuando CMT cree el sitio oficial de ICLSET 2026.",
+        es: "El enlace de envío de Microsoft CMT estará disponible próximamente cuando CMT cree el sitio oficial de ICLSET 2026.",
         en: "The Microsoft CMT submission link will be available shortly after CMT creates the official ICLSET 2026 conference site.",
       },
       {
-        es: "No se recibiran trabajos por correo electronico ni mediante plataformas distintas a Microsoft CMT.",
+        es: "No se recibirán trabajos por correo electrónico ni mediante plataformas distintas a Microsoft CMT.",
         en: "Submissions will not be accepted by email or through platforms other than Microsoft CMT.",
       },
     ],
@@ -106,7 +106,7 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
   {
     key: "how-to-submit",
     title: {
-      es: "Como enviar",
+      es: "Cómo enviar",
       en: "HOW TO SUBMIT",
     },
     description: {
@@ -115,19 +115,19 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
     },
     items: [
       {
-        es: "Crear o verificar una cuenta personal de Microsoft CMT antes de iniciar el envio.",
+        es: "Crear o verificar una cuenta personal de Microsoft CMT antes de iniciar el envío.",
         en: "Create or verify a personal Microsoft CMT account before starting the submission.",
       },
       {
-        es: "Preparar el PDF anonimizado y seleccionar el track correspondiente durante el envio.",
+        es: "Preparar el PDF anonimizado y seleccionar el track correspondiente durante el envío.",
         en: "Prepare the anonymized PDF and select the corresponding track during submission.",
       },
       {
-        es: "Completar los metadatos solicitados en CMT y confirmar que el archivo cargado corresponde a la version de revision.",
+        es: "Completar los metadatos solicitados en CMT y confirmar que el archivo cargado corresponde a la versión de revisión.",
         en: "Complete the metadata requested by CMT and confirm that the uploaded file is the review version.",
       },
       {
-        es: "Conservar el identificador de la contribucion para seguimiento, revision y notificaciones.",
+        es: "Conservar el identificador de la contribución para seguimiento, revisión y notificaciones.",
         en: "Keep the contribution identifier for tracking, review, and notifications.",
       },
     ],
