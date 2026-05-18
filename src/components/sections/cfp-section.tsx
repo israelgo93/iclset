@@ -289,16 +289,25 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   ))}
                 </div>
 
-                <div className="border-iclset-emerald/15 mt-5 grid gap-4 rounded-[1.15rem] border bg-white/80 p-4 sm:flex sm:items-center sm:justify-between">
+                <div className="from-iclset-blue via-iclset-sky to-iclset-emerald mt-5 grid gap-4 overflow-hidden rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_18px_46px_-24px_rgb(31_148_255_/_0.75)] sm:flex sm:items-center sm:justify-between">
                   <div className="flex gap-3">
-                    <span className="bg-iclset-blue/10 text-iclset-blue grid size-10 shrink-0 place-items-center rounded-xl">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-white/18 text-white shadow-sm ring-1 ring-white/25">
                       <Info className="size-5" />
                     </span>
-                    <p className="text-iclset-muted text-sm leading-6">
-                      {registrationFeesContent.note[locale]}
-                    </p>
+                    <div>
+                      <p className="text-base leading-6 font-semibold">
+                        {registrationFeesContent.note[locale]}
+                      </p>
+                      <p className="mt-1 max-w-sm text-sm leading-6 text-white/82">
+                        {registrationFeesContent.ctaDescription[locale]}
+                      </p>
+                    </div>
                   </div>
-                  <Button asChild variant="outline" className="shrink-0">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="text-iclset-ink min-w-44 shrink-0 border-white/70 bg-white shadow-[0_16px_34px_-20px_rgb(15_23_42_/_0.7)] hover:border-white hover:bg-white"
+                  >
                     <a href={registrationFeesContent.ctaUrl}>
                       {registrationFeesContent.cta[locale]}
                       <ArrowRight className="size-4" />

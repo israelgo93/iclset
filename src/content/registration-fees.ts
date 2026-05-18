@@ -65,12 +65,16 @@ export const registrationFeesContent = {
     en: "Registration fees for attendees, ULEAM staff, external participants, and conference authors.",
   },
   note: {
-    es: "Inscríbete ahora.",
-    en: "Register now.",
+    es: "Inscríbete ahora",
+    en: "Register now",
+  },
+  ctaDescription: {
+    es: "Completa tu registro en la plataforma oficial de inscripciones de ICLSET 2026.",
+    en: "Complete your registration through the official ICLSET 2026 registration platform.",
   },
   cta: {
-    es: "Inscripciones",
-    en: "Registration",
+    es: "Ir a inscripciones",
+    en: "Go to registration",
   },
   ctaUrl: "https://congreso.iclset.com",
 } as const;
