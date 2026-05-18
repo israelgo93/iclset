@@ -70,6 +70,13 @@ export interface FaqItem {
   answer: LocalizedText;
 }
 
+export interface RegistrationFee {
+  key: string;
+  audience: LocalizedText;
+  amount: string;
+  description: LocalizedText;
+}
+
 export interface NavigationItem {
   href: string;
   label: LocalizedText;

@@ -11,7 +11,7 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - **Sede:** Paraninfo Alfonso Aguilar Ruilova, ULEAM.
 - **Ciudad:** Manta, Manabi, Ecuador.
 - **Fechas:** 15, 16 y 17 de julio de 2026.
-- **Modalidad:** hibrida, presencial y virtual sincronica.
+- **Modalidad:** híbrida, presencial y virtual sincrónica.
 - **Lema:** Biociencia, Agrociencia y Tecnologia: investigacion que transforma territorios.
 
 ## Stack
@@ -30,10 +30,10 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 
 - `/es` y `/en`: home principal.
 - `/es/call-for-papers` y `/en/call-for-papers`: convocatoria, contribuciones, revisión doble ciega y Microsoft CMT.
-- `/es/program` y `/en/program`: programa academico por dia.
+- `/es/program` y `/en/program`: programa académico por día.
 - `/es/tracks` y `/en/tracks`: tracks científicos y ejes temáticos.
 - `/es/publications` y `/en/publications`: proceso editorial y revistas aliadas.
-- `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad hibrida.
+- `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad híbrida.
 - `/es/committees` y `/en/committees`: chairs, comités y organización.
 - `/es/contact` y `/en/contact`: canales institucionales.
 - `/en/cmt-acknowledgment.html`: pagina estatica verificable por `curl` con el acknowledgement obligatorio de Microsoft CMT y `charset=UTF-8`.
@@ -46,12 +46,13 @@ Todo el contenido sensible vive en `src/content`:
 - `navigation.ts`: navegacion bilingue.
 - `tracks.ts`: tres tracks, carreras articuladoras, ejes y chairs.
 - `important-dates.ts`: cronograma oficial y fechas CMT.
-- `schedule.ts`: programa academico por dia.
+- `registration-fees.ts`: valores de inscripción publicados para estudiantes, personal ULEAM, participantes externos y autores.
+- `schedule.ts`: programa académico por día.
 - `journals.ts`: revistas aliadas con URLs e indexacion.
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
-- `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques preliminares de lineamientos para autores y envio.
+- `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques preliminares de lineamientos para autores y envío.
 
 ## Visuales
 
@@ -107,6 +108,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Sitio bilingue publicado en AWS ECS Fargate.
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
+- Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
 - Requisitos preliminares de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Build de produccion requerido antes de commit o despliegue.
@@ -114,8 +116,8 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 
 ## Planificacion CMT
 
-- Mantener `/en/call-for-papers` como pagina publica central para CFP, fechas futuras, lineamientos de autores, lineamientos de envio, donde enviar y como enviar.
+- Mantener `/en/call-for-papers` como página pública central para CFP, fechas futuras, lineamientos de autores, lineamientos de envío, donde enviar y como enviar.
 - Mantener `/en/committees` como evidencia publica de chairs, comite honorifico, comite organizador y comite cientifico.
 - Mantener `/en/cmt-acknowledgment.html` como pagina HTML estatica para verificacion automatica de Microsoft CMT.
 - Validar en cada despliegue que el acknowledgement responde con `Content-Type: text/html; charset=UTF-8` y contiene el texto exacto solicitado por Microsoft CMT.
-- Cuando CMT cree el sitio oficial del congreso, reemplazar el placeholder por el enlace final de envio sin habilitar otros canales de recepcion.
+- Cuando CMT cree el sitio oficial del congreso, reemplazar el placeholder por el enlace final de envío sin habilitar otros canales de recepción.

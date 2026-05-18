@@ -15,6 +15,7 @@ Incluye:
 - Tracks.
 - Programa académico.
 - Revistas aliadas.
+- Valores de inscripción.
 - Proceso editorial.
 - Comité y organización.
 - Sede y modalidad híbrida.
@@ -532,7 +533,16 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 ### Completado
 
 - Requisitos oficiales de Microsoft CMT incorporados en la pagina Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
-- Placeholder publico de envio configurado: el enlace de Microsoft CMT se publicara cuando CMT cree el sitio oficial de ICLSET 2026.
+- Placeholder público de envío configurado: el enlace de Microsoft CMT se publicará cuando CMT cree el sitio oficial de ICLSET 2026.
 - Se explicita que no se reciben trabajos por correo electronico ni por plataformas distintas a Microsoft CMT.
 - Acknowledgement obligatorio de CMT publicado como texto plano estatico y verificable en `/en/cmt-acknowledgment.html`.
 - La ruta de acknowledgement debe responder con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4` porque CMT lo reporta como charset invalido.
+
+## Actualización de valores de inscripción - 2026-05-17
+
+### Completado
+
+- Valores de inscripción centralizados en `src/content/registration-fees.ts`.
+- Nueva sección pública en home con estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores de papers o pósters USD 25.
+- Acceso directo desde el hero hacia la sección de valores.
+- FAQ de costo de inscripción conectada al contenido tipado para evitar duplicación manual.

@@ -1,5 +1,16 @@
 import type { FaqItem } from "@/types/conference";
 
+import { registrationFees } from "./registration-fees";
+
+const registrationFeesSummary = {
+  es: registrationFees
+    .map((fee) => `${fee.audience.es} ${fee.amount}`)
+    .join(", "),
+  en: registrationFees
+    .map((fee) => `${fee.audience.en} ${fee.amount}`)
+    .join(", "),
+};
+
 export const faqs: FaqItem[] = [
   {
     question: {
@@ -77,8 +88,8 @@ export const faqs: FaqItem[] = [
       en: "What is the registration fee?",
     },
     answer: {
-      es: "Las tarifas documentadas son: estudiantes USD 15, personal ULEAM USD 25, personal externo USD 35 y autores de papers o pósters USD 25.",
-      en: "Documented fees are: students USD 15, ULEAM staff USD 25, external participants USD 35, and paper or poster authors USD 25.",
+      es: `Las tarifas documentadas son: ${registrationFeesSummary.es}.`,
+      en: `Documented fees are: ${registrationFeesSummary.en}.`,
     },
   },
 ];

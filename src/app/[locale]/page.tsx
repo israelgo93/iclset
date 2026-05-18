@@ -8,6 +8,7 @@ import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProgramPreviewSection } from "@/components/sections/program-preview-section";
 import { PublicationsSection } from "@/components/sections/publications-section";
+import { RegistrationFeesSection } from "@/components/sections/registration-fees-section";
 import { StatsSection } from "@/components/sections/stats-section";
 import { TimelineSection } from "@/components/sections/timeline-section";
 import { TracksSection } from "@/components/sections/tracks-section";
@@ -63,6 +64,7 @@ export default async function HomePage({
       <StatsSection locale={locale} />
       <TracksSection locale={locale} />
       <CfpSection locale={locale} />
+      <RegistrationFeesSection locale={locale} />
       <TimelineSection locale={locale} />
       <ProgramPreviewSection locale={locale} />
       <PublicationsSection locale={locale} />
