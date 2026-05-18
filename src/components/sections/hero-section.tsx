@@ -57,7 +57,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
     transition: { duration: 0.6, ease: easing, delay },
   });
 
-  const handleFeesClick = (event: MouseEvent<HTMLAnchorElement>) => {
+  const handleFeesClick = (event: MouseEvent<HTMLElement>) => {
     const section = document.getElementById("registration-fees");
 
     if (!section) {
@@ -65,10 +65,12 @@ export function HeroSection({ locale }: HeroSectionProps) {
     }
 
     event.preventDefault();
-    window.scrollTo({
-      top: Math.max(section.offsetTop - 96, 0),
-      behavior: shouldReduceMotion ? "auto" : "smooth",
-    });
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const targetTop = Math.max(Math.round(sectionTop - 96), 0);
+
+    window.setTimeout(() => {
+      window.scrollTo(0, targetTop);
+    }, 0);
     window.history.pushState(null, "", "#registration-fees");
   };
 
@@ -271,10 +273,13 @@ export function HeroSection({ locale }: HeroSectionProps) {
                 {secondaryCta.label[locale]}
               </Link>
             </Button>
-            <Button asChild size="lg" variant="glass">
-              <a href="#registration-fees" onClick={handleFeesClick}>
-                {feesCtaLabel}
-              </a>
+            <Button
+              type="button"
+              size="lg"
+              variant="glass"
+              onClick={handleFeesClick}
+            >
+              {feesCtaLabel}
             </Button>
           </motion.div>
         </div>
