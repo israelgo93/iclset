@@ -72,4 +72,5 @@ export const registrationFeesContent = {
     es: "Inscripciones",
     en: "Registration",
   },
+  ctaUrl: "https://congreso.iclset.com",
 } as const;

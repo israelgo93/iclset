@@ -298,9 +298,11 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       {registrationFeesContent.note[locale]}
                     </p>
                   </div>
-                  <Button type="button" variant="outline" className="shrink-0">
-                    {registrationFeesContent.cta[locale]}
-                    <ArrowRight className="size-4" />
+                  <Button asChild variant="outline" className="shrink-0">
+                    <a href={registrationFeesContent.ctaUrl}>
+                      {registrationFeesContent.cta[locale]}
+                      <ArrowRight className="size-4" />
+                    </a>
                   </Button>
                 </div>
               </aside>

@@ -71,9 +71,11 @@ export function RegistrationFeesSection({
                   {registrationFeesContent.note[locale]}
                 </p>
               </div>
-              <Button type="button" variant="outline" className="shrink-0">
-                <ClipboardList className="size-4" />
-                {registrationFeesContent.cta[locale]}
+              <Button asChild variant="outline" className="shrink-0">
+                <a href={registrationFeesContent.ctaUrl}>
+                  <ClipboardList className="size-4" />
+                  {registrationFeesContent.cta[locale]}
+                </a>
               </Button>
             </div>
           </div>
