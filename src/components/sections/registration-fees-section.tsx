@@ -1,5 +1,4 @@
-import { Info, Mail, ReceiptText } from "lucide-react";
-import Link from "next/link";
+import { ClipboardList, Info, ReceiptText } from "lucide-react";
 
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,6 @@ import {
   registrationFees,
   registrationFeesContent,
 } from "@/content/registration-fees";
-import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
 
 interface RegistrationFeesSectionProps {
@@ -73,11 +71,9 @@ export function RegistrationFeesSection({
                   {registrationFeesContent.note[locale]}
                 </p>
               </div>
-              <Button asChild variant="outline" className="shrink-0">
-                <Link href={localizePath(locale, "/contact")}>
-                  <Mail className="size-4" />
-                  {registrationFeesContent.cta[locale]}
-                </Link>
+              <Button type="button" variant="outline" className="shrink-0">
+                <ClipboardList className="size-4" />
+                {registrationFeesContent.cta[locale]}
               </Button>
             </div>
           </div>

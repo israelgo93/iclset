@@ -57,19 +57,19 @@ export const registrationFeesContent = {
     en: "Registration fees",
   },
   title: {
-    es: "Tarifas documentadas para participar en ICLSET 2026",
-    en: "Documented fees to participate in ICLSET 2026",
+    es: "Tarifas para participar en ICLSET 2026",
+    en: "Fees to participate in ICLSET 2026",
   },
   description: {
-    es: "Los valores se publican como referencia institucional para asistentes, autores y personal académico. La fase actual no incluye pagos en línea.",
-    en: "Fees are published as institutional reference for attendees, authors, and academic staff. The current phase does not include online payments.",
+    es: "Valores de inscripción para asistentes, personal ULEAM, participantes externos y autores del congreso.",
+    en: "Registration fees for attendees, ULEAM staff, external participants, and conference authors.",
   },
   note: {
-    es: "El flujo de inscripción institucional se informará por los canales oficiales del congreso.",
-    en: "The institutional registration flow will be announced through the official conference channels.",
+    es: "Inscríbete ahora.",
+    en: "Register now.",
   },
   cta: {
-    es: "Consultar contacto",
-    en: "Contact the organizers",
+    es: "Inscripciones",
+    en: "Registration",
   },
 } as const;

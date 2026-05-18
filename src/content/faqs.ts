@@ -88,8 +88,8 @@ export const faqs: FaqItem[] = [
       en: "What is the registration fee?",
     },
     answer: {
-      es: `Las tarifas documentadas son: ${registrationFeesSummary.es}.`,
-      en: `Documented fees are: ${registrationFeesSummary.en}.`,
+      es: `Las tarifas de inscripción son: ${registrationFeesSummary.es}.`,
+      en: `Registration fees are: ${registrationFeesSummary.en}.`,
     },
   },
 ];
