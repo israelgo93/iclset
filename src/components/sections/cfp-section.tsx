@@ -302,7 +302,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
 
                 <div className="min-h-5 flex-1" aria-hidden="true" />
 
-                <div className="border-iclset-blue/15 bg-iclset-blue/8 rounded-[1.35rem] border p-4 sm:p-5">
+                <div className="border-iclset-blue/15 bg-iclset-blue/8 min-h-64 rounded-[1.35rem] border p-4 sm:p-5">
                   <div className="flex items-center gap-2">
                     <CalendarDays className="text-iclset-blue size-4" />
                     <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
@@ -410,7 +410,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   ))}
                 </div>
 
-                <div className="from-iclset-blue via-iclset-sky to-iclset-emerald mt-5 grid gap-4 overflow-hidden rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_18px_46px_-24px_rgb(31_148_255_/_0.75)] sm:flex sm:items-center sm:justify-between">
+                <div className="from-iclset-blue via-iclset-sky to-iclset-emerald mt-5 grid min-h-64 gap-4 overflow-hidden rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_18px_46px_-24px_rgb(31_148_255_/_0.75)] sm:flex sm:items-center sm:justify-between">
                   <div className="flex gap-3">
                     <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-white/18 text-white shadow-sm ring-1 ring-white/25">
                       <Info className="size-5" />
