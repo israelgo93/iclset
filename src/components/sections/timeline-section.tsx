@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useSyncExternalStore } from "react";
 
 import { SectionHeading } from "@/components/shared/section-heading";
+import { conference } from "@/content/conference";
 import { importantDates } from "@/content/important-dates";
 import type { ImportantDate } from "@/types/conference";
 import type { Locale } from "@/types/locale";
@@ -90,6 +91,53 @@ const stateStyles: Record<
 	},
 };
 
+interface TimelineCardContentProps {
+	item: ImportantDate;
+	locale: Locale;
+	state: DateState;
+	style: (typeof stateStyles)[DateState];
+	shouldReduceMotion: boolean | null;
+}
+
+function TimelineCardContent({
+	item,
+	locale,
+	state,
+	style,
+	shouldReduceMotion,
+}: TimelineCardContentProps) {
+	const Icon = style.icon;
+
+	return (
+		<>
+			<div className="flex items-start justify-between gap-3">
+				<span
+					className={`shadow-iclset-navy/15 inline-grid size-11 place-items-center rounded-2xl shadow-md ${style.iconBg} ${style.iconText}`}
+				>
+					<Icon
+						className={`size-5 ${state === "active" && !shouldReduceMotion ? "animate-spin [animation-duration:2.4s]" : ""}`}
+						aria-hidden="true"
+					/>
+				</span>
+				<span
+					className={`rounded-full px-2.5 py-1 text-[0.65rem] font-semibold tracking-[0.14em] uppercase ${style.badge}`}
+				>
+					{stateBadges[state][locale]}
+				</span>
+			</div>
+			<p className={`mt-5 text-sm font-semibold tracking-wide ${style.dateText}`}>
+				{item.date[locale]}
+			</p>
+			<h3 className={`mt-2 text-lg font-semibold ${style.titleText}`}>
+				{item.title[locale]}
+			</h3>
+			<p className={`mt-2 text-sm leading-6 ${style.descriptionText}`}>
+				{item.description[locale]}
+			</p>
+		</>
+	);
+}
+
 export function TimelineSection({ locale }: TimelineSectionProps) {
 	const shouldReduceMotion = useReducedMotion();
 	const isClient = useIsClient();
@@ -121,7 +169,50 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 					{importantDates.map((item) => {
 						const state: DateState = now ? computeState(item, now) : "upcoming";
 						const style = stateStyles[state];
-						const Icon = style.icon;
+						const isCmtSubmission = item.key === "submission";
+						const className = `group relative rounded-[1.5rem] border p-6 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.16)] outline-none transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(31_64_120_/_0.25)] focus-visible:ring-3 focus-visible:ring-iclset-blue/35 ${style.card} ${style.opacity}`;
+						const cardContent = (
+							<TimelineCardContent
+								item={item}
+								locale={locale}
+								state={state}
+								style={style}
+								shouldReduceMotion={shouldReduceMotion}
+							/>
+						);
+
+						if (isCmtSubmission) {
+							return (
+								<motion.a
+									key={item.key}
+									href={conference.cmtUrl}
+									target="_blank"
+									rel="noreferrer"
+									aria-label={
+										locale === "es"
+											? "Enviar trabajo mediante Microsoft CMT"
+											: "Submit work through Microsoft CMT"
+									}
+									variants={{
+										hidden: { opacity: 0, y: 22 },
+										visible: { opacity: 1, y: 0 },
+									}}
+									transition={{ duration: 0.55, ease: easing }}
+									whileHover={
+										shouldReduceMotion
+											? undefined
+											: {
+													y: -6,
+													transition: { duration: 0.25, ease: easing },
+												}
+									}
+									className={className}
+									aria-current={state === "active" ? "step" : undefined}
+								>
+									{cardContent}
+								</motion.a>
+							);
+						}
 
 						return (
 							<motion.article
@@ -136,37 +227,10 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 										? undefined
 										: { y: -6, transition: { duration: 0.25, ease: easing } }
 								}
-								className={`group relative rounded-[1.5rem] border p-6 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.16)] transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(31_64_120_/_0.25)] ${style.card} ${style.opacity}`}
+								className={className}
 								aria-current={state === "active" ? "step" : undefined}
 							>
-								<div className="flex items-start justify-between gap-3">
-									<span
-										className={`shadow-iclset-navy/15 inline-grid size-11 place-items-center rounded-2xl shadow-md ${style.iconBg} ${style.iconText}`}
-									>
-										<Icon
-											className={`size-5 ${state === "active" && !shouldReduceMotion ? "animate-spin [animation-duration:2.4s]" : ""}`}
-											aria-hidden="true"
-										/>
-									</span>
-									<span
-										className={`rounded-full px-2.5 py-1 text-[0.65rem] font-semibold tracking-[0.14em] uppercase ${style.badge}`}
-									>
-										{stateBadges[state][locale]}
-									</span>
-								</div>
-								<p
-									className={`mt-5 text-sm font-semibold tracking-wide ${style.dateText}`}
-								>
-									{item.date[locale]}
-								</p>
-								<h3 className={`mt-2 text-lg font-semibold ${style.titleText}`}>
-									{item.title[locale]}
-								</h3>
-								<p
-									className={`mt-2 text-sm leading-6 ${style.descriptionText}`}
-								>
-									{item.description[locale]}
-								</p>
+								{cardContent}
 							</motion.article>
 						);
 					})}

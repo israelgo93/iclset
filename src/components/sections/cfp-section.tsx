@@ -10,6 +10,7 @@ import {
   ReceiptText,
   ShieldCheck,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 
@@ -26,6 +27,15 @@ import type { Locale } from "@/types/locale";
 
 interface CfpSectionProps {
   locale: Locale;
+}
+
+interface CfpItem {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+  accent: string;
+  href?: string;
+  ariaLabel?: string;
 }
 
 const easing = [0.22, 1, 0.36, 1] as const;
@@ -50,7 +60,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
   const submissionStart = formatDate(submissionDate?.startsAt, locale);
   const submissionEnd = formatDate(submissionDate?.endsAt, locale);
 
-  const items = [
+  const items: CfpItem[] = [
     {
       icon: FileText,
       title: "Full paper",
@@ -59,7 +69,6 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Artículo completo de 8 a 12 páginas en la plantilla del congreso."
           : "Full paper, 8 to 12 pages, using the conference template.",
       accent: "from-iclset-blue to-iclset-sky",
-      color: "text-iclset-blue",
     },
     {
       icon: BookOpenCheck,
@@ -69,7 +78,6 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Contribución de 2 páginas y póster para la feria académica."
           : "Two-page contribution and poster for the academic fair.",
       accent: "from-iclset-emerald to-iclset-green",
-      color: "text-iclset-emerald",
     },
     {
       icon: ShieldCheck,
@@ -79,7 +87,6 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Dos revisores por artículo; tercer revisor o decisión del Track Chair si hay discrepancia."
           : "Two reviewers per paper; third reviewer or Track Chair decision when reviews conflict.",
       accent: "from-iclset-cyan to-iclset-sky",
-      color: "text-iclset-sky",
     },
     {
       icon: ExternalLink,
@@ -89,7 +96,11 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Recepción, asignación de revisores, rúbricas y notificaciones."
           : "Reception, reviewer assignment, rubrics, and notifications.",
       accent: "from-iclset-green to-iclset-lime",
-      color: "text-iclset-green",
+      href: conference.cmtUrl,
+      ariaLabel:
+        locale === "es"
+          ? "Enviar trabajo mediante Microsoft CMT"
+          : "Submit work through Microsoft CMT",
     },
   ];
 
@@ -143,6 +154,72 @@ export function CfpSection({ locale }: CfpSectionProps) {
                 <div className="mt-5 grid content-start gap-3 sm:grid-cols-2">
                   {items.map((item, index) => {
                     const Icon = item.icon;
+                    const cardClassName =
+                      "group border-iclset-blue/10 to-iclset-cyan-soft/30 rounded-[1.15rem] border bg-gradient-to-br from-white p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)] outline-none transition-shadow focus-visible:ring-3 focus-visible:ring-iclset-blue/35";
+                    const cardContent = (
+                      <div className="flex items-start gap-3">
+                        <span
+                          className={`grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${item.accent} text-white shadow-md`}
+                        >
+                          <Icon className="size-4.5" />
+                        </span>
+                        <div>
+                          <h4 className="text-iclset-ink flex items-center gap-1.5 text-sm font-semibold">
+                            {item.title}
+                            {item.href ? (
+                              <ExternalLink
+                                className="text-iclset-emerald size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                aria-hidden="true"
+                              />
+                            ) : null}
+                          </h4>
+                          <p className="text-iclset-muted mt-1.5 text-sm leading-6">
+                            {item.text}
+                          </p>
+                        </div>
+                      </div>
+                    );
+
+                    if (item.href) {
+                      return (
+                        <motion.a
+                          key={item.title}
+                          href={item.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={item.ariaLabel}
+                          initial={
+                            shouldReduceMotion ? false : { opacity: 0, y: 16 }
+                          }
+                          whileInView={
+                            shouldReduceMotion
+                              ? undefined
+                              : { opacity: 1, y: 0 }
+                          }
+                          viewport={{ once: true, margin: "-40px" }}
+                          transition={{
+                            duration: 0.5,
+                            ease: easing,
+                            delay: 0.05 * index,
+                          }}
+                          whileHover={
+                            shouldReduceMotion
+                              ? undefined
+                              : {
+                                  y: -3,
+                                  transition: {
+                                    duration: 0.25,
+                                    ease: easing,
+                                  },
+                                }
+                          }
+                          className={cardClassName}
+                        >
+                          {cardContent}
+                        </motion.a>
+                      );
+                    }
+
                     return (
                       <motion.div
                         key={item.title}
@@ -166,23 +243,9 @@ export function CfpSection({ locale }: CfpSectionProps) {
                                 transition: { duration: 0.25, ease: easing },
                               }
                         }
-                        className="group border-iclset-blue/10 to-iclset-cyan-soft/30 rounded-[1.15rem] border bg-gradient-to-br from-white p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)]"
+                        className={cardClassName}
                       >
-                        <div className="flex items-start gap-3">
-                          <span
-                            className={`grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${item.accent} text-white shadow-md`}
-                          >
-                            <Icon className="size-4.5" />
-                          </span>
-                          <div>
-                            <h4 className="text-iclset-ink text-sm font-semibold">
-                              {item.title}
-                            </h4>
-                            <p className="text-iclset-muted mt-1.5 text-sm leading-6">
-                              {item.text}
-                            </p>
-                          </div>
-                        </div>
+                        {cardContent}
                       </motion.div>
                     );
                   })}
