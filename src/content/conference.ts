@@ -43,7 +43,7 @@ export const conference = {
   timezone: "America/Guayaquil",
   contactEmail: "israel.gomez@uleam.edu.ec",
   editorialPlatform: "Microsoft CMT",
-  cmtUrl: "https://cmt3.research.microsoft.com/About",
+  cmtUrl: "https://cmt3.research.microsoft.com/ICLSET2026/",
   templateUrl: null,
   repoUrl: "https://github.com/israelgo93/iclset.git",
 } as const;

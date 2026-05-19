@@ -477,7 +477,7 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 
 ### Pendiente institucional
 
-- Enlace final de Microsoft CMT.
+- Enlace final de Microsoft CMT configurado: `https://cmt3.research.microsoft.com/ICLSET2026/`.
 - Enlaces de plantillas para autores.
 - Chairs y miembros de comitÃ©.
 - Tarifas de inscripciÃ³n.
@@ -533,7 +533,7 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 ### Completado
 
 - Requisitos oficiales de Microsoft CMT incorporados en la pagina Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
-- Placeholder público de envío configurado: el enlace de Microsoft CMT se publicará cuando CMT cree el sitio oficial de ICLSET 2026.
+- Enlace público de envío configurado hacia el sitio oficial de ICLSET 2026 en Microsoft CMT.
 - Se explicita que no se reciben trabajos por correo electronico ni por plataformas distintas a Microsoft CMT.
 - Acknowledgement obligatorio de CMT publicado como texto plano estatico y verificable en `/en/cmt-acknowledgment.html`.
 - La ruta de acknowledgement debe responder con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4` porque CMT lo reporta como charset invalido.

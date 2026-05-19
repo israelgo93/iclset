@@ -94,8 +94,8 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
     },
     items: [
       {
-        es: "El enlace de envío de Microsoft CMT estará disponible próximamente cuando CMT cree el sitio oficial de ICLSET 2026.",
-        en: "The Microsoft CMT submission link will be available shortly after CMT creates the official ICLSET 2026 conference site.",
+        es: "Los trabajos deben enviarse mediante el sitio oficial de ICLSET 2026 en Microsoft CMT.",
+        en: "Submissions must be sent through the official ICLSET 2026 site in Microsoft CMT.",
       },
       {
         es: "No se recibirán trabajos por correo electrónico ni mediante plataformas distintas a Microsoft CMT.",
@@ -110,8 +110,8 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
       en: "HOW TO SUBMIT",
     },
     description: {
-      es: "Flujo previsto para autores una vez habilitado el sitio oficial de ICLSET 2026 en CMT.",
-      en: "Expected author workflow once the official ICLSET 2026 site is enabled in CMT.",
+      es: "Flujo para autores en el sitio oficial de ICLSET 2026 en CMT.",
+      en: "Author workflow in the official ICLSET 2026 site in CMT.",
     },
     items: [
       {

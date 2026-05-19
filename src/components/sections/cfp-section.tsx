@@ -192,7 +192,9 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   <div className="flex items-center gap-2">
                     <CalendarDays className="text-iclset-blue size-4" />
                     <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-                      {locale === "es" ? "Recepción en CMT" : "CMT submission"}
+                      {locale === "es"
+                        ? "Recepción de envío CMT"
+                        : "CMT submission reception"}
                     </p>
                   </div>
                   <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
@@ -229,11 +231,16 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       </Link>
                     </Button>
                     <Button asChild size="default" variant="outline">
-                      <Link href={conference.cmtUrl}>
+                      <a
+                        href={conference.cmtUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {locale === "es"
-                          ? "Compatibilidad Microsoft CMT"
-                          : "Microsoft CMT compatibility"}
-                      </Link>
+                          ? "Enviar Microsoft CMT"
+                          : "Submit via Microsoft CMT"}
+                        <ExternalLink className="size-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>

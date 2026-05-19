@@ -120,4 +120,4 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Mantener `/en/committees` como evidencia publica de chairs, comite honorifico, comite organizador y comite cientifico.
 - Mantener `/en/cmt-acknowledgment.html` como pagina HTML estatica para verificacion automatica de Microsoft CMT.
 - Validar en cada despliegue que el acknowledgement responde con `Content-Type: text/html; charset=UTF-8` y contiene el texto exacto solicitado por Microsoft CMT.
-- Cuando CMT cree el sitio oficial del congreso, reemplazar el placeholder por el enlace final de envío sin habilitar otros canales de recepción.
+- El enlace oficial de envio de trabajos es `https://cmt3.research.microsoft.com/ICLSET2026/`; no habilitar canales alternos de recepción.
