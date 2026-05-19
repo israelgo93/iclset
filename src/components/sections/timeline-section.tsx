@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, CircleDashed, Loader2 } from "lucide-react";
+import { CheckCircle2, CircleDashed, ExternalLink, Loader2 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { useSyncExternalStore } from "react";
 
@@ -97,6 +97,7 @@ interface TimelineCardContentProps {
 	state: DateState;
 	style: (typeof stateStyles)[DateState];
 	shouldReduceMotion: boolean | null;
+	cta?: string;
 }
 
 function TimelineCardContent({
@@ -105,6 +106,7 @@ function TimelineCardContent({
 	state,
 	style,
 	shouldReduceMotion,
+	cta,
 }: TimelineCardContentProps) {
 	const Icon = style.icon;
 
@@ -134,6 +136,12 @@ function TimelineCardContent({
 			<p className={`mt-2 text-sm leading-6 ${style.descriptionText}`}>
 				{item.description[locale]}
 			</p>
+			{cta ? (
+				<span className="text-iclset-emerald mt-4 inline-flex items-center gap-1.5 rounded-full bg-iclset-emerald/10 px-3 py-1.5 text-xs font-semibold transition-colors duration-300 group-hover:bg-iclset-emerald group-hover:text-white">
+					{cta}
+					<ExternalLink className="size-3.5" />
+				</span>
+			) : null}
 		</>
 	);
 }
@@ -170,6 +178,12 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 						const state: DateState = now ? computeState(item, now) : "upcoming";
 						const style = stateStyles[state];
 						const isCmtSubmission = item.key === "submission";
+						const cta =
+							isCmtSubmission && locale === "es"
+								? "Enviar Microsoft CMT"
+								: isCmtSubmission
+									? "Submit via CMT"
+									: undefined;
 						const className = `group relative rounded-[1.5rem] border p-6 shadow-[0_18px_50px_-30px_rgb(15_23_42_/_0.16)] outline-none transition-all duration-500 hover:shadow-[0_28px_70px_-30px_rgb(31_64_120_/_0.25)] focus-visible:ring-3 focus-visible:ring-iclset-blue/35 ${style.card} ${style.opacity}`;
 						const cardContent = (
 							<TimelineCardContent
@@ -178,6 +192,7 @@ export function TimelineSection({ locale }: TimelineSectionProps) {
 								state={state}
 								style={style}
 								shouldReduceMotion={shouldReduceMotion}
+								cta={cta}
 							/>
 						);
 

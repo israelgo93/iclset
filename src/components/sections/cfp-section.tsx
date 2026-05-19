@@ -36,6 +36,7 @@ interface CfpItem {
   accent: string;
   href?: string;
   ariaLabel?: string;
+  cta?: string;
 }
 
 const easing = [0.22, 1, 0.36, 1] as const;
@@ -101,6 +102,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
         locale === "es"
           ? "Enviar trabajo mediante Microsoft CMT"
           : "Submit work through Microsoft CMT",
+      cta: locale === "es" ? "Enviar Microsoft CMT" : "Submit via CMT",
     },
   ];
 
@@ -176,6 +178,12 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           <p className="text-iclset-muted mt-1.5 text-sm leading-6">
                             {item.text}
                           </p>
+                          {item.cta ? (
+                            <span className="text-iclset-emerald mt-3 inline-flex items-center gap-1.5 rounded-full bg-iclset-emerald/10 px-3 py-1.5 text-xs font-semibold transition-colors duration-300 group-hover:bg-iclset-emerald group-hover:text-white">
+                              {item.cta}
+                              <ExternalLink className="size-3.5" />
+                            </span>
+                          ) : null}
                         </div>
                       </div>
                     );
