@@ -114,10 +114,10 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.
 
-## Planificacion CMT
+## Planificación CMT
 
-- Mantener `/en/call-for-papers` como página pública central para CFP, fechas futuras, lineamientos de autores, lineamientos de envío, donde enviar y como enviar.
-- Mantener `/en/committees` como evidencia publica de chairs, comite honorifico, comite organizador y comite cientifico.
-- Mantener `/en/cmt-acknowledgment.html` como pagina HTML estatica para verificacion automatica de Microsoft CMT.
+- Mantener `/en/call-for-papers` como página pública central para CFP, fechas futuras, lineamientos de autores, lineamientos de envío, dónde enviar y cómo enviar.
+- Mantener `/en/committees` como evidencia pública de chairs, comité honorífico, comité organizador y comité científico.
+- Mantener `/en/cmt-acknowledgment.html` como página HTML estática para verificación automática de Microsoft CMT.
 - Validar en cada despliegue que el acknowledgement responde con `Content-Type: text/html; charset=UTF-8` y contiene el texto exacto solicitado por Microsoft CMT.
-- El enlace oficial de envio de trabajos es `https://cmt3.research.microsoft.com/ICLSET2026/`; no habilitar canales alternos de recepción.
+- El enlace oficial de envío de trabajos es `https://cmt3.research.microsoft.com/ICLSET2026/`; no habilitar canales alternos de recepción.

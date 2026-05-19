@@ -528,15 +528,15 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Imágenes SVG creadas para los tres días del programa y el icono oficial del evento.
 - Copy publico actualizado para eliminar referencias a versiones, progreso tecnico y estructura futura.
 
-## Actualizacion CMT - 2026-05-14
+## Actualización CMT - 2026-05-14
 
 ### Completado
 
-- Requisitos oficiales de Microsoft CMT incorporados en la pagina Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
+- Requisitos oficiales de Microsoft CMT incorporados en la página Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Enlace público de envío configurado hacia el sitio oficial de ICLSET 2026 en Microsoft CMT.
-- Se explicita que no se reciben trabajos por correo electronico ni por plataformas distintas a Microsoft CMT.
-- Acknowledgement obligatorio de CMT publicado como texto plano estatico y verificable en `/en/cmt-acknowledgment.html`.
-- La ruta de acknowledgement debe responder con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4` porque CMT lo reporta como charset invalido.
+- Se explicita que no se reciben trabajos por correo electrónico ni por plataformas distintas a Microsoft CMT.
+- Acknowledgement obligatorio de CMT publicado como texto plano estático y verificable en `/en/cmt-acknowledgment.html`.
+- La ruta de acknowledgement debe responder con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4` porque CMT lo reporta como charset inválido.
 
 ## Actualización de valores de inscripción - 2026-05-17
 
