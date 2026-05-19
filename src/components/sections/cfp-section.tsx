@@ -137,8 +137,8 @@ export function CfpSection({ locale }: CfpSectionProps) {
           transition={{ duration: 0.6, ease: easing }}
         >
           <div className="via-iclset-cyan-soft/35 to-iclset-green-soft/25 rounded-[1.85rem] bg-gradient-to-br from-white p-4 sm:p-6 lg:p-7">
-            <div className="grid items-stretch gap-5 xl:grid-cols-[1.08fr_0.92fr] xl:grid-rows-[auto_1fr_auto]">
-              <article className="grid h-full grid-rows-[auto_1fr_auto] rounded-[1.5rem] border border-white/80 bg-white/90 p-5 shadow-[0_18px_50px_-34px_rgb(15_23_42_/_0.28)] backdrop-blur sm:p-6 xl:row-span-3 xl:grid-rows-subgrid">
+            <div className="grid items-stretch gap-5 xl:grid-cols-[1.08fr_0.92fr]">
+              <article className="flex h-full flex-col rounded-[1.5rem] border border-white/80 bg-white/90 p-5 shadow-[0_18px_50px_-34px_rgb(15_23_42_/_0.28)] backdrop-blur sm:p-6">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
@@ -300,7 +300,9 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   </div>
                 </div>
 
-                <div className="border-iclset-blue/15 bg-iclset-blue/8 mt-5 rounded-[1.35rem] border p-4 sm:p-5">
+                <div className="min-h-5 flex-1" aria-hidden="true" />
+
+                <div className="border-iclset-blue/15 bg-iclset-blue/8 rounded-[1.35rem] border p-4 sm:p-5">
                   <div className="flex items-center gap-2">
                     <CalendarDays className="text-iclset-blue size-4" />
                     <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
@@ -360,7 +362,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
 
               <aside
                 id="registration-fees"
-                className="border-iclset-emerald/15 bg-iclset-green-soft/35 grid h-full scroll-mt-24 grid-rows-[auto_1fr_auto] rounded-[1.5rem] border p-5 shadow-[0_18px_50px_-36px_rgb(15_23_42_/_0.24)] sm:p-6 xl:row-span-3 xl:grid-rows-subgrid"
+                className="border-iclset-emerald/15 bg-iclset-green-soft/35 grid h-full scroll-mt-24 grid-rows-[auto_1fr_auto] rounded-[1.5rem] border p-5 shadow-[0_18px_50px_-36px_rgb(15_23_42_/_0.24)] sm:p-6"
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
