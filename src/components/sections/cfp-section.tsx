@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BookOpenCheck,
   CalendarDays,
+  Download,
   ExternalLink,
   FileText,
   Info,
@@ -22,6 +23,7 @@ import {
   registrationFees,
   registrationFeesContent,
 } from "@/content/registration-fees";
+import { conferenceTemplates } from "@/content/templates";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
 
@@ -257,6 +259,45 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       </motion.div>
                     );
                   })}
+                </div>
+
+                <div className="border-iclset-emerald/15 bg-iclset-emerald/5 mt-5 rounded-[1.35rem] border p-4 sm:p-5">
+                  <div className="flex items-center gap-2">
+                    <Download className="text-iclset-emerald size-4" />
+                    <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+                      {locale === "es"
+                        ? "Plantillas en Word"
+                        : "Word templates"}
+                    </p>
+                  </div>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {conferenceTemplates.map((template) => (
+                      <a
+                        key={template.key}
+                        href={template.href}
+                        download={template.fileName}
+                        className="group/template rounded-[1rem] border border-white/80 bg-white/90 p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] outline-none transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3 focus-visible:ring-iclset-emerald/35"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="from-iclset-emerald to-iclset-green grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br text-white shadow-md">
+                            <FileText className="size-4.5" />
+                          </span>
+                          <div>
+                            <h4 className="text-iclset-ink flex items-center gap-1.5 text-sm font-semibold">
+                              {template.title[locale]}
+                              <Download
+                                className="text-iclset-emerald size-3.5 transition-transform duration-300 group-hover/template:translate-y-0.5"
+                                aria-hidden="true"
+                              />
+                            </h4>
+                            <p className="text-iclset-muted mt-1.5 text-sm leading-6">
+                              {template.description[locale]}
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="border-iclset-blue/15 bg-iclset-blue/8 mt-5 rounded-[1.35rem] border p-4 sm:p-5">

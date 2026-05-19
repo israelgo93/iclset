@@ -31,8 +31,8 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
       en: "AUTHOR GUIDELINES",
     },
     description: {
-      es: "Expectativas preliminares para autores que presenten contribuciones a ICLSET 2026.",
-      en: "Preliminary expectations for authors submitting contributions to ICLSET 2026.",
+      es: "Estos son los lineamientos para autores que presenten contribuciones a ICLSET 2026.",
+      en: "These are the author guidelines for submitting contributions to ICLSET 2026.",
     },
     items: [
       {
@@ -44,7 +44,7 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
         en: "Authors must use an active Microsoft CMT account to submit and track their work.",
       },
       {
-        es: "Al menos un autor de cada trabajo aceptado deberá inscribirse y presentar la contribución en la modalidad asignada.",
+        es: "Al menos un autor de cada trabajo aceptado debe inscribirse y presentar la contribución en la modalidad asignada.",
         en: "At least one author of each accepted work must register and present the contribution in the assigned modality.",
       },
       {
@@ -60,13 +60,13 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
       en: "SUBMISSION GUIDELINES",
     },
     description: {
-      es: "Condiciones preliminares para preparar el archivo y completar la postulación en CMT.",
-      en: "Preliminary conditions for preparing the file and completing the submission in CMT.",
+      es: "Estos son los lineamientos para preparar el archivo y completar la postulación en CMT.",
+      en: "These are the guidelines for preparing the file and completing the submission in CMT.",
     },
     items: [
       {
-        es: "Full papers: 8 a 12 páginas en la plantilla oficial del congreso, cuando sea publicada.",
-        en: "Full papers: 8 to 12 pages using the official conference template once published.",
+        es: "Full papers: 8 a 12 páginas en la plantilla oficial del congreso.",
+        en: "Full papers: 8 to 12 pages using the official conference template.",
       },
       {
         es: "Pósters científicos: contribución de 2 páginas y póster para la feria académica.",
@@ -77,8 +77,8 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
         en: "The initial file must be anonymized for double-blind review, with no names, affiliations, or identifying acknowledgments.",
       },
       {
-        es: "Se aceptará un único envío por contribución en la plataforma CMT, dentro del plazo oficial publicado.",
-        en: "One submission per contribution will be accepted in the CMT platform within the official published deadline.",
+        es: "Se acepta un único envío por contribución en la plataforma CMT, dentro del plazo oficial publicado.",
+        en: "One submission per contribution is accepted in the CMT platform within the official published deadline.",
       },
     ],
   },
@@ -89,17 +89,17 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
       en: "WHERE TO SUBMIT",
     },
     description: {
-      es: "Canal editorial preliminar definido para la recepción de trabajos.",
-      en: "Preliminary editorial channel defined for receiving submissions.",
+      es: "Canal editorial oficial definido para la recepción de trabajos.",
+      en: "Official editorial channel for receiving submissions.",
     },
     items: [
       {
-        es: "Los trabajos deben enviarse mediante el sitio oficial de ICLSET 2026 en Microsoft CMT.",
-        en: "Submissions must be sent through the official ICLSET 2026 site in Microsoft CMT.",
+        es: "Los trabajos deben enviarse mediante el sitio Oficial https://cmt3.research.microsoft.com/ICLSET2026/ en Microsoft CMT.",
+        en: "Submissions must be sent through the official site https://cmt3.research.microsoft.com/ICLSET2026/ in Microsoft CMT.",
       },
       {
-        es: "No se recibirán trabajos por correo electrónico ni mediante plataformas distintas a Microsoft CMT.",
-        en: "Submissions will not be accepted by email or through platforms other than Microsoft CMT.",
+        es: "No se reciben trabajos por correo electrónico ni mediante plataformas distintas a Microsoft CMT.",
+        en: "Submissions are not accepted by email or through platforms other than Microsoft CMT.",
       },
     ],
   },

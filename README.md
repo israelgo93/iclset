@@ -52,7 +52,8 @@ Todo el contenido sensible vive en `src/content`:
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
-- `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques preliminares de lineamientos para autores y envío.
+- `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques de lineamientos para autores y envío.
+- `templates.ts`: plantillas Word descargables para artículos y resúmenes.
 
 ## Visuales
 
@@ -109,7 +110,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
 - Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
-- Requisitos preliminares de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
+- Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.

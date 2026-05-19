@@ -25,13 +25,13 @@ export function CmtComplianceSection({ locale }: CmtComplianceSectionProps) {
           </p>
           <h2 className="text-iclset-ink mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
             {locale === "es"
-              ? "Información preliminar para autores y envío"
-              : "Preliminary author and submission information"}
+              ? "Lineamientos para autores y envío"
+              : "Author and submission guidelines"}
           </h2>
           <p className="text-iclset-muted mt-4 text-base leading-7">
             {locale === "es"
-              ? "Esta sección concentra los elementos solicitados por Microsoft CMT para que la convocatoria sea pública, clara y verificable antes de habilitar el sitio editorial oficial."
-              : "This section centralizes the elements requested by Microsoft CMT so the call is public, clear, and verifiable before the official editorial site is enabled."}
+              ? "Esta sección concentra los lineamientos oficiales para preparar y enviar full papers y pósters científicos mediante Microsoft CMT."
+              : "This section centralizes the official guidelines for preparing and submitting full papers and scientific posters through Microsoft CMT."}
           </p>
         </div>
 
