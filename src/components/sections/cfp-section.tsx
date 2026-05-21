@@ -3,7 +3,6 @@
 import {
   ArrowRight,
   BookOpenCheck,
-  CalendarDays,
   Download,
   ExternalLink,
   FileText,
@@ -138,64 +137,73 @@ export function CfpSection({ locale }: CfpSectionProps) {
           }
           align="center"
         />
+
         <motion.div
-          className="brand-gradient-border overflow-hidden rounded-[2rem] bg-white p-1 shadow-[0_30px_80px_-42px_rgb(31_64_120_/_0.34)]"
+          className="brand-gradient-border overflow-hidden rounded-[1.75rem] bg-white p-1 shadow-[0_30px_80px_-42px_rgb(31_64_120_/_0.34)]"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: easing }}
         >
-          <div className="via-iclset-cyan-soft/35 to-iclset-green-soft/25 rounded-[1.85rem] bg-gradient-to-br from-white p-4 sm:p-6 lg:p-7">
-            <div className="grid items-stretch gap-5 xl:grid-cols-[1.08fr_0.92fr]">
-              <article className="flex h-full flex-col rounded-[1.5rem] border border-white/80 bg-white/90 p-5 shadow-[0_18px_50px_-34px_rgb(15_23_42_/_0.28)] backdrop-blur sm:p-6">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="via-iclset-cyan-soft/35 to-iclset-green-soft/25 rounded-[1.55rem] bg-gradient-to-br from-white p-3 sm:p-4 lg:p-5">
+            <div className="grid items-stretch gap-4 xl:grid-cols-[minmax(0,1.28fr)_minmax(22rem,0.72fr)]">
+              <article className="h-full rounded-[1.35rem] border border-white/80 bg-white/92 p-4 shadow-[0_18px_50px_-34px_rgb(15_23_42_/_0.28)] backdrop-blur sm:p-5">
+                <div className="from-iclset-blue-soft/80 to-iclset-cyan-soft/35 border-iclset-blue/10 flex flex-col gap-3 rounded-[1.2rem] border bg-gradient-to-r p-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
                       Call for Papers
                     </p>
-                    <h3 className="text-iclset-ink mt-2 text-2xl leading-tight font-semibold tracking-tight">
+                    <h3 className="text-iclset-ink mt-1.5 text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
                       {locale === "es"
                         ? "Envío académico por CMT"
                         : "Academic submission through CMT"}
                     </h3>
+                    <p className="text-iclset-muted mt-2 max-w-2xl text-sm leading-5">
+                      {locale === "es"
+                        ? "Lineamientos, plantillas y ventana oficial de recepción en un solo flujo para autores."
+                        : "Guidelines, templates, and the official submission window in one author workflow."}
+                    </p>
                   </div>
-                  <span className="from-iclset-blue to-iclset-emerald grid size-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white shadow-md">
-                    <FileText className="size-5" />
+                  <span className="from-iclset-blue to-iclset-emerald grid size-13 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white shadow-[0_18px_36px_-18px_rgb(31_148_255_/_0.75)]">
+                    <FileText className="size-6" />
                   </span>
                 </div>
 
-                <div className="mt-5 grid content-start gap-3 sm:grid-cols-2">
+                <div className="mt-4 grid content-start gap-3 md:grid-cols-2">
                   {items.map((item, index) => {
                     const Icon = item.icon;
-                    const cardClassName =
-                      "group border-iclset-blue/10 to-iclset-cyan-soft/30 rounded-[1.15rem] border bg-gradient-to-br from-white p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)] outline-none transition-shadow focus-visible:ring-3 focus-visible:ring-iclset-blue/35";
+                    const cardClassName = `group border-iclset-blue/10 to-iclset-cyan-soft/25 rounded-[1rem] border bg-gradient-to-br from-white p-3.5 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)] outline-none transition-shadow focus-visible:ring-3 focus-visible:ring-iclset-blue/35 ${
+                      item.href
+                        ? "border-iclset-emerald/25 from-iclset-emerald/8 to-iclset-green-soft/45"
+                        : "xl:col-span-1"
+                    }`;
                     const cardContent = (
-                      <div className="flex items-start gap-3">
-                        <span
-                          className={`grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${item.accent} text-white shadow-md`}
-                        >
-                          <Icon className="size-4.5" />
-                        </span>
-                        <div>
-                          <h4 className="text-iclset-ink flex items-center gap-1.5 text-sm font-semibold">
-                            {item.title}
+                      <div className="grid gap-2.5">
+                        <div className="flex items-center gap-3">
+                          <span
+                            className={`grid size-8 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${item.accent} text-white shadow-md`}
+                          >
+                            <Icon className="size-4" />
+                          </span>
+                          <h4 className="text-iclset-ink flex min-w-0 items-center gap-1.5 text-sm font-semibold">
+                            <span className="truncate">{item.title}</span>
                             {item.href ? (
                               <ExternalLink
-                                className="text-iclset-emerald size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                className="text-iclset-emerald size-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                                 aria-hidden="true"
                               />
                             ) : null}
                           </h4>
-                          <p className="text-iclset-muted mt-1.5 text-sm leading-6">
-                            {item.text}
-                          </p>
-                          {item.cta ? (
-                            <span className="text-iclset-emerald bg-iclset-emerald/10 group-hover:bg-iclset-emerald mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors duration-300 group-hover:text-white">
-                              {item.cta}
-                              <ExternalLink className="size-3.5" />
-                            </span>
-                          ) : null}
                         </div>
+                        <p className="text-iclset-muted text-justify text-[0.82rem] leading-5 hyphens-auto">
+                          {item.text}
+                        </p>
+                        {item.cta ? (
+                          <span className="from-iclset-emerald to-iclset-green mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-x-0.5">
+                            {item.cta}
+                            <ExternalLink className="size-3.5" />
+                          </span>
+                        ) : null}
                       </div>
                     );
 
@@ -226,10 +234,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                               ? undefined
                               : {
                                   y: -3,
-                                  transition: {
-                                    duration: 0.25,
-                                    ease: easing,
-                                  },
+                                  transition: { duration: 0.25, ease: easing },
                                 }
                           }
                           className={cardClassName}
@@ -268,84 +273,110 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       </motion.div>
                     );
                   })}
+                  <motion.div
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                    whileInView={
+                      shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
+                    }
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.5,
+                      ease: easing,
+                      delay: 0.05 * items.length,
+                    }}
+                    whileHover={
+                      shouldReduceMotion
+                        ? undefined
+                        : {
+                            y: -3,
+                            transition: { duration: 0.25, ease: easing },
+                          }
+                    }
+                    className="border-iclset-blue/20 from-iclset-blue/10 to-iclset-sky/10 rounded-[1rem] border bg-gradient-to-br p-3.5 shadow-[0_12px_32px_-28px_rgb(31_148_255_/_0.45)] transition-shadow outline-none"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.16em] uppercase">
+                        {locale === "es"
+                          ? "Recepción de envío CMT"
+                          : "CMT submission reception"}
+                      </p>
+                      <span className="bg-iclset-blue/10 text-iclset-blue rounded-full px-3 py-1 text-xs font-semibold">
+                        Microsoft CMT
+                      </span>
+                    </div>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                      <div className="rounded-xl bg-white/90 p-3 shadow-sm">
+                        <p className="text-iclset-muted text-[0.65rem] font-semibold tracking-[0.14em] uppercase">
+                          {locale === "es" ? "Inicio" : "Opens"}
+                        </p>
+                        <p className="text-iclset-ink mt-1 text-base font-semibold">
+                          {submissionStart ?? submissionDate?.date[locale]}
+                        </p>
+                      </div>
+                      <div className="rounded-xl bg-white/90 p-3 shadow-sm">
+                        <p className="text-iclset-muted text-[0.65rem] font-semibold tracking-[0.14em] uppercase">
+                          {locale === "es" ? "Cierre" : "Closes"}
+                        </p>
+                        <p className="text-iclset-ink mt-1 text-base font-semibold">
+                          {submissionEnd ?? submissionDate?.date[locale]}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-iclset-muted mt-2.5 text-justify text-[0.82rem] leading-5 hyphens-auto">
+                      {submissionDate?.description[locale]}
+                    </p>
+                  </motion.div>
                 </div>
 
-                <div className="border-iclset-emerald/15 bg-iclset-emerald/5 mt-5 rounded-[1.35rem] border p-4 sm:p-5">
-                  <div className="flex items-center gap-2">
-                    <Download className="text-iclset-emerald size-4" />
-                    <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-                      {locale === "es"
-                        ? "Plantillas en Word"
-                        : "Word templates"}
-                    </p>
-                  </div>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {conferenceTemplates.map((template) => (
-                      <a
-                        key={template.key}
-                        href={template.href}
-                        download={template.fileName}
-                        className="group/template focus-visible:ring-iclset-emerald/35 rounded-[1rem] border border-white/80 bg-white/90 p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 outline-none hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3"
-                      >
-                        <div className="flex items-start gap-3">
-                          <span className="from-iclset-emerald to-iclset-green grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br text-white shadow-md">
-                            <FileText className="size-4.5" />
-                          </span>
-                          <div>
-                            <h4 className="text-iclset-ink flex items-center gap-1.5 text-sm font-semibold">
-                              {template.title[locale]}
-                              <Download
-                                className="text-iclset-emerald size-3.5 transition-transform duration-300 group-hover/template:translate-y-0.5"
-                                aria-hidden="true"
-                              />
-                            </h4>
-                            <p className="text-iclset-muted mt-1.5 text-sm leading-6">
-                              {template.description[locale]}
-                            </p>
-                          </div>
-                        </div>
-                      </a>
-                    ))}
+                <div className="mt-4">
+                  <div className="border-iclset-emerald/20 from-iclset-emerald/8 to-iclset-green-soft/45 rounded-[1.2rem] border bg-gradient-to-br p-4 shadow-[0_18px_44px_-34px_rgb(78_205_87_/_0.45)]">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.16em] uppercase">
+                        {locale === "es"
+                          ? "Plantillas en Word"
+                          : "Word templates"}
+                      </p>
+                      <Download className="text-iclset-emerald size-4" />
+                    </div>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                      {conferenceTemplates.map((template) => (
+                        <a
+                          key={template.key}
+                          href={template.href}
+                          download={template.fileName}
+                          className="group/template focus-visible:ring-iclset-emerald/35 rounded-xl border border-white/80 bg-white/90 p-3 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 outline-none hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3"
+                        >
+                          <h4 className="text-iclset-ink flex items-center gap-1.5 text-sm font-semibold">
+                            {template.title[locale]}
+                            <Download
+                              className="text-iclset-emerald size-3.5 transition-transform duration-300 group-hover/template:translate-y-0.5"
+                              aria-hidden="true"
+                            />
+                          </h4>
+                          <p className="text-iclset-muted mt-1.5 text-[0.8rem] leading-5">
+                            {template.description[locale]}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="min-h-5 flex-1" aria-hidden="true" />
-
-                <div className="border-iclset-blue/15 bg-iclset-blue/8 min-h-64 rounded-[1.35rem] border p-4 sm:p-5">
-                  <div className="flex items-center gap-2">
-                    <CalendarDays className="text-iclset-blue size-4" />
-                    <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+                <div className="border-iclset-blue/12 from-iclset-navy to-iclset-blue mt-4 rounded-[1.2rem] border bg-gradient-to-r p-3.5 text-white shadow-[0_20px_48px_-28px_rgb(15_23_42_/_0.75)] sm:flex sm:items-center sm:justify-between sm:gap-4">
+                  <div className="mb-3 sm:mb-0">
+                    <p className="text-sm font-semibold">
                       {locale === "es"
-                        ? "Recepción de envío CMT"
-                        : "CMT submission reception"}
+                        ? "Acciones principales para autores"
+                        : "Primary author actions"}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-white/72">
+                      {locale === "es"
+                        ? "Consulta los lineamientos o inicia el envío oficial en Microsoft CMT."
+                        : "Review the guidelines or start the official submission in Microsoft CMT."}
                     </p>
                   </div>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-                    <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
-                      <p className="text-iclset-muted text-[0.68rem] font-semibold tracking-[0.16em] uppercase">
-                        {locale === "es" ? "Inicio" : "Opens"}
-                      </p>
-                      <p className="text-iclset-ink mt-1 text-lg font-semibold">
-                        {submissionStart ?? submissionDate?.date[locale]}
-                      </p>
-                    </div>
-                    <span className="text-iclset-blue hidden text-xl font-semibold sm:block">
-                      →
-                    </span>
-                    <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
-                      <p className="text-iclset-muted text-[0.68rem] font-semibold tracking-[0.16em] uppercase">
-                        {locale === "es" ? "Cierre" : "Closes"}
-                      </p>
-                      <p className="text-iclset-ink mt-1 text-lg font-semibold">
-                        {submissionEnd ?? submissionDate?.date[locale]}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-iclset-muted mt-3 text-sm leading-6">
-                    {submissionDate?.description[locale]}
-                  </p>
-                  <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-                    <Button asChild size="default" variant="default">
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <Button asChild size="lg" variant="default">
                       <Link href={localizePath(locale, "/call-for-papers")}>
                         {locale === "es"
                           ? "Ver lineamientos"
@@ -353,7 +384,12 @@ export function CfpSection({ locale }: CfpSectionProps) {
                         <ArrowRight className="size-4 transition-transform duration-300 group-hover/button:translate-x-1" />
                       </Link>
                     </Button>
-                    <Button asChild size="default" variant="outline">
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="text-iclset-ink border-white/65 bg-white hover:bg-white"
+                    >
                       <a
                         href={conference.cmtUrl}
                         target="_blank"
@@ -371,42 +407,42 @@ export function CfpSection({ locale }: CfpSectionProps) {
 
               <aside
                 id="registration-fees"
-                className="border-iclset-emerald/15 bg-iclset-green-soft/35 grid h-full scroll-mt-24 grid-rows-[auto_1fr_auto] rounded-[1.5rem] border p-5 shadow-[0_18px_50px_-36px_rgb(15_23_42_/_0.24)] sm:p-6"
+                className="border-iclset-emerald/15 bg-iclset-green-soft/35 flex h-full scroll-mt-24 flex-col rounded-[1.35rem] border p-4 shadow-[0_18px_50px_-36px_rgb(15_23_42_/_0.24)] sm:p-5"
               >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="from-iclset-emerald/10 to-iclset-green-soft/55 border-iclset-emerald/15 flex flex-col gap-3 rounded-[1.15rem] border bg-gradient-to-r p-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
                       {registrationFeesContent.eyebrow[locale]}
                     </p>
-                    <h3 className="text-iclset-ink mt-2 text-2xl leading-tight font-semibold tracking-tight">
+                    <h3 className="text-iclset-ink mt-1.5 text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
                       {registrationFeesContent.title[locale]}
                     </h3>
-                    <p className="text-iclset-muted mt-2 text-sm leading-6">
+                    <p className="text-iclset-muted mt-2 text-[0.84rem] leading-5">
                       {registrationFeesContent.description[locale]}
                     </p>
                   </div>
-                  <span className="from-iclset-emerald to-iclset-green grid size-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white shadow-md">
-                    <ReceiptText className="size-5" />
+                  <span className="from-iclset-emerald to-iclset-green grid size-13 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white shadow-[0_18px_36px_-18px_rgb(78_205_87_/_0.78)]">
+                    <ReceiptText className="size-6" />
                   </span>
                 </div>
 
-                <div className="mt-5 grid content-start gap-3">
+                <div className="mt-4 grid content-start gap-2.5">
                   {registrationFees.map((fee, index) => (
                     <article
                       key={fee.key}
-                      className="group rounded-[1.15rem] border border-white/80 bg-white/90 p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)]"
+                      className="group rounded-[1rem] border border-white/80 bg-white/92 p-3 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)]"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className="text-iclset-muted text-[0.68rem] font-semibold tracking-[0.16em] uppercase">
+                          <p className="text-iclset-muted text-[0.65rem] font-semibold tracking-[0.15em] uppercase">
                             {fee.audience[locale]}
                           </p>
-                          <p className="text-iclset-muted mt-2 text-sm leading-6">
+                          <p className="text-iclset-muted mt-1.5 text-[0.82rem] leading-5">
                             {fee.description[locale]}
                           </p>
                         </div>
                         <p
-                          className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-semibold ${
+                          className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
                             index % 2 === 0
                               ? "bg-iclset-blue/10 text-iclset-blue"
                               : "bg-iclset-emerald/10 text-iclset-emerald"
@@ -419,24 +455,25 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   ))}
                 </div>
 
-                <div className="from-iclset-blue via-iclset-sky to-iclset-emerald mt-5 grid min-h-64 gap-4 overflow-hidden rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_18px_46px_-24px_rgb(31_148_255_/_0.75)] sm:flex sm:items-center sm:justify-between">
+                <div className="from-iclset-blue via-iclset-sky to-iclset-emerald mt-auto grid gap-4 overflow-hidden rounded-[1.2rem] bg-gradient-to-r p-5 text-white shadow-[0_22px_54px_-22px_rgb(31_148_255_/_0.82)]">
                   <div className="flex gap-3">
-                    <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-white/18 text-white shadow-sm ring-1 ring-white/25">
+                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-white/18 text-white shadow-sm ring-1 ring-white/25">
                       <Info className="size-5" />
                     </span>
                     <div>
-                      <p className="text-base leading-6 font-semibold">
+                      <p className="text-xl leading-6 font-semibold">
                         {registrationFeesContent.note[locale]}
                       </p>
-                      <p className="mt-1 max-w-sm text-sm leading-6 text-white/82">
+                      <p className="mt-1 text-sm leading-5 text-white/82">
                         {registrationFeesContent.ctaDescription[locale]}
                       </p>
                     </div>
                   </div>
                   <Button
                     asChild
+                    size="lg"
                     variant="outline"
-                    className="text-iclset-ink min-w-44 shrink-0 border-white/70 bg-white shadow-[0_16px_34px_-20px_rgb(15_23_42_/_0.7)] hover:border-white hover:bg-white"
+                    className="text-iclset-ink w-full border-white/70 bg-white shadow-[0_16px_34px_-20px_rgb(15_23_42_/_0.7)] hover:border-white hover:bg-white"
                   >
                     <a href={registrationFeesContent.ctaUrl}>
                       {registrationFeesContent.cta[locale]}
