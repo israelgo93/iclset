@@ -1,9 +1,17 @@
 "use client";
 
-import { CalendarClock, ChevronDown, MapPin } from "lucide-react";
+import {
+  CalendarClock,
+  CalendarPlus,
+  ChevronDown,
+  Download,
+  MapPin,
+} from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
+import { conference } from "@/content/conference";
 import { schedule } from "@/content/schedule";
 import type { Locale } from "@/types/locale";
 
@@ -14,32 +22,86 @@ interface ProgramPreviewSectionProps {
 
 const dayAccentStyles = [
   {
-    panel: "from-iclset-emerald/18 via-white to-iclset-green/10",
-    media: "from-iclset-emerald to-iclset-green",
     text: "text-iclset-emerald",
-    ring: "ring-iclset-emerald/20",
     border: "border-l-iclset-emerald",
+    edge: "border-iclset-emerald/25",
+    ring: "ring-iclset-emerald/20",
+    glow: "shadow-[0_22px_70px_-46px_rgb(16_185_129_/_0.45)]",
   },
   {
-    panel: "from-iclset-blue/16 via-white to-iclset-sky/10",
-    media: "from-iclset-blue to-iclset-sky",
     text: "text-iclset-blue",
-    ring: "ring-iclset-blue/20",
     border: "border-l-iclset-blue",
+    edge: "border-iclset-blue/25",
+    ring: "ring-iclset-blue/20",
+    glow: "shadow-[0_22px_70px_-46px_rgb(31_148_255_/_0.45)]",
   },
   {
-    panel: "from-iclset-green/16 via-white to-iclset-lime/14",
-    media: "from-iclset-green to-iclset-lime",
     text: "text-iclset-green",
-    ring: "ring-iclset-green/20",
     border: "border-l-iclset-green",
+    edge: "border-iclset-green/25",
+    ring: "ring-iclset-green/20",
+    glow: "shadow-[0_22px_70px_-46px_rgb(78_205_87_/_0.42)]",
   },
 ] as const;
 
 const easing = [0.22, 1, 0.36, 1] as const;
+const eventStartDate = "20260715T080000";
+const eventEndDate = "20260717T173000";
+const eventTimeZone = "America/Guayaquil";
 
 function getDayAccent(index: number) {
   return dayAccentStyles[index] ?? dayAccentStyles[0];
+}
+
+function createCalendarLinks(locale: Locale) {
+  const title =
+    locale === "es"
+      ? "ICLSET 2026 - Conferencia internacional"
+      : "ICLSET 2026 - International conference";
+  const details =
+    locale === "es"
+      ? "Recordatorio de ICLSET 2026: programa académico híbrido con plenarias, sesiones por track y feria académica."
+      : "Reminder for ICLSET 2026: hybrid academic program with plenaries, track sessions, and academic fair.";
+  const reminder =
+    locale === "es"
+      ? "ICLSET 2026 inicia mañana. Revisa el programa académico y los accesos institucionales."
+      : "ICLSET 2026 starts tomorrow. Review the academic program and institutional access details.";
+  const location = `${conference.location.venue}, ${conference.location.city}, ${conference.location.province}, ${conference.location.country}`;
+  const googleParams = new URLSearchParams({
+    action: "TEMPLATE",
+    text: title,
+    dates: `${eventStartDate}/${eventEndDate}`,
+    ctz: eventTimeZone,
+    details,
+    location,
+  });
+  const icsContent = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//ICLSET 2026//Academic Program//ES",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    "UID:iclset-2026-academic-program@iclset.com",
+    `DTSTAMP:${eventStartDate}Z`,
+    `DTSTART;TZID=${eventTimeZone}:${eventStartDate}`,
+    `DTEND;TZID=${eventTimeZone}:${eventEndDate}`,
+    `SUMMARY:${title}`,
+    `DESCRIPTION:${details}`,
+    `LOCATION:${location}`,
+    "BEGIN:VALARM",
+    "TRIGGER:-P1D",
+    "ACTION:DISPLAY",
+    `DESCRIPTION:${reminder}`,
+    "END:VALARM",
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\r\n");
+
+  return {
+    google: `https://calendar.google.com/calendar/render?${googleParams.toString()}`,
+    ics: `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`,
+  };
 }
 
 export function ProgramPreviewSection({
@@ -47,22 +109,36 @@ export function ProgramPreviewSection({
   detailed = false,
 }: ProgramPreviewSectionProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [agendasOpen, setAgendasOpen] = useState(true);
+  const calendarLinks = createCalendarLinks(locale);
   const sectionIntro =
     locale === "es"
       ? "Agenda completa visible por jornada, con plenarias, paneles, sesiones por track y feria académica."
       : "Complete agenda visible by day, including plenaries, panels, track sessions, and the academic fair.";
-  const sectionScope =
-    locale === "es"
-      ? "15, 16 y 17 de julio de 2026 - modalidad híbrida"
-      : "July 15, 16, and 17, 2026 - hybrid format";
   const sectionClassName = detailed
     ? "relative isolate w-full overflow-hidden py-14 sm:py-16 lg:py-18"
     : "relative isolate w-full overflow-hidden py-14 sm:py-16 lg:min-h-svh lg:py-16";
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateAgendaState = () => {
+      setAgendasOpen(!mediaQuery.matches);
+    };
+
+    updateAgendaState();
+    mediaQuery.addEventListener("change", updateAgendaState);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateAgendaState);
+    };
+  }, []);
+
   return (
     <section className={sectionClassName}>
-      <div className="tech-grid pointer-events-none absolute inset-0 -z-10 opacity-45" />
-      <div className="from-iclset-cyan-soft/80 pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b to-transparent" />
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(135deg,oklch(97%_0.025_220),oklch(93%_0.04_165))]" />
+      <div className="tech-grid pointer-events-none absolute inset-0 -z-10 opacity-42" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(circle_at_18%_12%,oklch(80%_0.14_215_/_0.28),transparent_26rem),radial-gradient(circle_at_86%_18%,oklch(78%_0.22_142_/_0.2),transparent_24rem)]" />
+
       <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-6 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(18rem,0.35fr)] lg:items-end">
           <div className="max-w-4xl">
@@ -79,30 +155,37 @@ export function ProgramPreviewSection({
               {sectionIntro}
             </p>
           </div>
-          <div className="brand-gradient-border rounded-[1.35rem] bg-white/78 p-3.5 shadow-[0_18px_60px_-34px_rgb(15_23_42_/_0.25)] backdrop-blur">
+
+          <div className="border-iclset-blue/15 rounded-[1.75rem] border bg-white/84 p-4 shadow-[0_24px_80px_-46px_rgb(8_24_50_/_0.28)] ring-1 ring-white/60 backdrop-blur-xl">
             <p className="text-iclset-muted text-xs font-semibold tracking-[0.16em] uppercase">
-              {locale === "es" ? "Los días son:" : "The days are:"}
+              {locale === "es" ? "Recordatorio" : "Reminder"}
             </p>
             <p className="text-iclset-ink mt-2 text-lg leading-tight font-semibold">
-              {sectionScope}
+              {locale === "es" ? "Agenda ICLSET 2026" : "ICLSET 2026 agenda"}
             </p>
-            <div className="mt-3 grid grid-cols-3 gap-2 text-center">
-              {schedule.map((day) => (
-                <div
-                  key={day.day.en}
-                  className="border-iclset-blue/10 bg-iclset-surface rounded-2xl border px-2 py-2"
-                >
-                  <p className="text-iclset-ink text-sm font-semibold">
-                    {day.day[locale]}
-                  </p>
-                  <p className="text-iclset-muted mt-1 text-[0.68rem] leading-tight">
-                    {day.date[locale]}
-                  </p>
-                  <p className="text-iclset-muted mt-1 text-[0.68rem] leading-tight">
-                    {day.items.length} {locale === "es" ? "bloques" : "blocks"}
-                  </p>
-                </div>
-              ))}
+            <p className="text-iclset-muted mt-2 text-sm leading-6">
+              {locale === "es"
+                ? "Agrega el evento a tu calendario con un recordatorio un día antes."
+                : "Add the event to your calendar with a one-day reminder."}
+            </p>
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+              <a
+                href={calendarLinks.google}
+                target="_blank"
+                rel="noreferrer"
+                className="from-iclset-blue to-iclset-green focus-visible:outline-iclset-sky inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r px-4 py-2.5 text-sm font-semibold text-white shadow-[0_16px_44px_-22px_rgb(31_148_255_/_0.8)] transition-transform hover:-translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-3"
+              >
+                <CalendarPlus className="size-4" />
+                {locale === "es" ? "Agregar a calendario" : "Add to calendar"}
+              </a>
+              <a
+                href={calendarLinks.ics}
+                download="iclset-2026.ics"
+                className="border-iclset-blue/15 text-iclset-ink focus-visible:outline-iclset-sky inline-flex min-h-11 items-center justify-center gap-2 rounded-full border bg-white/72 px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-3"
+              >
+                <Download className="text-iclset-blue size-4" />
+                {locale === "es" ? "Otros calendarios" : "Other calendars"}
+              </a>
             </div>
           </div>
         </div>
@@ -115,6 +198,7 @@ export function ProgramPreviewSection({
               index={index}
               locale={locale}
               shouldReduceMotion={shouldReduceMotion}
+              initiallyOpen={agendasOpen}
             />
           ))}
         </div>
@@ -128,6 +212,7 @@ interface ProgramDayCardProps {
   index: number;
   locale: Locale;
   shouldReduceMotion: boolean | null;
+  initiallyOpen: boolean;
 }
 
 function ProgramDayCard({
@@ -135,6 +220,7 @@ function ProgramDayCard({
   index,
   locale,
   shouldReduceMotion,
+  initiallyOpen,
 }: ProgramDayCardProps) {
   const accent = getDayAccent(index);
 
@@ -148,10 +234,12 @@ function ProgramDayCard({
         ease: easing,
         delay: 0.05 * index,
       }}
-      className={`group/day border-iclset-blue/10 min-w-0 overflow-hidden rounded-[1.45rem] border bg-gradient-to-br ${accent.panel} shadow-[0_24px_74px_-46px_rgb(15_23_42_/_0.28)] ring-1 ${accent.ring}`}
+      className={`text-iclset-ink min-w-0 overflow-hidden rounded-[1.75rem] border bg-white/86 ring-1 backdrop-blur-xl ${accent.edge} ${accent.ring} ${accent.glow}`}
     >
-      <div className={`bg-gradient-to-br ${accent.media} p-2.5`}>
-        <div className="bg-iclset-navy relative overflow-hidden rounded-[1.1rem] border border-white/35 shadow-[0_22px_54px_-28px_rgb(6_20_38_/_0.55)]">
+      <div className="p-3">
+        <div
+          className={`bg-iclset-navy relative overflow-hidden rounded-[1.25rem] border shadow-[0_22px_54px_-32px_rgb(6_20_38_/_0.48)] ${accent.edge}`}
+        >
           <Image
             src={day.image.src}
             alt={day.image.alt[locale]}
@@ -159,9 +247,9 @@ function ProgramDayCard({
             height={768}
             sizes="(max-width: 1024px) 100vw, 33vw"
             loading={index === 0 ? "eager" : "lazy"}
-            className="ease-iclset aspect-[16/9] h-full w-full object-cover object-center transition-transform duration-500 group-hover/day:scale-[1.025] lg:aspect-[2.6/1]"
+            className="ease-iclset aspect-[16/9] h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02] lg:aspect-[2.6/1]"
           />
-          <div className="from-iclset-navy/70 absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-3.5">
+          <div className="from-iclset-navy/78 absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-3.5">
             <p className="text-sm font-semibold text-white">
               {day.day[locale]}
             </p>
@@ -172,23 +260,18 @@ function ProgramDayCard({
         </div>
       </div>
 
-      <div className="p-3.5 sm:p-4">
-        <div className="border-iclset-blue/10 border-b pb-3 lg:min-h-[6rem]">
-          <p
-            className={`text-xs font-semibold tracking-[0.13em] uppercase ${accent.text}`}
-          >
-            {day.day[locale]} - {day.date[locale]}
-          </p>
-          <h3 className="text-iclset-ink mt-2 text-lg leading-tight font-semibold tracking-tight lg:text-[1.15rem] xl:text-[1.22rem]">
+      <div className="p-4 pt-1 sm:p-5 sm:pt-2">
+        <div className="border-iclset-blue/10 border-b pb-3 lg:min-h-[5.25rem]">
+          <h3 className="text-iclset-ink text-lg leading-tight font-semibold tracking-tight lg:text-[1.15rem] xl:text-[1.22rem]">
             {day.summary[locale]}
           </h3>
         </div>
 
         <details
-          open
+          open={initiallyOpen}
           className="group mt-3 [&>summary::-webkit-details-marker]:hidden"
         >
-          <summary className="border-iclset-blue/10 text-iclset-ink focus-visible:outline-iclset-sky flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl border bg-white/78 px-3 py-2.5 text-sm font-semibold transition-colors hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-3">
+          <summary className="border-iclset-blue/10 text-iclset-ink focus-visible:outline-iclset-sky flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl border bg-white/76 px-3 py-2.5 text-sm font-semibold shadow-[0_12px_40px_-32px_rgb(8_24_50_/_0.4)] transition-colors hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-3">
             <span className="flex items-center gap-2">
               <CalendarClock className={`size-4 ${accent.text}`} />
               {locale === "es" ? "Agenda del día" : "Day agenda"}
@@ -203,7 +286,7 @@ function ProgramDayCard({
             {day.items.map((item) => (
               <li
                 key={`${item.time}-${item.title.en}`}
-                className="border-iclset-blue/10 min-w-0 rounded-[1.05rem] border bg-white/72 p-2.5 transition-colors hover:bg-white"
+                className="border-iclset-blue/10 min-w-0 rounded-[1.05rem] border bg-white/74 p-2.5 shadow-[0_14px_44px_-34px_rgb(8_24_50_/_0.35)] transition-colors hover:bg-white"
               >
                 <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-1">
                   <p

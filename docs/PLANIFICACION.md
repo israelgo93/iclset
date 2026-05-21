@@ -557,3 +557,15 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Identificadores editoriales documentados: ISBN, ISSN y DOI individual por artículo.
 - Tarifa de publicación para revistas o proceedings indexados en Scopus: USD 400.
 - Información reflejada en publicaciones, Call for Papers, lineamientos CMT y FAQ.
+
+## Actualización UI programa y sede - 2026-05-21
+
+### Completado
+
+- Programa académico de home rediseñado como tres cards visibles, con imagen primero, resumen corto y agenda por día.
+- Agendas del programa colapsadas por defecto en móvil y abiertas en tablet/desktop para lectura comparativa.
+- Fechas redundantes retiradas del cuerpo de las cards; las fechas completas se mantienen sobre las imágenes y en el calendario.
+- Bloque de fechas operativas reemplazado por CTA para agregar ICLSET 2026 a Google Calendar o descargar archivo `.ics` para otros calendarios.
+- Recordatorio de calendario configurado para un día antes del inicio del evento.
+- Sección de sede ajustada con video de fondo solo en tablet/desktop, overlay de contraste y fallback móvil sin video.
+- Verificación bilingüe y responsive definida como paso obligatorio antes del commit de estos cambios.

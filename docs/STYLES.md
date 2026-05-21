@@ -275,13 +275,18 @@ Recepción → Revisión doble ciego → Decisión editorial → Presentación �
 
 ### 7. Programa preliminar
 
-Tabs:
+En home debe funcionar como una sección ejecutiva de agenda:
 
-- Día 1.
-- Día 2.
-- Día 3.
+- Tres cards visibles, una por día.
+- Imagen primero, con día y fecha completa sobre la imagen.
+- Resumen académico corto debajo de la imagen.
+- Agenda desplegable con horarios, título, descripción y modalidad.
+- En móvil, cada agenda inicia colapsada para reducir altura y permitir que el usuario despliegue el día que necesita.
+- En tablet y desktop, las agendas pueden iniciar abiertas para lectura comparativa.
+- No repetir la fecha como una etiqueta secundaria si ya aparece en la imagen.
+- Reemplazar bloques de resumen redundantes por un CTA de calendario: Google Calendar como acción principal y archivo `.ics` para otros calendarios.
 
-Mostrar solo resumen en home y detalle en `/program`.
+El home muestra el programa completo de forma escaneable; la página `/program` puede ampliar contexto si se requiere.
 
 ### 8. Revistas aliadas
 
@@ -303,6 +308,8 @@ Bloque visual de Manta y ULEAM:
 - Modalidad híbrida.
 - Zoom institucional.
 - Conectividad y acceso.
+- En tablet y desktop puede usar video de fondo institucional con overlay y blur para mantener contraste.
+- En móvil no debe cargar ni mostrar video; usar el layout claro tipo card de sede para rendimiento y legibilidad.
 
 ### 10. FAQ
 
@@ -583,3 +590,13 @@ Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme
 - Los titulos `AUTHOR GUIDELINES`, `SUBMISSION GUIDELINES`, `WHERE TO SUBMIT` y `HOW TO SUBMIT` deben quedar visibles como textos reales en la pagina.
 - El acknowledgement debe mantenerse como parrafo simple, sin negrita, cursiva ni transformaciones visuales que modifiquen el texto requerido por Microsoft CMT.
 - La pagina `/en/cmt-acknowledgment.html` prioriza verificacion automatica sobre diseño; debe conservar HTML minimo, texto plano y `charset=UTF-8`.
+
+## Ajuste UI programa y sede · 2026-05-21
+
+- El programa académico en home adopta una estructura de tres cards claras tipo glass, con imagen primero y agenda por día debajo del resumen.
+- Las fechas completas se muestran en la imagen de cada día y en el contenido de calendario; no deben duplicarse como chips adicionales dentro de la card.
+- En móvil, las agendas de Día 1, Día 2 y Día 3 se entregan colapsadas por defecto; el usuario puede desplegarlas desde `Agenda del día`.
+- En tablet y desktop, las agendas pueden permanecer abiertas para que la sección sea comparativa y ocupe el ancho disponible.
+- El antiguo resumen operativo de fechas se reemplaza por CTA de calendario con Google Calendar y archivo `.ics` compatible con otros calendarios, incluyendo recordatorio un día antes.
+- La sección de sede usa video de fondo solo desde tablet hacia arriba, con overlay y blur de marca para preservar contraste. En móvil se mantiene una versión sin video inspirada en cards claras.
+- Todo copy visible de estas secciones debe mantenerse bilingüe: español con tildes y acentos correctos, e inglés equivalente sin mezclar idiomas.

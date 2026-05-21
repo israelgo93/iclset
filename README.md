@@ -61,6 +61,9 @@ Todo el contenido sensible vive en `src/content`:
 - Icono del evento: `public/brand/iclset-icon.svg`.
 - Imagenes del programa: `public/program/day-1.svg`, `public/program/day-2.svg`, `public/program/day-3.svg`.
 - Hero con animacion Motion inspirada en biociencia, agrociencia y tecnologia.
+- Programa académico en home con tarjetas claras tipo glass, imágenes por día, agenda desplegable y CTA para agregar ICLSET 2026 a Google Calendar u otros calendarios mediante archivo `.ics`.
+- En móvil, las agendas de cada día del programa se muestran colapsadas por defecto para que el usuario las despliegue cuando necesite consultar horarios.
+- Sección de sede con video de fondo de Manta solo en tablet/desktop; en móvil se mantiene una versión clara sin video para rendimiento y legibilidad.
 - Layout mobile-first para Android, iOS, tablet, desktop y wide desktop.
 
 ## SEO y accesibilidad
@@ -114,6 +117,8 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Ruta Springer documentada y visible para el track tecnológico: libro `Innovation and Research – Smart Technologies and Systems`, serie Lecture Notes in Networks and Systems indexada en Scopus, ISBN/ISSN, DOI por artículo, revisión doble ciego, formato Springer, PDF, manuscrito en inglés y tarifa de publicación USD 400.
 - Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
+- Programa académico rediseñado con menor carga de gradientes, mayor contraste de texto, agenda colapsada en móvil, agenda abierta en tablet/desktop y enlaces de calendario bilingües.
+- Sede híbrida rediseñada con cards compactas, video de fondo en desktop/tablet desde el segundo 7 del video institucional y fallback móvil sin video.
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.
 
