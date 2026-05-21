@@ -491,3 +491,13 @@ pnpm add -D prettier prettier-plugin-tailwindcss
 - La ruta de acknowledgement debe responder `200 OK` con `Content-Type: text/html; charset=UTF-8`; no usar `charset=utf8mb4`.
 - El enlace final de envio CMT sigue como placeholder hasta que Microsoft cree el sitio oficial de ICLSET 2026.
 - Antes de solicitar validacion CMT, ejecutar `curl.exe -i https://iclset.com/en/cmt-acknowledgment.html` y confirmar que contiene el texto exacto del acknowledgement.
+
+## Estado Springer - 2026-05-21
+
+- El track tecnológico de ICLSET 2026 incluye la publicación de artículos aceptados por Springer.
+- Las contribuciones forman parte del libro `Innovation and Research – Smart Technologies and Systems`, publicado en la serie Lecture Notes in Networks and Systems, indexada en Scopus.
+- El volumen debe contar con ISBN e ISSN; cada artículo publicado debe tener DOI individual.
+- Todos los envíos mantienen revisión rigurosa doble ciego para asegurar calidad, originalidad y relevancia científica.
+- Para este track, los envíos deben prepararse en formato Springer, en PDF y escritos en inglés.
+- Tarifa de publicación para revistas o proceedings indexados en Scopus: USD 400.
+- Este contenido vive en `src/content/springer.ts` y debe mantenerse visible en las páginas de publicaciones y Call for Papers.

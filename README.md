@@ -2,7 +2,7 @@
 
 Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and Emerging Technologies**, organizada por la Universidad Laica Eloy Alfaro de Manabi y la Facultad de Ciencias de la Vida y Tecnologias.
 
-## Informacion del evento
+## Información del evento
 
 - **Nombre:** International Conference on Life Sciences and Emerging Technologies.
 - **Sigla:** ICLSET 2026.
@@ -48,7 +48,8 @@ Todo el contenido sensible vive en `src/content`:
 - `important-dates.ts`: cronograma oficial y fechas CMT.
 - `registration-fees.ts`: valores de inscripción publicados para estudiantes, personal ULEAM, participantes externos y autores.
 - `schedule.ts`: programa académico por día.
-- `journals.ts`: revistas aliadas con URLs e indexacion.
+- `journals.ts`: revistas aliadas con URLs e indexación.
+- `springer.ts`: ruta Springer del track tecnológico, requisitos de formato, indexación Scopus y tarifa de publicación.
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
@@ -110,6 +111,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
 - Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
+- Ruta Springer documentada y visible para el track tecnológico: libro `Innovation and Research – Smart Technologies and Systems`, serie Lecture Notes in Networks and Systems indexada en Scopus, ISBN/ISSN, DOI por artículo, revisión doble ciego, formato Springer, PDF, manuscrito en inglés y tarifa de publicación USD 400.
 - Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Build de produccion requerido antes de commit o despliegue.

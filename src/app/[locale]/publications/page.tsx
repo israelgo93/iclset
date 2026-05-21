@@ -23,8 +23,8 @@ export async function generateMetadata({
     title: locale === "es" ? "Publicaciones" : "Publications",
     description:
       locale === "es"
-        ? "Proceso editorial de ICLSET 2026, revisión doble ciego, libro de actas y revistas académicas aliadas."
-        : "ICLSET 2026 editorial process, double-blind review, proceedings, and partner academic journals.",
+        ? "Proceso editorial de ICLSET 2026, revisión doble ciego, ruta Springer en Scopus, libro de actas y revistas académicas aliadas."
+        : "ICLSET 2026 editorial process, double-blind review, Springer Scopus pathway, proceedings, and partner academic journals.",
   });
 }
 
@@ -50,8 +50,8 @@ export default async function PublicationsPage({
         }
         description={
           locale === "es"
-            ? "Información sobre revisión por pares, actas y canalización post-conferencia."
-            : "Information about peer review, proceedings, and post-conference pathways."
+            ? "Información sobre revisión por pares, ruta Springer, actas y canalización post-conferencia."
+            : "Information about peer review, Springer pathway, proceedings, and post-conference pathways."
         }
       />
       <PublicationsSection locale={locale} detailed />

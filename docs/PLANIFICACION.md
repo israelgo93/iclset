@@ -546,3 +546,14 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Nueva sección pública en home con estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores de papers o pósters USD 25.
 - Acceso directo desde el hero hacia la sección de valores.
 - FAQ de costo de inscripción conectada al contenido tipado para evitar duplicación manual.
+
+## Actualización Springer - 2026-05-21
+
+### Completado
+
+- Ruta Springer del track tecnológico centralizada en `src/content/springer.ts`.
+- Publicación indicada para el libro `Innovation and Research – Smart Technologies and Systems`, dentro de la serie Lecture Notes in Networks and Systems, indexada en Scopus.
+- Requisitos del track publicados: formato Springer, archivo PDF y manuscrito en inglés.
+- Identificadores editoriales documentados: ISBN, ISSN y DOI individual por artículo.
+- Tarifa de publicación para revistas o proceedings indexados en Scopus: USD 400.
+- Información reflejada en publicaciones, Call for Papers, lineamientos CMT y FAQ.

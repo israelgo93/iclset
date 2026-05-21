@@ -1,6 +1,7 @@
 import type { FaqItem } from "@/types/conference";
 
 import { registrationFees } from "./registration-fees";
+import { springerPublication } from "./springer";
 
 const registrationFeesSummary = {
   es: registrationFees
@@ -78,8 +79,8 @@ export const faqs: FaqItem[] = [
       en: "Will there be journal publication pathways?",
     },
     answer: {
-      es: "Los artículos aceptados y presentados se canalizan hacia las revistas aliadas Encriptar, YAKU, ALLPA, Revista Científica Conectividad y Ecuadorian Science Journal, según afinidad temática y proceso editorial propio de cada revista.",
-      en: "Accepted and presented papers are routed to Encriptar, YAKU, ALLPA, Revista Científica Conectividad, and Ecuadorian Science Journal according to thematic fit and each journal's editorial process.",
+      es: `Los artículos aceptados y presentados se canalizan hacia las revistas aliadas Encriptar, YAKU, ALLPA, Revista Científica Conectividad y Ecuadorian Science Journal, según afinidad temática y proceso editorial propio. El track tecnológico también contempla ruta Springer en Lecture Notes in Networks and Systems, indexada en Scopus, con tarifa de publicación de ${springerPublication.fee.amount}.`,
+      en: `Accepted and presented papers are routed to Encriptar, YAKU, ALLPA, Revista Científica Conectividad, and Ecuadorian Science Journal according to thematic fit and each journal's editorial process. The technological track also includes a Springer pathway in Lecture Notes in Networks and Systems, indexed in Scopus, with a publication fee of ${springerPublication.fee.amount}.`,
     },
   },
   {

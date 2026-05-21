@@ -23,6 +23,7 @@ import {
   registrationFees,
   registrationFeesContent,
 } from "@/content/registration-fees";
+import { springerPublication } from "@/content/springer";
 import { conferenceTemplates } from "@/content/templates";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
@@ -72,6 +73,14 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Artículo completo de 8 a 12 páginas en la plantilla del congreso."
           : "Full paper, 8 to 12 pages, using the conference template.",
       accent: "from-iclset-blue to-iclset-sky",
+    },
+    {
+      icon: BookOpenCheck,
+      title: springerPublication.eyebrow[locale],
+      text: springerPublication.requirements
+        .map((requirement) => requirement[locale])
+        .join(" "),
+      accent: "from-iclset-blue to-iclset-emerald",
     },
     {
       icon: BookOpenCheck,
@@ -181,7 +190,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                             {item.text}
                           </p>
                           {item.cta ? (
-                            <span className="text-iclset-emerald mt-3 inline-flex items-center gap-1.5 rounded-full bg-iclset-emerald/10 px-3 py-1.5 text-xs font-semibold transition-colors duration-300 group-hover:bg-iclset-emerald group-hover:text-white">
+                            <span className="text-iclset-emerald bg-iclset-emerald/10 group-hover:bg-iclset-emerald mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors duration-300 group-hover:text-white">
                               {item.cta}
                               <ExternalLink className="size-3.5" />
                             </span>
@@ -276,7 +285,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                         key={template.key}
                         href={template.href}
                         download={template.fileName}
-                        className="group/template rounded-[1rem] border border-white/80 bg-white/90 p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] outline-none transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3 focus-visible:ring-iclset-emerald/35"
+                        className="group/template focus-visible:ring-iclset-emerald/35 rounded-[1rem] border border-white/80 bg-white/90 p-4 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 outline-none hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3"
                       >
                         <div className="flex items-start gap-3">
                           <span className="from-iclset-emerald to-iclset-green grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br text-white shadow-md">
