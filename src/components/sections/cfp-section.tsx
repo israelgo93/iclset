@@ -362,20 +362,20 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   </div>
                 </div>
 
-                <div className="border-iclset-blue/12 from-iclset-navy to-iclset-blue mt-4 rounded-[1.2rem] border bg-gradient-to-r p-3.5 text-white shadow-[0_20px_48px_-28px_rgb(15_23_42_/_0.75)] sm:flex sm:items-center sm:justify-between sm:gap-4">
-                  <div className="mb-3 sm:mb-0">
+                <div className="border-iclset-blue/12 from-iclset-navy to-iclset-blue mt-4 rounded-[1.2rem] border bg-gradient-to-r p-3.5 text-white shadow-[0_20px_48px_-28px_rgb(15_23_42_/_0.75)] md:flex md:items-center md:justify-between md:gap-4">
+                  <div className="mb-4 max-w-xl md:mb-0 md:max-w-xs lg:max-w-sm">
                     <p className="text-sm font-semibold">
                       {locale === "es"
                         ? "Acciones principales para autores"
                         : "Primary author actions"}
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-white/72">
+                    <p className="mt-1 text-xs leading-5 text-white/72 sm:max-w-prose md:max-w-none">
                       {locale === "es"
                         ? "Consulta los lineamientos o inicia el envío oficial en Microsoft CMT."
                         : "Review the guidelines or start the official submission in Microsoft CMT."}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-3 sm:flex-row">
+                  <div className="grid gap-3 sm:grid-cols-2 md:flex md:shrink-0">
                     <Button asChild size="lg" variant="default">
                       <Link href={localizePath(locale, "/call-for-papers")}>
                         {locale === "es"
