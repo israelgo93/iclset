@@ -15,7 +15,7 @@ export const schedule: ScheduleDay[] = [
       en: "Opening ceremony, cross-cutting keynote, IT keynote, panels, and parallel sessions by track.",
     },
     image: {
-      src: "/keynote/day-1.png",
+      src: "/keynote/day-1.jpg",
       alt: {
         es: "Inauguración con conferencia magistral y escenarios con biodiversidad, ADN y tecnología",
         en: "Opening ceremony with keynote and stages featuring biodiversity, DNA, and technology",
@@ -128,7 +128,7 @@ export const schedule: ScheduleDay[] = [
       en: "Bio/Environment keynotes, Bio-Environment panel, Open Science panel, and parallel sessions.",
     },
     image: {
-      src: "/keynote/day-2.png",
+      src: "/keynote/day-2.jpg",
       alt: {
         es: "Jornada Bio-Ambiente con keynotes, paneles y diálogo de ciencia abierta",
         en: "Bio-Environment day with keynotes, panels, and open science dialogue",
@@ -226,7 +226,7 @@ export const schedule: ScheduleDay[] = [
       en: "Poster fair at Plaza Centenario, editors' roundtable, and closing ceremony.",
     },
     image: {
-      src: "/keynote/day-3.png",
+      src: "/keynote/day-3.jpg",
       alt: {
         es: "Feria de pósters científicos, mesa de editores y clausura institucional",
         en: "Scientific poster fair, editors' roundtable, and institutional closing",
