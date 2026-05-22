@@ -338,7 +338,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       </p>
                       <Download className="text-iclset-emerald size-4" />
                     </div>
-                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                    <div className="mt-3 grid gap-2 md:grid-cols-3">
                       {conferenceTemplates.map((template) => (
                         <a
                           key={template.key}

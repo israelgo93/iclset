@@ -54,7 +54,7 @@ Todo el contenido sensible vive en `src/content`:
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
 - `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques de lineamientos para autores y envío.
-- `templates.ts`: plantillas Word descargables para artículos y resúmenes.
+- `templates.ts`: plantillas Word descargables para artículos, resúmenes y Springer.
 
 ## Visuales
 
@@ -116,6 +116,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
 - Ruta Springer documentada y visible para el track tecnológico: libro `Innovation and Research – Smart Technologies and Systems`, serie Lecture Notes in Networks and Systems indexada en Scopus, ISBN/ISSN, DOI por artículo, revisión doble ciego, formato Springer, PDF, manuscrito en inglés y tarifa de publicación USD 400.
 - Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
+- Plantillas actualizadas: artículos, resúmenes y Springer.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Programa académico rediseñado con menor carga de gradientes, mayor contraste de texto, agenda colapsada en móvil, agenda abierta en tablet/desktop y enlaces de calendario bilingües.
 - Sede híbrida rediseñada con cards compactas, video de fondo en desktop/tablet desde el segundo 7 del video institucional y fallback móvil sin video.
