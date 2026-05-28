@@ -26,8 +26,8 @@ export async function generateMetadata({
     title: locale === "es" ? "Call for Papers" : "Call for Papers",
     description:
       locale === "es"
-        ? "Lineamientos para full papers, pósters científicos, ruta Springer del track tecnológico, revisión doble ciego, plantillas y envío mediante Microsoft CMT."
-        : "Guidelines for full papers, scientific posters, the technological track Springer pathway, double-blind review, templates, and submission through Microsoft CMT.",
+        ? "Lineamientos para full papers, pósters científicos, track tecnológico, revisión doble ciego, plantillas y envío mediante Microsoft CMT."
+        : "Guidelines for full papers, scientific posters, the technology track, double-blind review, templates, and submission through Microsoft CMT.",
   });
 }
 
@@ -53,8 +53,8 @@ export default async function CallForPapersPage({
         }
         description={
           locale === "es"
-            ? "Información pública para full papers, pósters científicos, ruta Springer, revisión doble ciego, anonimización, plantillas y plataforma editorial."
-            : "Public information for full papers, scientific posters, Springer pathway, double-blind review, anonymization, templates, and editorial platform."
+            ? "Información pública para full papers, pósters científicos, track tecnológico, revisión doble ciego, anonimización, plantillas y plataforma editorial."
+            : "Public information for full papers, scientific posters, the technology track, double-blind review, anonymization, templates, and editorial platform."
         }
       />
       <CfpSection locale={locale} />

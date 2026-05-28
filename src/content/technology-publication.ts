@@ -1,6 +1,6 @@
 import type { LocalizedText } from "@/types/locale";
 
-interface SpringerPublicationContent {
+interface TechnologyPublicationContent {
   eyebrow: LocalizedText;
   title: LocalizedText;
   summary: LocalizedText;
@@ -13,24 +13,20 @@ interface SpringerPublicationContent {
   };
 }
 
-export const springerPublication = {
+export const technologyPublication = {
   eyebrow: {
-    es: "Ruta Springer",
-    en: "Springer pathway",
+    es: "Track tecnológico",
+    en: "Technology track",
   },
   title: {
-    es: "Track tecnológico con publicación Springer en LNNS",
-    en: "Technological track with Springer publication in LNNS",
+    es: "Track tecnológico",
+    en: "Technology track",
   },
   summary: {
-    es: "El track tecnológico de ICLSET 2026 incluye la publicación de artículos aceptados por la reconocida editorial Springer, garantizando altos estándares de calidad académica.",
-    en: "The technological track of ICLSET 2026 includes the publication of accepted papers by the renowned publisher Springer, ensuring high academic quality standards.",
+    es: "El track tecnológico de ICLSET 2026 mantiene revisión por pares doble ciego y canalización editorial hacia publicaciones académicas indexadas en Scopus.",
+    en: "The ICLSET 2026 technology track maintains double-blind peer review and editorial pathways toward Scopus-indexed academic publications.",
   },
   details: [
-    {
-      es: "Las contribuciones formarán parte del libro Innovation and Research – Smart Technologies and Systems, publicado en la prestigiosa serie Lecture Notes in Networks and Systems, indexada en Scopus.",
-      en: "The contributions will be part of the book Innovation and Research – Smart Technologies and Systems, published in the prestigious Lecture Notes in Networks and Systems series, which is indexed in Scopus.",
-    },
     {
       es: "El volumen contará con su correspondiente ISBN e ISSN, y cada artículo publicado tendrá un DOI individual para su adecuada identificación y citación.",
       en: "The volume will have its corresponding ISBN and ISSN, and each published article will be assigned an individual DOI for proper identification and citation.",
@@ -41,10 +37,6 @@ export const springerPublication = {
     },
   ],
   requirements: [
-    {
-      es: "Los envíos para este track deben prepararse en formato Springer.",
-      en: "Submissions for this track must be prepared in the Springer format.",
-    },
     {
       es: "El archivo debe enviarse en PDF.",
       en: "The file must be submitted in PDF.",
@@ -65,4 +57,4 @@ export const springerPublication = {
       en: "Publication fee for Scopus-indexed journals or proceedings.",
     },
   },
-} as const satisfies SpringerPublicationContent;
+} as const satisfies TechnologyPublicationContent;

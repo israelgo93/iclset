@@ -77,8 +77,8 @@ export const cmtRequirementBlocks: CmtRequirementBlock[] = [
         en: "The initial file must be anonymized for double-blind review, with no names, affiliations, or identifying acknowledgments.",
       },
       {
-        es: "Los envíos del track tecnológico con ruta Springer deben prepararse en formato Springer, en PDF y escritos en inglés.",
-        en: "Technological track submissions for the Springer pathway must be prepared in the Springer format, submitted as PDF, and written in English.",
+        es: "Los envíos del track tecnológico deben presentarse en PDF y estar escritos en inglés.",
+        en: "Technology track submissions must be submitted as PDF files and written in English.",
       },
       {
         es: "Se acepta un único envío por contribución en la plataforma CMT, dentro del plazo oficial publicado.",

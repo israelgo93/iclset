@@ -1,7 +1,7 @@
 import type { LocalizedText } from "@/types/locale";
 
 export interface ConferenceTemplate {
-  key: "full-paper" | "abstract" | "springer";
+  key: "full-paper" | "abstract";
   title: LocalizedText;
   description: LocalizedText;
   href: string;
@@ -34,18 +34,5 @@ export const conferenceTemplates = [
     },
     href: "/templates/plantilla-resumenes-abstract-iclset-2026.docx",
     fileName: "plantilla-resumenes-abstract-iclset-2026.docx",
-  },
-  {
-    key: "springer",
-    title: {
-      es: "Plantilla Springer",
-      en: "Springer template",
-    },
-    description: {
-      es: "Track tecnológico · Word.",
-      en: "Technology track · Word.",
-    },
-    href: "/templates/plantilla-springer-iclset-2026.docx",
-    fileName: "plantilla-springer-iclset-2026.docx",
   },
 ] satisfies readonly ConferenceTemplate[];

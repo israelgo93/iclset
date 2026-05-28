@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { journals } from "@/content/journals";
 import { publicationLogos } from "@/content/publication-logos";
-import { springerPublication } from "@/content/springer";
+import { technologyPublication } from "@/content/technology-publication";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
 
@@ -55,12 +55,12 @@ export function PublicationsSection({
           }
           description={
             locale === "es"
-              ? "ICLSET 2026 contempla libro de actas, ruta Springer para el track tecnológico y canalización de artículos aceptados hacia revistas aliadas."
-              : "ICLSET 2026 includes proceedings, a Springer pathway for the technological track, and pathways for accepted papers toward partner journals."
+              ? "ICLSET 2026 contempla libro de actas, track tecnológico y canalización de artículos aceptados hacia revistas aliadas."
+              : "ICLSET 2026 includes proceedings, the technology track, and pathways for accepted papers toward partner journals."
           }
         />
         <motion.div
-          className="mb-10 grid gap-3 sm:grid-cols-3"
+          className="mb-10 grid gap-3 sm:grid-cols-2"
           initial={shouldReduceMotion ? false : "hidden"}
           whileInView={shouldReduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
@@ -106,16 +106,16 @@ export function PublicationsSection({
           <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
             <div>
               <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-                {springerPublication.eyebrow[locale]}
+                {technologyPublication.eyebrow[locale]}
               </p>
               <h3 className="text-iclset-ink mt-2 text-2xl leading-tight font-semibold tracking-tight">
-                {springerPublication.title[locale]}
+                {technologyPublication.title[locale]}
               </h3>
               <p className="text-iclset-muted mt-3 text-sm leading-6 sm:text-base">
-                {springerPublication.summary[locale]}
+                {technologyPublication.summary[locale]}
               </p>
               <div className="mt-5 grid gap-3">
-                {springerPublication.details.map((detail) => (
+                {technologyPublication.details.map((detail) => (
                   <p
                     key={detail.en}
                     className="border-iclset-blue/10 text-iclset-muted rounded-2xl border bg-white/78 p-4 text-sm leading-6 shadow-sm"
@@ -132,7 +132,7 @@ export function PublicationsSection({
                   : "Track requirements"}
               </p>
               <ul className="mt-4 grid gap-3">
-                {springerPublication.requirements.map((requirement) => (
+                {technologyPublication.requirements.map((requirement) => (
                   <li
                     key={requirement.en}
                     className="text-iclset-muted flex gap-3 text-sm leading-6"
@@ -147,13 +147,13 @@ export function PublicationsSection({
               </ul>
               <div className="from-iclset-blue to-iclset-emerald mt-5 rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_16px_46px_-28px_rgb(31_148_255_/_0.78)]">
                 <p className="text-xs font-semibold tracking-[0.16em] text-white/80 uppercase">
-                  {springerPublication.fee.label[locale]}
+                  {technologyPublication.fee.label[locale]}
                 </p>
                 <p className="mt-1 text-2xl font-semibold">
-                  {springerPublication.fee.amount}
+                  {technologyPublication.fee.amount}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/84">
-                  {springerPublication.fee.description[locale]}
+                  {technologyPublication.fee.description[locale]}
                 </p>
               </div>
             </aside>

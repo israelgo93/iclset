@@ -22,7 +22,7 @@ import {
   registrationFees,
   registrationFeesContent,
 } from "@/content/registration-fees";
-import { springerPublication } from "@/content/springer";
+import { technologyPublication } from "@/content/technology-publication";
 import { conferenceTemplates } from "@/content/templates";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
@@ -75,8 +75,8 @@ export function CfpSection({ locale }: CfpSectionProps) {
     },
     {
       icon: BookOpenCheck,
-      title: springerPublication.eyebrow[locale],
-      text: springerPublication.requirements
+      title: technologyPublication.eyebrow[locale],
+      text: technologyPublication.requirements
         .map((requirement) => requirement[locale])
         .join(" "),
       accent: "from-iclset-blue to-iclset-emerald",

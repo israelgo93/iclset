@@ -173,7 +173,7 @@ Uso recomendado:
 - Countdown.
 - Registro.
 - Fechas importantes.
-- Publicaciones previas en Springer/Scopus.
+- Publicaciones previas indexadas en Scopus.
 - Enfoque de innovación para sociedad.
 
 Qué adaptar para ICLSET:

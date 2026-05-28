@@ -1,7 +1,7 @@
 import type { LocalizedText } from "@/types/locale";
 
 export interface PublicationLogo {
-  key: "springer" | "scopus" | "latindex";
+  key: "scopus" | "latindex";
   name: string;
   src: string;
   alt: LocalizedText;
@@ -12,19 +12,6 @@ export interface PublicationLogo {
 }
 
 export const publicationLogos = [
-  {
-    key: "springer",
-    name: "Springer",
-    src: "/partners/springer-logo.png",
-    alt: {
-      es: "Logotipo de Springer",
-      en: "Springer logo",
-    },
-    width: 2272,
-    height: 678,
-    displayWidth: 168,
-    displayHeight: 50,
-  },
   {
     key: "scopus",
     name: "Scopus",
