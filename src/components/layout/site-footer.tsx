@@ -101,7 +101,8 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             {conference.contactEmail}
           </a>
           <p className="mt-8 text-xs leading-5 text-white/40">
-            © 2026 {conference.acronym}. Uleam
+            © 2026 {conference.acronym}. Universidad Laica Eloy Alfaro de
+            Manabí.
           </p>
         </div>
       </div>
