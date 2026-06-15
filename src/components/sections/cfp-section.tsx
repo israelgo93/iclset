@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowDown,
   ArrowRight,
   BookOpenCheck,
   Download,
@@ -39,6 +40,8 @@ interface CfpItem {
   href?: string;
   ariaLabel?: string;
   cta?: string;
+  highlight?: boolean;
+  scrollTarget?: string;
 }
 
 const easing = [0.22, 1, 0.36, 1] as const;
@@ -62,6 +65,10 @@ export function CfpSection({ locale }: CfpSectionProps) {
   );
   const submissionStart = formatDate(submissionDate?.startsAt, locale);
   const submissionEnd = formatDate(submissionDate?.endsAt, locale);
+  const previousSubmissionEnd = formatDate(
+    submissionDate?.previousEndsAt,
+    locale,
+  );
 
   const items: CfpItem[] = [
     {
@@ -100,19 +107,19 @@ export function CfpSection({ locale }: CfpSectionProps) {
       accent: "from-iclset-cyan to-iclset-sky",
     },
     {
-      icon: ExternalLink,
-      title: conference.editorialPlatform,
+      icon: FileText,
+      title:
+        locale === "es"
+          ? "Participación de ponencias virtuales"
+          : "Virtual presentation participation",
       text:
         locale === "es"
-          ? "Recepción, asignación de revisores, rúbricas y notificaciones."
-          : "Reception, reviewer assignment, rubrics, and notifications.",
+          ? "Envía un resumen de tu ponencia en el formato plantilla resumen, detallado en la siguiente tarjeta."
+          : "Submit an abstract of your presentation using the abstract template format detailed in the next card.",
       accent: "from-iclset-green to-iclset-lime",
-      href: conference.cmtUrl,
-      ariaLabel:
-        locale === "es"
-          ? "Enviar trabajo mediante Microsoft CMT"
-          : "Submit work through Microsoft CMT",
-      cta: locale === "es" ? "Enviar Microsoft CMT" : "Submit via CMT",
+      cta: locale === "es" ? "Ver plantilla resumen" : "View abstract template",
+      highlight: true,
+      scrollTarget: "#abstract-template",
     },
   ];
 
@@ -172,13 +179,17 @@ export function CfpSection({ locale }: CfpSectionProps) {
                 <div className="mt-4 grid content-start gap-3 md:grid-cols-2">
                   {items.map((item, index) => {
                     const Icon = item.icon;
-                    const cardClassName = `group border-iclset-blue/10 to-iclset-cyan-soft/25 rounded-[1rem] border bg-gradient-to-br from-white p-3.5 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)] outline-none transition-shadow focus-visible:ring-3 focus-visible:ring-iclset-blue/35 ${
+                    const cardClassName = `group relative overflow-hidden border-iclset-blue/10 to-iclset-cyan-soft/25 rounded-[1rem] border bg-gradient-to-br from-white p-3.5 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.25)] outline-none transition-shadow focus-visible:ring-3 focus-visible:ring-iclset-blue/35 ${
                       item.href
                         ? "border-iclset-emerald/25 from-iclset-emerald/8 to-iclset-green-soft/45"
                         : "xl:col-span-1"
+                    } ${
+                      item.highlight
+                        ? "iclset-card-glow border-iclset-emerald/45 from-iclset-emerald/10 to-iclset-green-soft/40"
+                        : ""
                     }`;
                     const cardContent = (
-                      <div className="grid gap-2.5">
+                      <div className="relative z-10 grid gap-2.5">
                         <div className="flex items-center gap-3">
                           <span
                             className={`grid size-8 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${item.accent} text-white shadow-md`}
@@ -186,7 +197,15 @@ export function CfpSection({ locale }: CfpSectionProps) {
                             <Icon className="size-4" />
                           </span>
                           <h4 className="text-iclset-ink flex min-w-0 items-center gap-1.5 text-sm font-semibold">
-                            <span className="truncate">{item.title}</span>
+                            <span
+                              className={
+                                item.highlight
+                                  ? "min-w-0 leading-5"
+                                  : "truncate"
+                              }
+                            >
+                              {item.title}
+                            </span>
                             {item.href ? (
                               <ExternalLink
                                 className="text-iclset-emerald size-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -199,10 +218,20 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           {item.text}
                         </p>
                         {item.cta ? (
-                          <span className="from-iclset-emerald to-iclset-green mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-x-0.5">
-                            {item.cta}
-                            <ExternalLink className="size-3.5" />
-                          </span>
+                          item.scrollTarget ? (
+                            <a
+                              href={item.scrollTarget}
+                              className="from-iclset-emerald to-iclset-green mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-y-0.5 focus-visible:ring-3 focus-visible:ring-iclset-emerald/35 focus-visible:outline-none"
+                            >
+                              {item.cta}
+                              <ArrowDown className="size-3.5 animate-bounce" />
+                            </a>
+                          ) : (
+                            <span className="from-iclset-emerald to-iclset-green mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-x-0.5">
+                              {item.cta}
+                              <ExternalLink className="size-3.5" />
+                            </span>
+                          )
                         ) : null}
                       </div>
                     );
@@ -268,6 +297,9 @@ export function CfpSection({ locale }: CfpSectionProps) {
                               }
                         }
                         className={cardClassName}
+                        data-testid={
+                          item.highlight ? "virtual-presentations-card" : undefined
+                        }
                       >
                         {cardContent}
                       </motion.div>
@@ -318,7 +350,18 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           {locale === "es" ? "Cierre" : "Closes"}
                         </p>
                         <p className="text-iclset-ink mt-1 text-base font-semibold">
-                          {submissionEnd ?? submissionDate?.date[locale]}
+                          {previousSubmissionEnd ? (
+                            <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                              <span className="text-iclset-muted line-through decoration-2">
+                                {previousSubmissionEnd}
+                              </span>
+                              <span>
+                                {submissionEnd ?? submissionDate?.date[locale]}
+                              </span>
+                            </span>
+                          ) : (
+                            (submissionEnd ?? submissionDate?.date[locale])
+                          )}
                         </p>
                       </div>
                     </div>
@@ -342,6 +385,11 @@ export function CfpSection({ locale }: CfpSectionProps) {
                       {conferenceTemplates.map((template) => (
                         <a
                           key={template.key}
+                          id={
+                            template.key === "abstract"
+                              ? "abstract-template"
+                              : undefined
+                          }
                           href={template.href}
                           download={template.fileName}
                           className="group/template focus-visible:ring-iclset-emerald/35 rounded-xl border border-white/80 bg-white/90 p-3 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 outline-none hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)] focus-visible:ring-3"
@@ -414,10 +462,10 @@ export function CfpSection({ locale }: CfpSectionProps) {
                     <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
                       {registrationFeesContent.eyebrow[locale]}
                     </p>
-                    <h3 className="text-iclset-ink mt-1.5 text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
+                    <h3 className="text-iclset-ink mt-1.5 text-xl leading-tight font-semibold tracking-tight sm:text-2xl">
                       {registrationFeesContent.title[locale]}
                     </h3>
-                    <p className="text-iclset-muted mt-2 text-[0.84rem] leading-5">
+                    <p className="text-iclset-muted mt-2 text-[0.76rem] leading-5">
                       {registrationFeesContent.description[locale]}
                     </p>
                   </div>
@@ -430,14 +478,29 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   {registrationFees.map((fee, index) => (
                     <article
                       key={fee.key}
-                      className="group rounded-[1rem] border border-white/80 bg-white/92 p-3 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)]"
+                      data-testid={
+                        fee.key === "facsvitec-faculty"
+                          ? "facivitec-fee-card"
+                          : undefined
+                      }
+                      className={`group relative overflow-hidden rounded-[1rem] border bg-white/92 p-3 transition duration-300 hover:-translate-y-0.5 ${
+                        fee.key === "facsvitec-faculty"
+                          ? "iclset-card-glow border-iclset-emerald/45"
+                          : "border-white/80 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)]"
+                      }`}
                     >
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="relative z-10 flex items-start justify-between gap-4">
                         <div>
                           <p className="text-iclset-muted text-[0.65rem] font-semibold tracking-[0.15em] uppercase">
                             {fee.audience[locale]}
                           </p>
-                          <p className="text-iclset-muted mt-1.5 text-[0.82rem] leading-5">
+                          <p
+                            className={`text-iclset-muted mt-1.5 leading-5 ${
+                              fee.key === "facsvitec-faculty"
+                                ? "text-[0.76rem]"
+                                : "text-[0.82rem]"
+                            }`}
+                          >
                             {fee.description[locale]}
                           </p>
                         </div>

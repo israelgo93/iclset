@@ -30,6 +30,8 @@ export interface ImportantDate {
   startsAt?: string;
   /** Fin del hito en formato ISO (YYYY-MM-DD). Inclusive. */
   endsAt?: string;
+  /** Fecha de cierre anterior, visible cuando se requiere mostrar una reprogramacion. */
+  previousEndsAt?: string;
 }
 
 export interface ScheduleItem {

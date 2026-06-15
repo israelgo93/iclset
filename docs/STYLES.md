@@ -600,3 +600,11 @@ Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme
 - El antiguo resumen operativo de fechas se reemplaza por CTA de calendario con Google Calendar y archivo `.ics` compatible con otros calendarios, incluyendo recordatorio un día antes.
 - La sección de sede usa video de fondo solo desde tablet hacia arriba, con overlay y blur de marca para preservar contraste. En móvil se mantiene una versión sin video inspirada en cards claras.
 - Todo copy visible de estas secciones debe mantenerse bilingüe: español con tildes y acentos correctos, e inglés equivalente sin mezclar idiomas.
+
+## Ajuste UI convocatoria y tarifas - 2026-06-15
+
+- Las cards destacadas de `Participacion de ponencias virtuales` y `Docentes FACIVITEC` usan un contorno luminoso animado con la clase `iclset-card-glow`.
+- El brillo debe aplicarse al borde externo real de la card mediante pseudo-elemento CSS; no se deben agregar bordes o cards internas que parezcan una card anidada.
+- La card de ponencias virtuales incluye un CTA compacto con flecha hacia abajo que apunta a la plantilla de resumenes.
+- El titulo del bloque de tarifas debe mantenerse mas compacto que un hero (`text-xl` en mobile y `text-2xl` desde `sm`) para no competir visualmente con la convocatoria.
+- La descripcion de la card `Docentes FACIVITEC` usa texto reducido para conservar jerarquia y evitar saturacion.

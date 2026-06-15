@@ -569,3 +569,15 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Recordatorio de calendario configurado para un día antes del inicio del evento.
 - Sección de sede ajustada con video de fondo solo en tablet/desktop, overlay de contraste y fallback móvil sin video.
 - Verificación bilingüe y responsive definida como paso obligatorio antes del commit de estos cambios.
+
+## Actualizacion convocatoria, ponencias virtuales y tarifas - 2026-06-15
+
+### Completado
+
+- Cierre de recepcion de envios actualizado del 14 de junio al 28 de junio de 2026; la fecha anterior queda visible con tachado en Call for Papers.
+- Nueva card de participacion de ponencias virtuales en la seccion Call for Papers, con enlace hacia `#abstract-template` para orientar al usuario a la plantilla de resumenes.
+- Nueva tarifa `Docentes FACIVITEC` por USD 15 para docentes de la Facultad de Ciencias de la Vida y Tecnologias.
+- Textos de tarifas ajustados para incluir docentes FACIVITEC y mantener equivalencia bilingue.
+- Cards destacadas de ponencias virtuales y docentes FACIVITEC con contorno luminoso animado mediante CSS, sin introducir cards internas.
+- Titulo y descripcion de la card de tarifas reducidos para mejorar lectura y evitar saturacion visual.
+- Validacion visual realizada en navegador local sobre `/es`, incluyendo comprobacion de consola, enlace hacia la plantilla de resumenes y contorno animado en ambas cards.

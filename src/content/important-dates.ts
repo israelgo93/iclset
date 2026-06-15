@@ -29,8 +29,8 @@ export const importantDates: ImportantDate[] = [
 	{
 		key: "submission",
 		date: {
-			es: "13 de mayo-14 de junio de 2026",
-			en: "May 13-June 14, 2026",
+			es: "13 de mayo-28 de junio de 2026",
+			en: "May 13-June 28, 2026",
 		},
 		title: {
 			es: "Recepción de artículos en CMT",
@@ -42,7 +42,8 @@ export const importantDates: ImportantDate[] = [
 		},
 		status: "confirmed",
 		startsAt: "2026-05-13",
-		endsAt: "2026-06-14",
+		endsAt: "2026-06-28",
+		previousEndsAt: "2026-06-14",
 	},
 	{
 		key: "review-assignment",

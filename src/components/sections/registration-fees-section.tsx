@@ -33,9 +33,18 @@ export function RegistrationFeesSection({
               {registrationFees.map((fee, index) => (
                 <article
                   key={fee.key}
-                  className="rounded-2xl border border-white/75 bg-white/90 p-5 shadow-[0_18px_40px_-30px_rgb(15_23_42_/_0.22)]"
+                  data-testid={
+                    fee.key === "facsvitec-faculty"
+                      ? "facivitec-fee-card"
+                      : undefined
+                  }
+                  className={`relative overflow-hidden rounded-2xl border bg-white/90 p-5 ${
+                    fee.key === "facsvitec-faculty"
+                      ? "iclset-card-glow border-iclset-emerald/45"
+                      : "border-white/75 shadow-[0_18px_40px_-30px_rgb(15_23_42_/_0.22)]"
+                  }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="relative z-10 flex items-start justify-between gap-4">
                     <div>
                       <p className="text-iclset-muted text-[0.68rem] font-semibold tracking-[0.16em] uppercase">
                         {fee.audience[locale]}
@@ -55,7 +64,13 @@ export function RegistrationFeesSection({
                       <ReceiptText className="size-5" />
                     </span>
                   </div>
-                  <p className="text-iclset-muted mt-4 text-sm leading-6">
+                  <p
+                    className={`text-iclset-muted relative z-10 mt-4 leading-6 ${
+                      fee.key === "facsvitec-faculty"
+                        ? "text-[0.8rem]"
+                        : "text-sm"
+                    }`}
+                  >
                     {fee.description[locale]}
                   </p>
                 </article>

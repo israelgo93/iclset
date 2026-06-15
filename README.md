@@ -46,7 +46,7 @@ Todo el contenido sensible vive en `src/content`:
 - `navigation.ts`: navegacion bilingue.
 - `tracks.ts`: tres tracks, carreras articuladoras, ejes y chairs.
 - `important-dates.ts`: cronograma oficial y fechas CMT.
-- `registration-fees.ts`: valores de inscripción publicados para estudiantes, personal ULEAM, participantes externos y autores.
+- `registration-fees.ts`: valores de inscripción publicados para estudiantes, docentes FACIVITEC, personal ULEAM, participantes externos y autores.
 - `schedule.ts`: programa académico por día.
 - `journals.ts`: revistas aliadas con URLs e indexación.
 - `technology-publication.ts`: contenido del track tecnológico, requisitos, indexación Scopus y tarifa de publicación.
@@ -64,6 +64,7 @@ Todo el contenido sensible vive en `src/content`:
 - Programa académico en home con tarjetas claras tipo glass, imágenes por día, agenda desplegable y CTA para agregar ICLSET 2026 a Google Calendar u otros calendarios mediante archivo `.ics`.
 - En móvil, las agendas de cada día del programa se muestran colapsadas por defecto para que el usuario las despliegue cuando necesite consultar horarios.
 - Sección de sede con video de fondo de Manta solo en tablet/desktop; en móvil se mantiene una versión clara sin video para rendimiento y legibilidad.
+- Cards destacadas de ponencias virtuales y docentes FACIVITEC con contorno luminoso animado, sin anidar cards internas.
 - Layout mobile-first para Android, iOS, tablet, desktop y wide desktop.
 
 ## SEO y accesibilidad
@@ -113,7 +114,9 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Sitio bilingue publicado en AWS ECS Fargate.
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
-- Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
+- Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, docentes FACIVITEC USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
+- Convocatoria actualizada: cierre de recepción de envíos reprogramado del 14 de junio al 28 de junio de 2026, mostrando la fecha anterior tachada en la sección Call for Papers.
+- Nueva modalidad visible en Call for Papers: participación de ponencias virtuales con enlace directo hacia la plantilla de resúmenes.
 - Track tecnológico documentado y visible: publicaciones indexadas en Scopus, ISBN/ISSN, DOI por artículo, revisión doble ciego, PDF, manuscrito en inglés y tarifa de publicación USD 400.
 - Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Plantillas actualizadas: artículos y resúmenes.

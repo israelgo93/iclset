@@ -259,6 +259,71 @@ a {
 	filter: blur(8px);
 }
 
+.iclset-card-glow {
+	position: relative;
+	isolation: isolate;
+	animation: iclset-card-glow 1.9s ease-in-out infinite;
+}
+
+.iclset-card-glow::before {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	padding: 2px;
+	pointer-events: none;
+	content: "";
+	border-radius: inherit;
+	background: linear-gradient(
+		120deg,
+		oklch(72% 0.18 158 / 0.2),
+		oklch(86% 0.2 130 / 0.95),
+		oklch(72% 0.18 158 / 0.2)
+	);
+	background-size: 220% 220%;
+	-webkit-mask:
+		linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	animation: iclset-card-border-sweep 1.6s linear infinite;
+}
+
+@keyframes iclset-card-glow {
+	0%,
+	100% {
+		border-color: oklch(72% 0.18 158 / 0.7);
+		box-shadow:
+			0 0 0 2px oklch(72% 0.18 158 / 0.18),
+			0 0 20px rgb(78 205 87 / 0.34),
+			0 18px 42px -26px rgb(78 205 87 / 0.78);
+	}
+
+	50% {
+		border-color: oklch(86% 0.2 130 / 0.95);
+		box-shadow:
+			0 0 0 3px oklch(86% 0.2 130 / 0.32),
+			0 0 34px rgb(78 205 87 / 0.58),
+			0 24px 60px -28px rgb(78 205 87 / 0.98);
+	}
+}
+
+@keyframes iclset-card-border-sweep {
+	0% {
+		background-position: 0% 50%;
+		opacity: 0.55;
+	}
+
+	50% {
+		background-position: 100% 50%;
+		opacity: 1;
+	}
+
+	100% {
+		background-position: 0% 50%;
+		opacity: 0.55;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
