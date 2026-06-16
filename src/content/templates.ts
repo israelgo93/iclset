@@ -1,7 +1,7 @@
 import type { LocalizedText } from "@/types/locale";
 
 export interface ConferenceTemplate {
-  key: "full-paper" | "abstract";
+  key: "full-paper" | "abstract" | "poster";
   title: LocalizedText;
   description: LocalizedText;
   href: string;
@@ -34,5 +34,18 @@ export const conferenceTemplates = [
     },
     href: "/templates/plantilla-resumenes-abstract-iclset-2026.docx",
     fileName: "plantilla-resumenes-abstract-iclset-2026.docx",
+  },
+  {
+    key: "poster",
+    title: {
+      es: "Plantilla póster",
+      en: "Poster template",
+    },
+    description: {
+      es: "Póster científico · PowerPoint.",
+      en: "Scientific poster · PowerPoint.",
+    },
+    href: "/templates/iclset-2026-plantilla-poster.pptx",
+    fileName: "iclset-2026-plantilla-poster.pptx",
   },
 ] satisfies readonly ConferenceTemplate[];

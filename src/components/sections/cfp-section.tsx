@@ -375,9 +375,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                   <div className="border-iclset-emerald/20 from-iclset-emerald/8 to-iclset-green-soft/45 rounded-[1.2rem] border bg-gradient-to-br p-4 shadow-[0_18px_44px_-34px_rgb(78_205_87_/_0.45)]">
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.16em] uppercase">
-                        {locale === "es"
-                          ? "Plantillas en Word"
-                          : "Word templates"}
+                        {locale === "es" ? "Plantillas" : "Templates"}
                       </p>
                       <Download className="text-iclset-emerald size-4" />
                     </div>
