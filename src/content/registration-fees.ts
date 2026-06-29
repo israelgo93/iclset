@@ -21,9 +21,25 @@ export const registrationFees: RegistrationFee[] = [
     },
     amount: "USD 15",
     description: {
-      es: "Tarifa para docentes de la Facultad de Ciencias de la Vida y Tecnologías.",
-      en: "Fee for faculty from the Faculty of Life Sciences and Technologies.",
+      es: "Docentes FACIVITEC con tarifa diferenciada.",
+      en: "FACIVITEC faculty with a differentiated fee.",
     },
+    options: [
+      {
+        label: {
+          es: "Con ponencia",
+          en: "With presentation",
+        },
+        amount: "USD 15",
+      },
+      {
+        label: {
+          es: "Sin ponencia",
+          en: "Without presentation",
+        },
+        amount: "USD 18",
+      },
+    ],
   },
   {
     key: "uleam-staff",
@@ -73,8 +89,8 @@ export const registrationFeesContent = {
     en: "Fees to participate in ICLSET 2026",
   },
   description: {
-    es: "Valores de inscripción para asistentes, docentes FACIVITEC, personal ULEAM, participantes externos y autores del congreso.",
-    en: "Registration fees for attendees, FACIVITEC faculty, ULEAM staff, external participants, and conference authors.",
+    es: "Tarifas oficiales por tipo de participante.",
+    en: "Official fees by participant type.",
   },
   note: {
     es: "Inscríbete ahora",

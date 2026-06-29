@@ -5,10 +5,18 @@ import { technologyPublication } from "./technology-publication";
 
 const registrationFeesSummary = {
   es: registrationFees
-    .map((fee) => `${fee.audience.es} ${fee.amount}`)
+    .map((fee) =>
+      fee.options
+        ? `${fee.audience.es}: ${fee.options.map((option) => `${option.label.es} ${option.amount}`).join(" / ")}`
+        : `${fee.audience.es} ${fee.amount}`,
+    )
     .join(", "),
   en: registrationFees
-    .map((fee) => `${fee.audience.en} ${fee.amount}`)
+    .map((fee) =>
+      fee.options
+        ? `${fee.audience.en}: ${fee.options.map((option) => `${option.label.en} ${option.amount}`).join(" / ")}`
+        : `${fee.audience.en} ${fee.amount}`,
+    )
     .join(", "),
 };
 

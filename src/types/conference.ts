@@ -77,6 +77,10 @@ export interface RegistrationFee {
   audience: LocalizedText;
   amount: string;
   description: LocalizedText;
+  options?: {
+    label: LocalizedText;
+    amount: string;
+  }[];
 }
 
 export interface NavigationItem {

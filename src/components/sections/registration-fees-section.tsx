@@ -49,9 +49,27 @@ export function RegistrationFeesSection({
                       <p className="text-iclset-muted text-[0.68rem] font-semibold tracking-[0.16em] uppercase">
                         {fee.audience[locale]}
                       </p>
-                      <p className="text-iclset-ink mt-2 text-3xl leading-none font-semibold tracking-tight">
-                        {fee.amount}
-                      </p>
+                      {fee.options ? (
+                        <div className="mt-2 grid gap-1.5">
+                          {fee.options.map((option) => (
+                            <div
+                              key={option.label.en}
+                              className="flex items-center gap-2"
+                            >
+                              <span className="text-iclset-muted text-xs font-medium">
+                                {option.label[locale]}
+                              </span>
+                              <span className="text-iclset-ink text-lg leading-none font-semibold tracking-tight">
+                                {option.amount}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-iclset-ink mt-2 text-3xl leading-none font-semibold tracking-tight">
+                          {fee.amount}
+                        </p>
+                      )}
                     </div>
                     <span
                       className={`grid size-10 shrink-0 place-items-center rounded-xl text-white shadow-md ${

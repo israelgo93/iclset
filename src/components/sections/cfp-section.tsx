@@ -487,7 +487,13 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           : "border-white/80 shadow-[0_12px_32px_-28px_rgb(15_23_42_/_0.28)] hover:shadow-[0_18px_44px_-30px_rgb(15_23_42_/_0.32)]"
                       }`}
                     >
-                      <div className="relative z-10 flex items-start justify-between gap-4">
+                      <div
+                        className={`relative z-10 flex gap-4 ${
+                          fee.options
+                            ? "flex-col min-[430px]:flex-row min-[430px]:items-start min-[430px]:justify-between"
+                            : "items-start justify-between"
+                        }`}
+                      >
                         <div>
                           <p className="text-iclset-muted text-[0.65rem] font-semibold tracking-[0.15em] uppercase">
                             {fee.audience[locale]}
@@ -502,15 +508,33 @@ export function CfpSection({ locale }: CfpSectionProps) {
                             {fee.description[locale]}
                           </p>
                         </div>
-                        <p
-                          className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
-                            index % 2 === 0
-                              ? "bg-iclset-blue/10 text-iclset-blue"
-                              : "bg-iclset-emerald/10 text-iclset-emerald"
-                          }`}
-                        >
-                          {fee.amount}
-                        </p>
+                        {fee.options ? (
+                          <div className="grid w-full shrink-0 gap-1.5 min-[430px]:w-auto">
+                            {fee.options.map((option) => (
+                              <div
+                                key={option.label.en}
+                                className="flex items-center justify-between gap-2 rounded-xl bg-iclset-emerald/10 px-2.5 py-1.5 text-iclset-emerald"
+                              >
+                                <span className="text-[0.62rem] leading-none font-semibold whitespace-nowrap">
+                                  {option.label[locale]}
+                                </span>
+                                <span className="text-xs leading-none font-semibold whitespace-nowrap">
+                                  {option.amount}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p
+                            className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                              index % 2 === 0
+                                ? "bg-iclset-blue/10 text-iclset-blue"
+                                : "bg-iclset-emerald/10 text-iclset-emerald"
+                            }`}
+                          >
+                            {fee.amount}
+                          </p>
+                        )}
                       </div>
                     </article>
                   ))}
