@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowUpRight,
   CalendarClock,
   CalendarPlus,
   ChevronDown,
@@ -9,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { conference } from "@/content/conference";
@@ -223,6 +225,27 @@ function ProgramDayCard({
   initiallyOpen,
 }: ProgramDayCardProps) {
   const accent = getDayAccent(index);
+  const detailHref =
+    day.detailPage !== undefined ? `/${locale}${day.detailPage.href}` : null;
+  const imageCard = (
+    <div
+      className={`bg-iclset-navy relative overflow-hidden rounded-[1.25rem] border shadow-[0_22px_54px_-32px_rgb(6_20_38_/_0.48)] ${accent.edge}`}
+    >
+      <Image
+        src={day.image.src}
+        alt={day.image.alt[locale]}
+        width={1024}
+        height={768}
+        sizes="(max-width: 1024px) 100vw, 33vw"
+        loading={index === 0 ? "eager" : "lazy"}
+        className="ease-iclset aspect-[16/9] h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02] lg:aspect-[2.6/1]"
+      />
+      <div className="from-iclset-navy/78 absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-3.5">
+        <p className="text-sm font-semibold text-white">{day.day[locale]}</p>
+        <p className="text-xs font-medium text-white/78">{day.date[locale]}</p>
+      </div>
+    </div>
+  );
 
   return (
     <motion.article
@@ -237,27 +260,19 @@ function ProgramDayCard({
       className={`text-iclset-ink min-w-0 overflow-hidden rounded-[1.75rem] border bg-white/86 ring-1 backdrop-blur-xl ${accent.edge} ${accent.ring} ${accent.glow}`}
     >
       <div className="p-3">
-        <div
-          className={`bg-iclset-navy relative overflow-hidden rounded-[1.25rem] border shadow-[0_22px_54px_-32px_rgb(6_20_38_/_0.48)] ${accent.edge}`}
-        >
-          <Image
-            src={day.image.src}
-            alt={day.image.alt[locale]}
-            width={1024}
-            height={768}
-            sizes="(max-width: 1024px) 100vw, 33vw"
-            loading={index === 0 ? "eager" : "lazy"}
-            className="ease-iclset aspect-[16/9] h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02] lg:aspect-[2.6/1]"
-          />
-          <div className="from-iclset-navy/78 absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-3.5">
-            <p className="text-sm font-semibold text-white">
-              {day.day[locale]}
-            </p>
-            <p className="text-xs font-medium text-white/78">
-              {day.date[locale]}
-            </p>
-          </div>
-        </div>
+        {detailHref !== null && day.detailPage !== undefined ? (
+          <Link
+            href={detailHref}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={day.detailPage.ariaLabel[locale]}
+            className="focus-visible:outline-iclset-sky block rounded-[1.25rem] focus-visible:outline-3 focus-visible:outline-offset-3"
+          >
+            {imageCard}
+          </Link>
+        ) : (
+          imageCard
+        )}
       </div>
 
       <div className="p-4 pt-1 sm:p-5 sm:pt-2">
@@ -265,6 +280,18 @@ function ProgramDayCard({
           <h3 className="text-iclset-ink text-lg leading-tight font-semibold tracking-tight lg:text-[1.15rem] xl:text-[1.22rem]">
             {day.summary[locale]}
           </h3>
+          {detailHref !== null && day.detailPage !== undefined ? (
+            <Link
+              href={detailHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={day.detailPage.ariaLabel[locale]}
+              className="border-iclset-blue/15 text-iclset-blue focus-visible:outline-iclset-sky mt-3 inline-flex min-h-10 items-center gap-2 rounded-full border bg-white/78 px-3.5 py-2 text-xs font-semibold transition-colors hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-3"
+            >
+              <span>{day.detailPage.label[locale]}</span>
+              <ArrowUpRight className="size-3.5" />
+            </Link>
+          ) : null}
         </div>
 
         <details

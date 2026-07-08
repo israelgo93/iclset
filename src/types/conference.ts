@@ -34,17 +34,33 @@ export interface ImportantDate {
   previousEndsAt?: string;
 }
 
+export interface ScheduleItemDetails {
+  heading: LocalizedText;
+  people?: {
+    name: string;
+    role?: LocalizedText;
+  }[];
+  bullets?: LocalizedText[];
+  paragraphs?: LocalizedText[];
+}
+
 export interface ScheduleItem {
   time: string;
   title: LocalizedText;
   description: LocalizedText;
   modality: LocalizedText;
+  details?: ScheduleItemDetails;
 }
 
 export interface ScheduleDay {
   day: LocalizedText;
   date: LocalizedText;
   summary: LocalizedText;
+  detailPage?: {
+    href: string;
+    label: LocalizedText;
+    ariaLabel: LocalizedText;
+  };
   image: {
     src: string;
     alt: LocalizedText;

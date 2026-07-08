@@ -581,3 +581,14 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Cards destacadas de ponencias virtuales y docentes FACIVITEC con contorno luminoso animado mediante CSS, sin introducir cards internas.
 - Titulo y descripcion de la card de tarifas reducidos para mejorar lectura y evitar saturacion visual.
 - Validacion visual realizada en navegador local sobre `/es`, incluyendo comprobacion de consola, enlace hacia la plantilla de resumenes y contorno animado en ambas cards.
+
+## Actualización jornada inaugural track TI - 2026-07-08
+
+### Completado
+
+- Agenda del Día 1 actualizada con el cronograma oficial de la jornada inaugural del track de Tecnologías de la Información.
+- La home y `/program` mantienen la agenda resumida por bloques, sin biografías dentro del acordeón del día.
+- Nueva página bilingüe `/es/program/day-1-it-track` y `/en/program/day-1-it-track` con línea de tiempo, detalle protocolar, conferencias, mesa redonda, panelistas, biografías y ponentes.
+- Fotografías de los ponentes extraídas del documento fuente y publicadas en `public/speakers/day-1-ti`.
+- Sitemap actualizado para incluir la nueva ruta bilingüe.
+- Validación realizada sobre contenido en español e inglés, tildes, consola del navegador, mobile snapshot, `pnpm lint`, `pnpm typecheck` y `pnpm build`.

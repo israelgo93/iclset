@@ -31,6 +31,7 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - `/es` y `/en`: home principal.
 - `/es/call-for-papers` y `/en/call-for-papers`: convocatoria, contribuciones, revisión doble ciega y Microsoft CMT.
 - `/es/program` y `/en/program`: programa académico por día.
+- `/es/program/day-1-it-track` y `/en/program/day-1-it-track`: jornada inaugural detallada del track de Tecnologías de la Información.
 - `/es/tracks` y `/en/tracks`: tracks científicos y ejes temáticos.
 - `/es/publications` y `/en/publications`: proceso editorial y revistas aliadas.
 - `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad híbrida.
@@ -48,6 +49,7 @@ Todo el contenido sensible vive en `src/content`:
 - `important-dates.ts`: cronograma oficial y fechas CMT.
 - `registration-fees.ts`: valores de inscripción publicados para estudiantes, docentes FACIVITEC, personal ULEAM, participantes externos y autores.
 - `schedule.ts`: programa académico por día.
+- `day-1-it-track.ts`: textos y ponentes de la jornada inaugural del track TI.
 - `journals.ts`: revistas aliadas con URLs e indexación.
 - `technology-publication.ts`: contenido del track tecnológico, requisitos, indexación Scopus y tarifa de publicación.
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
@@ -62,6 +64,7 @@ Todo el contenido sensible vive en `src/content`:
 - Imagenes del programa: `public/program/day-1.svg`, `public/program/day-2.svg`, `public/program/day-3.svg`.
 - Hero con animacion Motion inspirada en biociencia, agrociencia y tecnologia.
 - Programa académico en home con tarjetas claras tipo glass, imágenes por día, agenda desplegable y CTA para agregar ICLSET 2026 a Google Calendar u otros calendarios mediante archivo `.ics`.
+- Jornada inaugural del track TI disponible como página detallada con línea de tiempo, ponentes y fotografías oficiales extraídas de la documentación recibida.
 - En móvil, las agendas de cada día del programa se muestran colapsadas por defecto para que el usuario las despliegue cuando necesite consultar horarios.
 - Sección de sede con video de fondo de Manta solo en tablet/desktop; en móvil se mantiene una versión clara sin video para rendimiento y legibilidad.
 - Cards destacadas de ponencias virtuales y docentes FACIVITEC con contorno luminoso animado, sin anidar cards internas.
@@ -122,6 +125,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Plantillas actualizadas: artículos y resúmenes.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Programa académico rediseñado con menor carga de gradientes, mayor contraste de texto, agenda colapsada en móvil, agenda abierta en tablet/desktop y enlaces de calendario bilingües.
+- Jornada inaugural del track TI publicada en `/es/program/day-1-it-track` y `/en/program/day-1-it-track`, con agenda detallada, biografías, panelistas y fotografías de ponentes.
 - Sede híbrida rediseñada con cards compactas, video de fondo en desktop/tablet desde el segundo 7 del video institucional y fallback móvil sin video.
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.

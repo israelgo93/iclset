@@ -7,6 +7,7 @@ import { locales } from "@/types/locale";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", ...navigation.map((item) => item.href)];
+  const extraLocalizedRoutes = ["/program/day-1-it-track"];
   const localizedRoutes = locales.flatMap((locale) =>
     routes.map((route) => ({
       url: `${site.baseUrl}/${locale}${route}`,
@@ -15,9 +16,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: route === "" ? 1 : 0.8,
     })),
   );
+  const localizedDetailRoutes = locales.flatMap((locale) =>
+    extraLocalizedRoutes.map((route) => ({
+      url: `${site.baseUrl}/${locale}${route}`,
+      lastModified: new Date("2026-07-08"),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+  );
 
   return [
     ...localizedRoutes,
+    ...localizedDetailRoutes,
     {
       url: `${site.baseUrl}${cmtAcknowledgmentPath}`,
       lastModified: new Date("2026-05-14"),
