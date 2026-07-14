@@ -68,6 +68,83 @@ export interface ScheduleDay {
   items: ScheduleItem[];
 }
 
+export type ProgramDaySlug =
+  | "day-1-it-track"
+  | "day-2-tracks"
+  | "day-3-open-house";
+
+export type ProgramTrackKey = TrackKey | "general";
+
+export type ProgramAgendaItemKind =
+  | "registration"
+  | "ceremony"
+  | "keynote"
+  | "presentation"
+  | "poster"
+  | "break"
+  | "meal"
+  | "closing";
+
+export interface ProgramParticipant {
+  name: string;
+  profileId?: string;
+  role?: LocalizedText;
+  affiliation?: LocalizedText;
+}
+
+export interface ProgramAgendaItem {
+  time: string;
+  kind: ProgramAgendaItemKind;
+  title: LocalizedText;
+  description?: LocalizedText;
+  participants?: ProgramParticipant[];
+}
+
+export interface ProgramSession {
+  id: string;
+  track: ProgramTrackKey;
+  label: LocalizedText;
+  title: LocalizedText;
+  description: LocalizedText;
+  venue: LocalizedText;
+  format: LocalizedText;
+  moderators?: LocalizedText;
+  zoomUrl?: string;
+  items: ProgramAgendaItem[];
+}
+
+export interface ProgramSpeakerProfile {
+  id: string;
+  name: string;
+  role: LocalizedText;
+  affiliation?: LocalizedText;
+  image?: {
+    src: string;
+    alt: LocalizedText;
+  };
+  biography?: LocalizedText[];
+  presentation?: {
+    title: LocalizedText;
+    abstract: LocalizedText;
+    keywords?: LocalizedText;
+  };
+}
+
+export interface ProgramDayDetail {
+  slug: ProgramDaySlug;
+  day: LocalizedText;
+  date: LocalizedText;
+  eyebrow: LocalizedText;
+  title: LocalizedText;
+  description: LocalizedText;
+  facts: {
+    label: LocalizedText;
+    value: LocalizedText;
+  }[];
+  sessions: ProgramSession[];
+  speakerProfileIds: string[];
+}
+
 export interface Journal {
   name: string;
   institution: LocalizedText;

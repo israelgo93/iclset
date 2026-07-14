@@ -3,11 +3,14 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { cmtAcknowledgmentPath } from "@/content/cmt";
 import { navigation } from "@/content/navigation";
+import { programDayDetails } from "@/content/program-days";
 import { locales } from "@/types/locale";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", ...navigation.map((item) => item.href)];
-  const extraLocalizedRoutes = ["/program/day-1-it-track"];
+  const extraLocalizedRoutes = programDayDetails.map(
+    (day) => `/program/${day.slug}`,
+  );
   const localizedRoutes = locales.flatMap((locale) =>
     routes.map((route) => ({
       url: `${site.baseUrl}/${locale}${route}`,
@@ -19,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localizedDetailRoutes = locales.flatMap((locale) =>
     extraLocalizedRoutes.map((route) => ({
       url: `${site.baseUrl}/${locale}${route}`,
-      lastModified: new Date("2026-07-08"),
+      lastModified: new Date("2026-07-14"),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     })),

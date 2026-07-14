@@ -62,8 +62,8 @@ function createCalendarLinks(locale: Locale) {
       : "ICLSET 2026 - International conference";
   const details =
     locale === "es"
-      ? "Recordatorio de ICLSET 2026: programa académico híbrido con plenarias, sesiones por track y feria académica."
-      : "Reminder for ICLSET 2026: hybrid academic program with plenaries, track sessions, and academic fair.";
+      ? "Recordatorio de ICLSET 2026: programa académico con plenarias, sesiones por track y presentación de pósters durante los tres días."
+      : "Reminder for ICLSET 2026: academic program with plenaries, track sessions, and poster presentations across all three days.";
   const reminder =
     locale === "es"
       ? "ICLSET 2026 inicia mañana. Revisa el programa académico y los accesos institucionales."
@@ -115,8 +115,8 @@ export function ProgramPreviewSection({
   const calendarLinks = createCalendarLinks(locale);
   const sectionIntro =
     locale === "es"
-      ? "Agenda completa visible por jornada, con plenarias, paneles, sesiones por track y feria académica."
-      : "Complete agenda visible by day, including plenaries, panels, track sessions, and the academic fair.";
+      ? "Agenda resumida por jornada, con acceso al cronograma completo de cada día y presentación de pósters en las tres fechas."
+      : "A concise daily agenda with access to each day's full schedule and poster presentations on all three dates.";
   const sectionClassName = detailed
     ? "relative isolate w-full overflow-hidden py-14 sm:py-16 lg:py-18"
     : "relative isolate w-full overflow-hidden py-14 sm:py-16 lg:min-h-svh lg:py-16";

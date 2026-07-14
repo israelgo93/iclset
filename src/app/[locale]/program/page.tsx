@@ -23,8 +23,8 @@ export async function generateMetadata({
     title: locale === "es" ? "Programa académico" : "Academic program",
     description:
       locale === "es"
-        ? "Programa de ICLSET 2026 por día, con keynotes, paneles, sesiones paralelas, pósters y clausura."
-        : "ICLSET 2026 program by day, including keynotes, panels, parallel sessions, posters, and closing ceremony.",
+        ? "Programa de ICLSET 2026 por día, con conferencias magistrales, sesiones por track y presentaciones de pósters en las tres jornadas."
+        : "ICLSET 2026 program by day, including keynotes, track sessions, and poster presentations across all three days.",
   });
 }
 
@@ -50,8 +50,8 @@ export default async function ProgramPage({
         }
         description={
           locale === "es"
-            ? "Tres jornadas híbridas con plenarias presenciales, sesiones virtuales por track, feria de pósters, mesa de editores y clausura."
-            : "Three hybrid days with in-person plenaries, virtual track sessions, poster fair, editors' roundtable, and closing ceremony."
+            ? "Tres jornadas con plenarias, sesiones presenciales y virtuales por track, y presentación de pósters científicos cada día."
+            : "Three days of plenaries, in-person and virtual track sessions, and scientific poster presentations every day."
         }
       />
       <ProgramPreviewSection locale={locale} detailed />

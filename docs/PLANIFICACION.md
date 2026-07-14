@@ -454,24 +454,24 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Revisión de copy.
 - Publicación oficial.
 
-## Estado de implementaciÃ³n inicial Â· 2026-05-11
+## Estado de implementación inicial · 2026-05-11
 
 ### Completado
 
 - Proyecto Next.js 16 creado en `C:\Proyectos\iclset`.
-- App Router configurado con rutas bilingÃ¼es `/es` y `/en`.
-- Landing principal implementada con hero, mÃ©tricas, tracks, Call for Papers, fechas clave, programa preliminar, proceso editorial, revistas, sede, comitÃ©s, FAQ, CTA final y footer.
-- PÃ¡ginas internas implementadas para Call for Papers, programa, tracks, publicaciones, sede, comitÃ©s y contacto.
+- App Router configurado con rutas bilingües `/es` y `/en`.
+- Landing principal implementada con hero, métricas, tracks, Call for Papers, fechas clave, programa preliminar, proceso editorial, revistas, sede, comités, FAQ, CTA final y footer.
+- Páginas internas implementadas para Call for Papers, programa, tracks, publicaciones, sede, comités y contacto.
 - Contenido sensible centralizado en `src/content`.
 - Tipos base creados en `src/types`.
-- Supabase preparado en `src/lib/supabase`, sin dependencia de base de datos para el sitio publico.
+- Supabase preparado en `src/lib/supabase`, sin dependencia de base de datos para el sitio público.
 - SEO inicial configurado con metadata por ruta, `sitemap.ts`, `robots.ts` y JSON-LD de evento en home.
-- README completo creado con informaciÃ³n del proyecto, estructura, contenido y comandos.
+- README completo creado con información del proyecto, estructura, contenido y comandos.
 
 ### Decisiones aplicadas
 
-- Se mantiene una versiÃ³n visual clara, neutral y moderna, sin fondos oscuros dominantes.
-- Los datos no aprobados se excluyen del contenido publico hasta su validacion.
+- Se mantiene una versión visual clara, neutral y moderna, sin fondos oscuros dominantes.
+- Los datos no aprobados se excluyen del contenido público hasta su validación.
 - No se implementan registro, pagos, dashboard, certificados ni base de datos productiva.
 - Se usa `pnpm` y TypeScript estricto.
 
@@ -479,10 +479,10 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 
 - Enlace final de Microsoft CMT configurado: `https://cmt3.research.microsoft.com/ICLSET2026/`.
 - Enlaces de plantillas para autores.
-- Chairs y miembros de comitÃ©.
-- Tarifas de inscripciÃ³n.
+- Chairs y miembros de comité.
+- Tarifas de inscripción.
 - URLs oficiales de revistas aliadas e indexaciones validadas.
-- Redes institucionales e imagenes oficiales.
+- Redes institucionales e imágenes oficiales.
 
 ## Estado de despliegue AWS ECS Fargate - 2026-05-11
 
@@ -592,3 +592,19 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Fotografías de los ponentes extraídas del documento fuente y publicadas en `public/speakers/day-1-ti`.
 - Sitemap actualizado para incluir la nueva ruta bilingüe.
 - Validación realizada sobre contenido en español e inglés, tildes, consola del navegador, mobile snapshot, `pnpm lint`, `pnpm typecheck` y `pnpm build`.
+
+## Actualización programa general y páginas por día - 2026-07-14
+
+### Completado
+
+- Programa académico conciliado con `Programa_General_ICLSET_2026_2.docx` y con las fichas de ponentes recibidas para Bio/Ambiente y Agrociencias.
+- Agenda resumida de home y `/program` actualizada con los bloques oficiales del Día 1, Día 2 y Día 3.
+- Presentaciones de pósters incorporadas en las tres jornadas.
+- Día 1 ampliado con la jornada inaugural del track TI y las salas paralelas de Agroindustria, Agronegocios y Agropecuaria.
+- Día 2 ampliado con las sesiones de Ciencias Biológicas y Ambientales, Tecnologías de la Información y Agrociencias.
+- Día 3 actualizado con Casa Abierta FACIVITEC y presentación de pósters en Plaza Centenario desde las 09:00.
+- Páginas bilingües detalladas disponibles en `/program/day-1-it-track`, `/program/day-2-tracks` y `/program/day-3-open-house` para los locales `es` y `en`.
+- Fotografías confirmadas incorporadas para Issam Touhami, Manuel Peralvo, Gerardo Pámanes-Carrasco, Sahian Macías Zambrano y David Segovia Araujo.
+- La fotografía identificada como Carlomagno Aguilera Solórzano no se asocia a Carlo Magno Delgado por tratarse de nombres distintos; su actividad usa placeholder.
+- Biografías, resúmenes y palabras clave de Issam Touhami y Manuel Peralvo incorporados en español e inglés.
+- Sitemap actualizado con las tres rutas detalladas.

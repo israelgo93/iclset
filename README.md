@@ -31,7 +31,9 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - `/es` y `/en`: home principal.
 - `/es/call-for-papers` y `/en/call-for-papers`: convocatoria, contribuciones, revisión doble ciega y Microsoft CMT.
 - `/es/program` y `/en/program`: programa académico por día.
-- `/es/program/day-1-it-track` y `/en/program/day-1-it-track`: jornada inaugural detallada del track de Tecnologías de la Información.
+- `/es/program/day-1-it-track` y `/en/program/day-1-it-track`: programa completo del Día 1 con jornada inaugural TI y sesiones de Agrociencias.
+- `/es/program/day-2-tracks` y `/en/program/day-2-tracks`: programa completo del Día 2 para Bio/Ambiente, TI y Agrociencias.
+- `/es/program/day-3-open-house` y `/en/program/day-3-open-house`: programa del Día 3 con Casa Abierta FACIVITEC y pósters científicos.
 - `/es/tracks` y `/en/tracks`: tracks científicos y ejes temáticos.
 - `/es/publications` y `/en/publications`: proceso editorial y revistas aliadas.
 - `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad híbrida.
@@ -49,7 +51,8 @@ Todo el contenido sensible vive en `src/content`:
 - `important-dates.ts`: cronograma oficial y fechas CMT.
 - `registration-fees.ts`: valores de inscripción publicados para estudiantes, docentes FACIVITEC, personal ULEAM, participantes externos y autores.
 - `schedule.ts`: programa académico por día.
-- `day-1-it-track.ts`: textos y ponentes de la jornada inaugural del track TI.
+- `program-days.ts`: cronograma bilingüe detallado de los tres días y sus sesiones por track.
+- `program-speakers.ts`: perfiles, biografías, resúmenes y fotografías confirmadas de ponentes.
 - `journals.ts`: revistas aliadas con URLs e indexación.
 - `technology-publication.ts`: contenido del track tecnológico, requisitos, indexación Scopus y tarifa de publicación.
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
@@ -64,7 +67,8 @@ Todo el contenido sensible vive en `src/content`:
 - Imagenes del programa: `public/program/day-1.svg`, `public/program/day-2.svg`, `public/program/day-3.svg`.
 - Hero con animacion Motion inspirada en biociencia, agrociencia y tecnologia.
 - Programa académico en home con tarjetas claras tipo glass, imágenes por día, agenda desplegable y CTA para agregar ICLSET 2026 a Google Calendar u otros calendarios mediante archivo `.ics`.
-- Jornada inaugural del track TI disponible como página detallada con línea de tiempo, ponentes y fotografías oficiales extraídas de la documentación recibida.
+- Los tres días disponen de una página detallada con bloques por track, línea de tiempo, sedes, moderación, accesos virtuales, ponentes y fotografías confirmadas.
+- Las presentaciones de pósters científicos son visibles en el Día 1, Día 2 y Día 3.
 - En móvil, las agendas de cada día del programa se muestran colapsadas por defecto para que el usuario las despliegue cuando necesite consultar horarios.
 - Sección de sede con video de fondo de Manta solo en tablet/desktop; en móvil se mantiene una versión clara sin video para rendimiento y legibilidad.
 - Cards destacadas de ponencias virtuales y docentes FACIVITEC con contorno luminoso animado, sin anidar cards internas.
@@ -125,7 +129,9 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Plantillas actualizadas: artículos y resúmenes.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.
 - Programa académico rediseñado con menor carga de gradientes, mayor contraste de texto, agenda colapsada en móvil, agenda abierta en tablet/desktop y enlaces de calendario bilingües.
-- Jornada inaugural del track TI publicada en `/es/program/day-1-it-track` y `/en/program/day-1-it-track`, con agenda detallada, biografías, panelistas y fotografías de ponentes.
+- Programa oficial actualizado desde `Programa_General_ICLSET_2026_2.docx`, con sesiones paralelas de Agrociencias en el Día 1; Bio/Ambiente, TI y Agrociencias en el Día 2; y Casa Abierta FACIVITEC en el Día 3.
+- Páginas detalladas publicadas para los tres días, con equivalencia completa entre español e inglés, perfiles disponibles y placeholders para ponentes sin fotografía.
+- Presentaciones de pósters publicadas en las tres jornadas conforme a la actualización institucional.
 - Sede híbrida rediseñada con cards compactas, video de fondo en desktop/tablet desde el segundo 7 del video institucional y fallback móvil sin video.
 - Build de produccion requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.

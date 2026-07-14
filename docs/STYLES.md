@@ -608,3 +608,14 @@ Tokens disponibles en `src/app/globals.css` y mapeados a Tailwind v4 via `@theme
 - La card de ponencias virtuales incluye un CTA compacto con flecha hacia abajo que apunta a la plantilla de resumenes.
 - El titulo del bloque de tarifas debe mantenerse mas compacto que un hero (`text-xl` en mobile y `text-2xl` desde `sm`) para no competir visualmente con la convocatoria.
 - La descripcion de la card `Docentes FACIVITEC` usa texto reducido para conservar jerarquia y evitar saturacion.
+
+## Ajuste UI programa detallado - 2026-07-14
+
+- Cada card del programa enlaza en una nueva pestaña a la página detallada de su jornada.
+- Las páginas de Día 1, Día 2 y Día 3 comparten una composición tipada con navegación entre días, metadatos, accesos a bloques por track y línea de tiempo completa.
+- Los bloques se diferencian con los colores existentes de Bio/Ambiente, Agrociencias y Tecnologías de la Información, sin cambiar la identidad general del sitio.
+- Las actividades se presentan como filas cronológicas sin anidar cards; los perfiles biográficos se agrupan al final de la jornada.
+- Cada ponente se muestra junto a su actividad. Cuando existe una fotografía confirmada se usa `next/image`; en caso contrario se muestra un placeholder neutro.
+- Los accesos Zoom solo aparecen cuando el programa oficial proporciona un enlace para la sala.
+- La Casa Abierta FACIVITEC y las presentaciones de pósters del Día 3 no reciben una hora de cierre mientras la fuente oficial no la establezca.
+- Todo el contenido visible mantiene equivalencia entre español e inglés, tildes correctas, contraste AA y comportamiento responsive.
