@@ -438,9 +438,7 @@ function SpeakerProfiles({ profiles, locale }: SpeakerProfilesProps) {
             id="speaker-profiles-title"
             className="text-iclset-ink mt-3 text-3xl leading-tight font-semibold sm:text-4xl"
           >
-            {locale === "es"
-              ? "Ponentes con ficha biográfica"
-              : "Speakers with biographical profiles"}
+            {locale === "es" ? "Ponentes" : "Speakers"}
           </h2>
         </div>
 
