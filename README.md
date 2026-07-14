@@ -23,7 +23,7 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - shadcn/ui para componentes base.
 - Motion for React para animaciones controladas.
 - lucide-react para iconografia.
-- Supabase preparado sin dependencia obligatoria para render publico.
+- Supabase preparado sin dependencia obligatoria para render público.
 - pnpm como package manager.
 
 ## Rutas
@@ -39,14 +39,14 @@ Sitio oficial de **ICLSET 2026 - International Conference on Life Sciences and E
 - `/es/venue` y `/en/venue`: sede, Manta, ULEAM y modalidad híbrida.
 - `/es/committees` y `/en/committees`: chairs, comités y organización.
 - `/es/contact` y `/en/contact`: canales institucionales.
-- `/en/cmt-acknowledgment.html`: pagina estatica verificable por `curl` con el acknowledgement obligatorio de Microsoft CMT y `charset=UTF-8`.
+- `/en/cmt-acknowledgment.html`: página estática verificable por `curl` con el acknowledgement obligatorio de Microsoft CMT y `charset=UTF-8`.
 
 ## Contenido centralizado
 
 Todo el contenido sensible vive en `src/content`:
 
-- `conference.ts`: identidad, fechas, sede, CTAs y metricas.
-- `navigation.ts`: navegacion bilingue.
+- `conference.ts`: identidad, fechas, sede, CTAs y métricas.
+- `navigation.ts`: navegación bilingüe.
 - `tracks.ts`: tres tracks, carreras articuladoras, ejes y chairs.
 - `important-dates.ts`: cronograma oficial y fechas CMT.
 - `registration-fees.ts`: valores de inscripción publicados para estudiantes, docentes FACIVITEC, personal ULEAM, participantes externos y autores.
@@ -61,11 +61,20 @@ Todo el contenido sensible vive en `src/content`:
 - `cmt.ts`: acknowledgement, enlaces oficiales de ayuda CMT y bloques de lineamientos para autores y envío.
 - `templates.ts`: plantillas Word descargables para artículos y resúmenes.
 
+## Fuentes documentales del programa
+
+- `docs/Programa_General_ICLSET_2026_2.docx`: fuente principal para fechas, horarios, actividades, tracks, sedes, responsables y enlaces Zoom.
+- `docs/Fotos y  nombres AGROCIENCIAS.docx`: fuente de identificación y fotografías para ponentes de Agrociencias.
+- `docs/Issam Tohuami _Datos - Fotos y Resumen.docx`: ficha biográfica, fotografía, resumen y palabras clave de Issam Touhami.
+- `docs/Manuel Peralvo_Datos - Fotos y Resumen.docx`: ficha biográfica, fotografía, resumen y palabras clave de Manuel Peralvo.
+
+Cuando una ficha individual difiere del programa general en fecha u hora, prevalece el programa general. Las fotografías solo se asocian cuando el nombre de la persona coincide de forma verificable.
+
 ## Visuales
 
 - Icono del evento: `public/brand/iclset-icon.svg`.
-- Imagenes del programa: `public/program/day-1.svg`, `public/program/day-2.svg`, `public/program/day-3.svg`.
-- Hero con animacion Motion inspirada en biociencia, agrociencia y tecnologia.
+- Imágenes del programa: `public/program/day-1.svg`, `public/program/day-2.svg`, `public/program/day-3.svg`.
+- Hero con animación Motion inspirada en biociencia, agrociencia y tecnología.
 - Programa académico en home con tarjetas claras tipo glass, imágenes por día, agenda desplegable y CTA para agregar ICLSET 2026 a Google Calendar u otros calendarios mediante archivo `.ics`.
 - Los tres días disponen de una página detallada con bloques por track, línea de tiempo, sedes, moderación, accesos virtuales, ponentes y fotografías confirmadas.
 - Las presentaciones de pósters científicos son visibles en el Día 1, Día 2 y Día 3.
@@ -118,7 +127,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 
 ## Estado actual
 
-- Sitio bilingue publicado en AWS ECS Fargate.
+- Sitio bilingüe publicado en AWS ECS Fargate.
 - Dominios `iclset.com`, `www.iclset.com` e `iclset.uleam.ec` activos con HTTPS.
 - Tracks, ejes, chairs, comités, fechas, programa y revistas actualizados desde la documentación oficial.
 - Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, docentes FACIVITEC USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
@@ -133,7 +142,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Páginas detalladas publicadas para los tres días, con equivalencia completa entre español e inglés, perfiles disponibles y placeholders para ponentes sin fotografía.
 - Presentaciones de pósters publicadas en las tres jornadas conforme a la actualización institucional.
 - Sede híbrida rediseñada con cards compactas, video de fondo en desktop/tablet desde el segundo 7 del video institucional y fallback móvil sin video.
-- Build de produccion requerido antes de commit o despliegue.
+- Build de producción requerido antes de commit o despliegue.
 - Contacto institucional operativo: `israel.gomez@uleam.edu.ec`.
 
 ## Planificación CMT
