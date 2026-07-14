@@ -71,7 +71,7 @@ export function StatsSection({ locale }: StatsSectionProps) {
 			<div className="section-container">
 				<motion.div
 					className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-					initial={shouldReduceMotion ? false : "hidden"}
+					initial={false}
 					whileInView={shouldReduceMotion ? undefined : "visible"}
 					viewport={{ once: true, margin: "-60px" }}
 					variants={{

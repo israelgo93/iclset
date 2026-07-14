@@ -61,7 +61,7 @@ export function PublicationsSection({
         />
         <motion.div
           className="mb-10 grid gap-3 sm:grid-cols-2"
-          initial={shouldReduceMotion ? false : "hidden"}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
           variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
@@ -98,7 +98,7 @@ export function PublicationsSection({
         </motion.div>
         <motion.article
           className="border-iclset-blue/10 from-iclset-blue-soft/70 to-iclset-green-soft/60 mb-10 overflow-hidden rounded-[2rem] border bg-gradient-to-br via-white p-5 shadow-[0_26px_80px_-46px_rgb(31_64_120_/_0.42)] sm:p-6 lg:p-7"
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, ease: easing }}
@@ -161,7 +161,7 @@ export function PublicationsSection({
         </motion.article>
         <motion.div
           className="grid gap-4 lg:grid-cols-5"
-          initial={shouldReduceMotion ? false : "hidden"}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
           variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
@@ -191,7 +191,7 @@ export function PublicationsSection({
         </motion.div>
         <motion.div
           className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5"
-          initial={shouldReduceMotion ? false : "hidden"}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
           variants={{ visible: { transition: { staggerChildren: 0.07 } } }}

@@ -25,7 +25,7 @@ export function MotionCard({
 	const shouldReduceMotion = useReducedMotion();
 
 	const baseMotionProps: MotionProps = {
-		initial: shouldReduceMotion ? false : { opacity: 0, y: 22 },
+		initial: false,
 		whileInView: shouldReduceMotion ? undefined : { opacity: 1, y: 0 },
 		viewport: { once: true, margin: "-80px" },
 		transition: { duration: 0.55, ease: easing, delay },

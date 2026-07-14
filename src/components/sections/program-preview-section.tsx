@@ -249,7 +249,7 @@ function ProgramDayCard({
 
   return (
     <motion.article
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+      initial={false}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{

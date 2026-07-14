@@ -23,7 +23,7 @@ export function FinalCtaSection({ locale }: FinalCtaSectionProps) {
 			<div className="section-container">
 				<motion.div
 					className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-[oklch(20%_0.06_250)] via-[oklch(28%_0.10_240)] to-[oklch(22%_0.08_220)] p-8 text-white sm:p-12 lg:p-14"
-					initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+					initial={false}
 					whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: "-80px" }}
 					transition={{ duration: 0.65, ease: easing }}

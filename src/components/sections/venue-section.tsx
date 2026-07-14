@@ -107,7 +107,7 @@ export function VenueSection({ locale }: VenueSectionProps) {
             return (
               <motion.article
                 key={item.title}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
+                initial={false}
                 whileInView={
                   shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
                 }
@@ -141,7 +141,7 @@ export function VenueSection({ locale }: VenueSectionProps) {
         </div>
 
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, x: 28 }}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: easing }}

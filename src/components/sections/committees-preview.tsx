@@ -48,7 +48,7 @@ export function CommitteesPreview({
 				/>
 				<motion.div
 					className="grid gap-5 md:grid-cols-2 xl:grid-cols-3"
-					initial={shouldReduceMotion ? false : "hidden"}
+					initial={false}
 					whileInView={shouldReduceMotion ? undefined : "visible"}
 					viewport={{ once: true, margin: "-80px" }}
 					variants={{ visible: { transition: { staggerChildren: 0.07 } } }}

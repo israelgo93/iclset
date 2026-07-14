@@ -147,7 +147,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
 
         <motion.div
           className="brand-gradient-border overflow-hidden rounded-[1.75rem] bg-white p-1 shadow-[0_30px_80px_-42px_rgb(31_64_120_/_0.34)]"
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+          initial={false}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: easing }}
@@ -244,9 +244,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           target="_blank"
                           rel="noreferrer"
                           aria-label={item.ariaLabel}
-                          initial={
-                            shouldReduceMotion ? false : { opacity: 0, y: 16 }
-                          }
+                          initial={false}
                           whileInView={
                             shouldReduceMotion
                               ? undefined
@@ -276,9 +274,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                     return (
                       <motion.div
                         key={item.title}
-                        initial={
-                          shouldReduceMotion ? false : { opacity: 0, y: 16 }
-                        }
+                        initial={false}
                         whileInView={
                           shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
                         }
@@ -306,7 +302,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                     );
                   })}
                   <motion.div
-                    initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                    initial={false}
                     whileInView={
                       shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
                     }

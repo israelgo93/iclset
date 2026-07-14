@@ -52,7 +52,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const fadeUp = (delay: number) => ({
-    initial: shouldReduceMotion ? false : { opacity: 0, y: 18 },
+    initial: false,
     animate: shouldReduceMotion ? undefined : { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: easing, delay },
   });
