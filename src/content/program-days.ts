@@ -265,8 +265,8 @@ export const programDayDetails: ProgramDayDetail[] = [
         venue: text("Cine ULEAM", "ULEAM Cinema"),
         format: text("Híbrida", "Hybrid"),
         moderators: text(
-          "Ing. Ángel Prado (08:30-09:50) y Dr. Edison Lavayen (10:05-11:25)",
-          "Ing. Ángel Prado (08:30-09:50) and Dr. Edison Lavayen (10:05-11:25)",
+          "Ing. Robert Mero (08:30-09:50) y Dr. Edison Lavayen (10:05-11:25)",
+          "Ing. Robert Mero (08:30-09:50) and Dr. Edison Lavayen (10:05-11:25)",
         ),
         zoomUrl: "https://us02web.zoom.us/j/88322870864",
         items: [
@@ -509,9 +509,7 @@ export const programDayDetails: ProgramDayDetail[] = [
             ),
             {
               participants: [
-                participant("Ing. Joffre Añazco", {
-                  affiliation: text("INIAP", "INIAP"),
-                }),
+                participant("Egresada Evelyn Chele Zambrano"),
               ],
             },
           ),
