@@ -9,7 +9,6 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { journals } from "@/content/journals";
 import { publicationLogos } from "@/content/publication-logos";
-import { technologyPublication } from "@/content/technology-publication";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
 
@@ -55,12 +54,12 @@ export function PublicationsSection({
           }
           description={
             locale === "es"
-              ? "ICLSET 2026 contempla libro de actas, track tecnológico y canalización de artículos aceptados hacia revistas aliadas."
-              : "ICLSET 2026 includes proceedings, the technology track, and pathways for accepted papers toward partner journals."
+              ? "ICLSET 2026 contempla libro de actas y canalización de artículos aceptados hacia revistas aliadas."
+              : "ICLSET 2026 includes proceedings and pathways for accepted papers toward partner journals."
           }
         />
         <motion.div
-          className="mb-10 grid gap-3 sm:grid-cols-2"
+          className="mb-10 grid max-w-md gap-3"
           initial={false}
           whileInView={shouldReduceMotion ? undefined : "visible"}
           viewport={{ once: true, margin: "-60px" }}
@@ -96,69 +95,6 @@ export function PublicationsSection({
             </motion.div>
           ))}
         </motion.div>
-        <motion.article
-          className="border-iclset-blue/10 from-iclset-blue-soft/70 to-iclset-green-soft/60 mb-10 overflow-hidden rounded-[2rem] border bg-gradient-to-br via-white p-5 shadow-[0_26px_80px_-46px_rgb(31_64_120_/_0.42)] sm:p-6 lg:p-7"
-          initial={false}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.55, ease: easing }}
-        >
-          <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
-            <div>
-              <p className="text-iclset-blue text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-                {technologyPublication.eyebrow[locale]}
-              </p>
-              <h3 className="text-iclset-ink mt-2 text-2xl leading-tight font-semibold tracking-tight">
-                {technologyPublication.title[locale]}
-              </h3>
-              <p className="text-iclset-muted mt-3 text-sm leading-6 sm:text-base">
-                {technologyPublication.summary[locale]}
-              </p>
-              <div className="mt-5 grid gap-3">
-                {technologyPublication.details.map((detail) => (
-                  <p
-                    key={detail.en}
-                    className="border-iclset-blue/10 text-iclset-muted rounded-2xl border bg-white/78 p-4 text-sm leading-6 shadow-sm"
-                  >
-                    {detail[locale]}
-                  </p>
-                ))}
-              </div>
-            </div>
-            <aside className="border-iclset-emerald/20 rounded-[1.5rem] border bg-white/82 p-5 shadow-[0_18px_50px_-36px_rgb(15_23_42_/_0.28)]">
-              <p className="text-iclset-emerald text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
-                {locale === "es"
-                  ? "Requisitos del track"
-                  : "Track requirements"}
-              </p>
-              <ul className="mt-4 grid gap-3">
-                {technologyPublication.requirements.map((requirement) => (
-                  <li
-                    key={requirement.en}
-                    className="text-iclset-muted flex gap-3 text-sm leading-6"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="bg-iclset-emerald mt-2 size-2 shrink-0 rounded-full"
-                    />
-                    <span>{requirement[locale]}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="from-iclset-blue to-iclset-emerald mt-5 rounded-[1.25rem] bg-gradient-to-r p-4 text-white shadow-[0_16px_46px_-28px_rgb(31_148_255_/_0.78)]">
-                <p className="text-xs font-semibold tracking-[0.16em] text-white/80 uppercase">
-                  {technologyPublication.fee.label[locale]}
-                </p>
-                <p className="mt-1 text-2xl font-semibold">
-                  {technologyPublication.fee.amount}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/84">
-                  {technologyPublication.fee.description[locale]}
-                </p>
-              </div>
-            </aside>
-          </div>
-        </motion.article>
         <motion.div
           className="grid gap-4 lg:grid-cols-5"
           initial={false}

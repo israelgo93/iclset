@@ -547,16 +547,13 @@ Mitigación: Motion solo donde aporte valor, imágenes optimizadas y Server Comp
 - Acceso directo desde el hero hacia la sección de valores.
 - FAQ de costo de inscripción conectada al contenido tipado para evitar duplicación manual.
 
-## Actualización track tecnológico - 2026-05-28
+## Actualización editorial - 2026-07-20
 
 ### Completado
 
-- Track tecnológico centralizado en `src/content/technology-publication.ts`.
-- Publicación indicada para revistas o proceedings indexados en Scopus.
-- Requisitos del track publicados: archivo PDF y manuscrito en inglés.
-- Identificadores editoriales documentados: ISBN, ISSN y DOI individual por artículo.
-- Tarifa de publicación para revistas o proceedings indexados en Scopus: USD 400.
-- Información reflejada en publicaciones, Call for Papers, lineamientos CMT y FAQ.
+- Retirado el bloque editorial diferenciado por track de las versiones en español e inglés.
+- Eliminados los requisitos y la tarifa de publicación asociados exclusivamente a ese bloque.
+- Publicaciones, Call for Papers, lineamientos CMT, FAQ y metadatos conservan únicamente información editorial general y confirmada.
 
 ## Actualización UI programa y sede - 2026-05-21
 

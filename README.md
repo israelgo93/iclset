@@ -54,7 +54,6 @@ Todo el contenido sensible vive en `src/content`:
 - `program-days.ts`: cronograma bilingüe detallado de los tres días y sus sesiones por track.
 - `program-speakers.ts`: perfiles, biografías, resúmenes y fotografías confirmadas de ponentes.
 - `journals.ts`: revistas aliadas con URLs e indexación.
-- `technology-publication.ts`: contenido del track tecnológico, requisitos, indexación Scopus y tarifa de publicación.
 - `committees.ts`: chairs, comité honorífico, organizador y científico.
 - `faqs.ts`: preguntas frecuentes.
 - `site.ts`: metadatos globales.
@@ -133,7 +132,7 @@ docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 iclse
 - Valores de inscripción visibles en home desde contenido tipado: estudiantes USD 15, docentes FACIVITEC USD 15, personal ULEAM USD 25, participantes externos USD 35 y autores USD 25.
 - Convocatoria actualizada: cierre de recepción de envíos reprogramado del 14 de junio al 28 de junio de 2026, mostrando la fecha anterior tachada en la sección Call for Papers.
 - Nueva modalidad visible en Call for Papers: participación de ponencias virtuales con enlace directo hacia la plantilla de resúmenes.
-- Track tecnológico documentado y visible: publicaciones indexadas en Scopus, ISBN/ISSN, DOI por artículo, revisión doble ciego, PDF, manuscrito en inglés y tarifa de publicación USD 400.
+- La información editorial pública se limita al proceso general de revisión, el libro de actas y las revistas aliadas confirmadas.
 - Requisitos de Microsoft CMT visibles en Call for Papers: author guidelines, submission guidelines, where to submit y how to submit.
 - Plantillas actualizadas: artículos y resúmenes.
 - Acknowledgement CMT publicado como texto plano estatico en `/en/cmt-acknowledgment.html`.

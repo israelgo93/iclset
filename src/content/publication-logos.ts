@@ -1,7 +1,7 @@
 import type { LocalizedText } from "@/types/locale";
 
 export interface PublicationLogo {
-  key: "scopus" | "latindex";
+  key: "latindex";
   name: string;
   src: string;
   alt: LocalizedText;
@@ -12,19 +12,6 @@ export interface PublicationLogo {
 }
 
 export const publicationLogos = [
-  {
-    key: "scopus",
-    name: "Scopus",
-    src: "/partners/scopus-logo.png",
-    alt: {
-      es: "Logotipo de Scopus",
-      en: "Scopus logo",
-    },
-    width: 960,
-    height: 309,
-    displayWidth: 154,
-    displayHeight: 50,
-  },
   {
     key: "latindex",
     name: "Latindex Catalogo 2.0",

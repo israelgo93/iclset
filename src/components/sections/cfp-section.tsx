@@ -23,7 +23,6 @@ import {
   registrationFees,
   registrationFeesContent,
 } from "@/content/registration-fees";
-import { technologyPublication } from "@/content/technology-publication";
 import { conferenceTemplates } from "@/content/templates";
 import { localizePath } from "@/lib/i18n";
 import type { Locale } from "@/types/locale";
@@ -79,14 +78,6 @@ export function CfpSection({ locale }: CfpSectionProps) {
           ? "Artículo completo de 8 a 12 páginas en la plantilla del congreso."
           : "Full paper, 8 to 12 pages, using the conference template.",
       accent: "from-iclset-blue to-iclset-sky",
-    },
-    {
-      icon: BookOpenCheck,
-      title: technologyPublication.eyebrow[locale],
-      text: technologyPublication.requirements
-        .map((requirement) => requirement[locale])
-        .join(" "),
-      accent: "from-iclset-blue to-iclset-emerald",
     },
     {
       icon: BookOpenCheck,
@@ -221,7 +212,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                           item.scrollTarget ? (
                             <a
                               href={item.scrollTarget}
-                              className="from-iclset-emerald to-iclset-green mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-y-0.5 focus-visible:ring-3 focus-visible:ring-iclset-emerald/35 focus-visible:outline-none"
+                              className="from-iclset-emerald to-iclset-green focus-visible:ring-iclset-emerald/35 mt-0.5 inline-flex w-fit items-center gap-1.5 rounded-full bg-gradient-to-r px-3 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_-16px_rgb(78_205_87_/_0.85)] transition-transform duration-300 group-hover:translate-y-0.5 focus-visible:ring-3 focus-visible:outline-none"
                             >
                               {item.cta}
                               <ArrowDown className="size-3.5 animate-bounce" />
@@ -294,7 +285,9 @@ export function CfpSection({ locale }: CfpSectionProps) {
                         }
                         className={cardClassName}
                         data-testid={
-                          item.highlight ? "virtual-presentations-card" : undefined
+                          item.highlight
+                            ? "virtual-presentations-card"
+                            : undefined
                         }
                       >
                         {cardContent}
@@ -509,7 +502,7 @@ export function CfpSection({ locale }: CfpSectionProps) {
                             {fee.options.map((option) => (
                               <div
                                 key={option.label.en}
-                                className="flex items-center justify-between gap-2 rounded-xl bg-iclset-emerald/10 px-2.5 py-1.5 text-iclset-emerald"
+                                className="bg-iclset-emerald/10 text-iclset-emerald flex items-center justify-between gap-2 rounded-xl px-2.5 py-1.5"
                               >
                                 <span className="text-[0.62rem] leading-none font-semibold whitespace-nowrap">
                                   {option.label[locale]}

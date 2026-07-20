@@ -1,7 +1,6 @@
 import type { FaqItem } from "@/types/conference";
 
 import { registrationFees } from "./registration-fees";
-import { technologyPublication } from "./technology-publication";
 
 const registrationFeesSummary = {
   es: registrationFees
@@ -87,8 +86,8 @@ export const faqs: FaqItem[] = [
       en: "Will there be journal publication pathways?",
     },
     answer: {
-      es: `Los artículos aceptados y presentados se canalizan hacia las revistas aliadas Encriptar, YAKU, ALLPA, Revista Científica Conectividad y Ecuadorian Science Journal, según afinidad temática y proceso editorial propio. El track tecnológico también contempla publicaciones indexadas en Scopus, con tarifa de publicación de ${technologyPublication.fee.amount}.`,
-      en: `Accepted and presented papers are routed to Encriptar, YAKU, ALLPA, Revista Científica Conectividad, and Ecuadorian Science Journal according to thematic fit and each journal's editorial process. The technology track also includes Scopus-indexed publications, with a publication fee of ${technologyPublication.fee.amount}.`,
+      es: "Los artículos aceptados y presentados se canalizan hacia las revistas aliadas Encriptar, YAKU, ALLPA, Revista Científica Conectividad y Ecuadorian Science Journal, según afinidad temática y proceso editorial propio.",
+      en: "Accepted and presented papers are routed to Encriptar, YAKU, ALLPA, Revista Científica Conectividad, and Ecuadorian Science Journal according to thematic fit and each journal's editorial process.",
     },
   },
   {

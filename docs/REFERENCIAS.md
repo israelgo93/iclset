@@ -173,7 +173,7 @@ Uso recomendado:
 - Countdown.
 - Registro.
 - Fechas importantes.
-- Publicaciones previas indexadas en Scopus.
+- Publicaciones previas del evento.
 - Enfoque de innovación para sociedad.
 
 Qué adaptar para ICLSET:
@@ -210,13 +210,13 @@ Uso recomendado:
 - Congreso híbrido en Ecuador.
 - Full paper con revisión por pares.
 - Resúmenes extendidos.
-- Publicación Scopus/Latindex según track.
+- Publicación académica según el proceso editorial del evento.
 
 Qué adaptar para ICLSET:
 
 - Explicación simple de modalidades de contribución.
 - Enfoque híbrido.
-- Sección de publicación por track.
+- Explicación general del proceso de publicación.
 
 ## Plataformas científicas y repositorios recomendados
 
